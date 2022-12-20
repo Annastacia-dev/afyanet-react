@@ -1,4 +1,5 @@
 import React from "react";
+import "./NavBar.css"
 
 
 function NavBar () {
@@ -6,15 +7,17 @@ function NavBar () {
 
     return(
        
-        <nav class="navbar navbar-light bg-light">
+        <nav className="navbar navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <img src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top"/>
+                <div id="contents">
+                    <a class="navbar-brand" href="" style={{color: "592C7B"}}>
+                    <img src="./assests/Logo.png" alt=""  class="d-inline-block align-text-top"/>
                     AfyaNet</a>
-                    <a>About Us</a>
-                    <a>Services</a>
-                    <a>Contact Us</a>
-                    <a>Our Partners</a>
+                    <a href = "" style={{color: "black"}}>About Us</a>
+                    <a href = "">Services</a>
+                    <a href = "">Contact Us</a>
+                    <a href = "">Our Partners</a>
+                    </div>
             </div>
         </nav>
     )

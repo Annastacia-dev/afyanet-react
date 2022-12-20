@@ -1,0 +1,22 @@
+#contents{
+    display: flex;
+    justify-content: space-evenly;
+    box-shadow: 2px 5px #888888;box-shadow: 5px 5px 1px 1px rgba(0, 0, 255, .2);
+    margin:auto;
+    width: 80%;
+    padding: 12px;
+    /* border: solid black; */
+    margin-top: 10px;
+}
+a{
+    text-decoration: none;
+}
+a:hover {
+    background-color: #9263CB;
+    border-radius: 25px;
+    padding: 8px;
+  }
+  img{
+    /* color: #9263CB; */
+    /* background-color: #9263CB; */
+  }
