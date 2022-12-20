@@ -15,10 +15,10 @@ function NavBar () {
                     <img src=" " alt=""></img>
                    <h3 style={{color: "#592C7B"}}>AfyaNet</h3> 
                     {/* </a> */}
-                    <a href = " " style={{color: "black"}}>About Us</a>
-                    <a href = " " style={{color: "black"}}>Services</a>
-                    <a href = " " style={{color: "black"}}>Contact Us</a>
-                    <a href = " " style={{color: "black"}}>Our Partners</a>
+                    <a href = " ">About Us</a>
+                    <a href = " ">Services</a>
+                    <a href = " ">Contact Us</a>
+                    <a href = " ">Our Partners</a>
                     </div>
             </div>
         </nav>
