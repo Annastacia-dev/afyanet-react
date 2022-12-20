@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import '../css/OurPartners.css'
 import bolt from '../assets/images/our partners/bolt-pharma.webp'
 
 const OurPartners = () => {
