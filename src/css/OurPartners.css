@@ -1,9 +1,9 @@
 .partner .card{
-    border-radius: 2rem;
+    border-radius: 1rem;
     border: none;
 }
 .partner .card img{
-    border-radius: 2rem;
+    border-radius: 1rem;
 }
 
 .partner a{
@@ -11,8 +11,12 @@
     color: var(--black);
 }
 
+.partner a :hover{
+    transform: scale(1.02);
+}
+
 .partner h5{
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 400;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
 }
