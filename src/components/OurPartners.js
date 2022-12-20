@@ -1,9 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import bolt from '../assets/images/our partners/bolt-pharma.webp'
 
 const OurPartners = () => {
   return (
-    <div className='container'>
+    <div className='container fluid'>
       <div className="row">
         <div className="col-12">
             <h1>Our Partners</h1>
@@ -13,13 +14,12 @@ const OurPartners = () => {
         </div>
       </div>
         <div className="row">
-            <div className="col-12 col-md-6 col-lg-4">
+            <div className="col-12 col-md-6 col-lg-2">
                 <Link>
-                <div className="card">
-                    <img src="https://via.placeholder.com/300x200" className="card-img-top" alt="..." />
+                <div className="partner card">
+                    <img src={bolt} className="card-img-top" alt="..." />
                     <div className="card-body">
-                        <h5 className="card-title">Card title</h5>
-                        <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <h5 className="card-title">Bolt Pharma</h5>
                     </div>
                 </div>
                 </Link>
