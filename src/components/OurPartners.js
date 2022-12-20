@@ -15,14 +15,12 @@ const OurPartners = () => {
         </div>
       </div>
         <div className="row">
-            <div className="col-12 col-md-6 col-lg-2">
+            <div className="partner col-12 col-md-6 col-lg-2">
                 <Link>
-                <div className="partner card">
+                <div className="card">
                     <img src={bolt} className="card-img-top" alt="..." />
-                    <div className="card-body">
-                        <h5 className="card-title">Bolt Pharma</h5>
-                    </div>
                 </div>
+                <h5 className="card-title">Bolt Pharma</h5>
                 </Link>
             </div>
         </div>

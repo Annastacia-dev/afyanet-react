@@ -1,0 +1,18 @@
+.partner .card{
+    border-radius: 2rem;
+    border: none;
+}
+.partner .card img{
+    border-radius: 2rem;
+}
+
+.partner a{
+    text-decoration: none;
+    color: var(--black);
+}
+
+.partner h5{
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 1rem;
+}
