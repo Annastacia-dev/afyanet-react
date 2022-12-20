@@ -5,14 +5,14 @@ import { partners } from '../data/partners'
 
 const OurPartners = () => {
   return (
-    <Container fluid="md">
+    <Container className='partner' fluid="md">
         <Row justify-content-center>
             <Col xs={12} >
                 <h1>Our Partners</h1>
                 <p>We are honored to have the following partners in our operations.</p>
             </Col>
         </Row>
-        <Row className='partner' >
+        <Row>
             {partners.map((partner) => (
                 <Col style={{marginBottom: "60px" }} xs={12} md={5} lg={2} key={partner.id}>
                     <a href={partner.link} target="_blank" rel="noreferrer">

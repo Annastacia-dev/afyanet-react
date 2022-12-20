@@ -1,3 +1,17 @@
+.partner{
+    padding: 2rem 0;
+}
+.partner h1{
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+   margin-bottom: 1.5rem;
+}
+
+.partner p{
+    margin-bottom: 1.5rem;
+}
+
 .partner .card{
     border-radius: 1rem;
     border: none;
@@ -16,7 +30,30 @@
 }
 
 .partner h5{
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 400;
     margin-top: 0.5rem;
+}
+
+@media screen and (max-width: 768px){
+    .partner{
+        padding: 1rem 0;
+    }
+    .partner h1{
+        font-size: 1.8rem;
+    }
+    .partner p{
+        font-size: 1.5rem;
+    }
+    .partner .card{
+        border-radius: 1rem;
+    }
+    .partner .card img{
+        border-radius: 1rem;
+    }
+    .partner h5{
+        font-size: 1.9rem;
+        margin-top: 1.5rem;
+        text-decoration: underline;
+    }
 }
