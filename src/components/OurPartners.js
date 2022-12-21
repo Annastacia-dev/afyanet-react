@@ -6,7 +6,7 @@ import { partners } from '../data/partners'
 const OurPartners = () => {
   return (
     <Container  id="ourpartners" className='partner' fluid="md">
-        <Row justify-content-center>
+        <Row justify-content-center="true">
             <Col xs={12} >
                 <h1>Our Partners</h1>
                 <p>We are honored to have the following partners in our operations.</p>

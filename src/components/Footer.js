@@ -6,28 +6,50 @@ import customerservice from '../assets/images/footer/customerservice.webp'
 const Footer = () => {
   return (
     <Container fluid="md" id="contactus" className="footer">
-        <Row className="grid-container">
-            <Col xs={12} md={6} className="grid-item">
+        <Row>
+            <Col xs={12} md={6}>
                 <img src={customerservice} alt="customer service" />
             </Col>
             <Col className='content' xs={12} md={6}>
                 <h1>Contact Us</h1>   
                 <p>Our service is available 24/7 and our dedicated team is always here to assist you.</p>
-                {/* Contacts with icons */}
-                <div className="contacts">
+                <Row className="contacts">
                     <div className="contact">
-                        <i className="fas fa-phone-alt"></i>
-                        <p>Phone: +1 234 567 890</p>
+                        <i className="fa-solid fa-at"></i>
+                        <span>info@afyanet.com </span>
                     </div>
                     <div className="contact">
-                        <i className="fas fa-envelope"></i>
-                        <p>Email: info@afyanet.com </p>
+                        <i className="fas fa-phone-alt"></i>
+                        <span>254-712-000000</span>
                     </div>
                     <div className="contact">
                         <i className="fas fa-map-marker-alt"></i>
-                        <p>Address: 1234, Main Street, New York, USA</p>
+                        <span>Matibabu Plaza, Upperhill, Nairobi</span>
                     </div>
-                </div>
+                </Row>
+                
+                <Row className="socials">
+                    <h1>Our socials</h1>        
+                    <div className="icons">
+                        <a href="https://www.facebook.com/afyanetkenya" target="_blank" rel="noopener noreferrer">
+                            <i className="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://twitter.com/afyanetkenya" target="_blank" rel="noopener noreferrer">
+                            <i className="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/afyanetkenya/" target="_blank" rel="noopener noreferrer">
+                            <i className="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/254712000000" target="_blank" rel="noopener noreferrer">
+                            <i className="fab fa-whatsapp"></i>
+                        </a>
+                    </div> 
+                </Row>
+                {/* Copyright */}
+                < Row className="copy">
+                    <hr/>
+                    <p>© {new Date().getFullYear()} All rights reserved.AfyaNet</p>
+                </Row>
             </Col>
         </Row>
     </Container>
