@@ -1,0 +1,79 @@
+.footer .content{
+    padding: 3rem;     
+}
+
+.footer h1{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.footer .contacts{
+    text-align: left;
+    margin-left: 4rem;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;   
+}
+
+.footer .contacts .contact i{
+    margin-right: 1rem;
+}
+
+.footer .contacts .contact span{
+    font-weight: 500;
+}
+
+.footer .socials{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 3rem;
+}
+
+.footer .socials .icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.footer .socials .icons a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border: 3px solid #3a1258;
+    color: var(--dark-purple);
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.5s ease;   
+}
+
+.footer .socials .icons a:hover{
+    background-color: var(--dark-purple);
+    color: var(--white);
+    transition: all 0.5s ease-in-out;
+}
+
+.footer .socials .icons a i{
+    font-size: 1.5rem;
+}
+    
+.footer .copy{
+    text-align: center;
+    margin-top: 3rem;
+    font-weight: 500;
+}
+
+.footer hr{
+    margin-top: 6rem;
+    margin-left: 6rem;
+    border: 1px solid #3a1258;
+    opacity: 1;
+    width: 70%;
+}
+

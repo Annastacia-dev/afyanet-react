@@ -1,7 +1,9 @@
 import './App.css';
+import React from 'react';
 import OurPartners from './components/OurPartners';
 import NavBar from './components/navbar/NavBar';
 import HomePage from './components/homepage/HomePage';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -11,6 +13,7 @@ function App() {
       <NavBar/>
       <HomePage/>
       <OurPartners />
+      <Footer />
     </div>
   );
 }
