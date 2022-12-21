@@ -4,7 +4,7 @@ import "./HomePage.css"
 function HomePage() {
 
     return (
-        <div className="container">
+        <div className="homepage container">
             <div>
             <h3 class="text-start">Connecting patients and providers<br></br>
             for better healthcare.</h3>

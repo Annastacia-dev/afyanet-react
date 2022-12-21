@@ -1,0 +1,26 @@
+
+
+.footer .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+    padding: 2rem 0;
+}
+
+.footer .grid-container .grid-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .grid-container .content {
+    width: 120%;
+}
+
+.footer h1{
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
