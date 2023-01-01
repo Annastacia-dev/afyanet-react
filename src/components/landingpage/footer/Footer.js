@@ -1,11 +1,11 @@
 import React from 'react'
-import {Container, Row, Col} from 'react-bootstrap'
-import '../css/Footer.css'
-import customerservice from '../assets/images/footer/customerservice.webp'
+import {Row, Col} from 'react-bootstrap'
+import '../../../css/Footer.css'
+import customerservice from '../../../assets/images/footer/customerservice.webp'
 
 const Footer = () => {
   return (
-    <Container fluid="md" id="contactus" className="footer">
+    <div fluid="md" id="contactus" className="container-fluid footer">
         <Row>
             <Col xs={12} md={6}>
                 <img src={customerservice} alt="customer service" />
@@ -53,7 +53,7 @@ const Footer = () => {
                 </Row>
             </Col>
         </Row>
-    </Container>
+    </div>
   )
 }
 

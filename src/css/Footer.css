@@ -6,6 +6,13 @@
     padding: 3rem;     
 }
 
+.footer img{
+    width: 90%;
+    height: 90%;
+    margin-left: -7rem;
+    margin-top: 3rem;
+}
+
 .footer h1{
     font-size: 1.5rem;
     font-weight: 600;
