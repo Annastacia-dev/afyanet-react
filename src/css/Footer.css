@@ -1,5 +1,16 @@
+.footer{
+    background-color: var(--background-color-5);
+}
+
 .footer .content{
     padding: 3rem;     
+}
+
+.footer img{
+    width: 90%;
+    height: 90%;
+    margin-left: -7rem;
+    margin-top: 3rem;
 }
 
 .footer h1{

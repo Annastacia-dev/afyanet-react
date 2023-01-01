@@ -1,11 +1,11 @@
 import React from 'react'
 import {Container, Row, Col, Card} from 'react-bootstrap'
-import '../css/OurPartners.css'
-import { partners } from '../data/partners'
+import '../../../css/OurPartners.css'
+import { partners } from '../../../data/partners'
 
 const OurPartners = () => {
   return (
-    <Container  id="ourpartners" className='partner' fluid="md">
+    <Container id="ourpartners" className='partner' fluid="md">
         <Row justify-content-center="true">
             <Col xs={12} >
                 <h1>Our Partners</h1>

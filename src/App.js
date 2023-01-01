@@ -1,19 +1,13 @@
 import './App.css';
 import React from 'react';
-import OurPartners from './components/OurPartners';
-import NavBar from './components/navbar/NavBar';
-import HomePage from './components/homepage/HomePage';
-import Footer from './components/Footer';
+import LandingPage from './components/landingpage/LandingPage';
 
 
 function App() {
   return (
    
     <div className="App">
-      <NavBar/>
-      <HomePage/>
-      <OurPartners />
-      <Footer />
+      <LandingPage />
     </div>
   );
 }
