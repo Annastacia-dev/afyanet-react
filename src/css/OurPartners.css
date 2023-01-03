@@ -1,0 +1,38 @@
+.partner{
+    padding: 2rem 0;
+    height: 100vh;
+}
+.partner h1{
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+   margin-bottom: 1.5rem;
+}
+
+.partner p{
+    margin-bottom: 1.5rem;
+}
+
+.partner .card{
+    border-radius: 1rem;
+    border: none;
+}
+.partner .card img{
+    border-radius: 1rem;
+}
+
+.partner a{
+    text-decoration: none;
+    color: var(--black);
+}
+
+.partner a :hover{
+    transform: scale(1.02);
+}
+
+.partner h5{
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 0.5rem;
+}
+
