@@ -1,6 +1,8 @@
 import React from 'react'
 import { Container,Row, Col } from 'react-bootstrap';
-import image from '../../../assets/images/about/nurse.jpg'
+
+import image from "../../../assets/images/about/nurse.jpg"
+import "./about.css
 
 const About = () => {
   return (
@@ -25,7 +27,10 @@ const About = () => {
     
   <Col md={4}>
   <p className="text-right">
-      At Afyanet, our mission is to make it easy for patients to find and connect with the right healthcare providers.We understand that navigating the healthcare system can be overwhelming,which is why we've developed a platform that makes it simple and convenient for patients to access the care they need.
+      At Afyanet, our mission is to make it easy for patients to find and connect with the right healthcare providers.
+     
+      We understand that navigating the healthcare system can be overwhelming,which is why we've developed a platform that makes it simple and convenient for patients to access the care they need.
+    
     </p> 
   </Col>
     </Row>
