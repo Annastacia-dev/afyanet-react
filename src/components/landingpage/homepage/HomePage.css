@@ -2,5 +2,24 @@
     padding-top: 100px;
 }
 
+.home-title{
+    font-size: 25px;
+    line-height: 1.5;
+    font-weight: 600;
+    margin-top: 100px;
+    text-align: left;
+}
+
+.home-text{
+    text-align: left;
+    line-height: 2;
+    font-size: 18px;
+    margin-top: 35px;
+}
+
+.home .btn-primary{
+    margin-top: 35px;
+}
+
 
 

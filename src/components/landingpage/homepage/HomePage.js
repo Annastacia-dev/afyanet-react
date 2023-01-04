@@ -13,10 +13,11 @@ function HomePage() {
                 <Row>
                     <Col md={6} className="home-content">
                         <h3 className="home-title">
-                        Connecting patients and providers for better healthcare.
+                        Connecting patients and healthcare providers for better healthcare.
                         </h3>
                         <p className="home-text">
-                        Welcome to Afyanet, a platform for connecting patients with healthcare providers.Find and connect with the right healthcare provider, so you can get the care you need when you need it.
+                        Welcome to Afyanet, a platform for connecting patients with healthcare providers.
+                        Find and connect with the right healthcare provider, so you can get the care you need when you need it.
                         </p>
                         <button onClick={() => navigate('/patient-signup')}  className="btn btn-primary" type="submit">Get Started</button>
                     </Col>
