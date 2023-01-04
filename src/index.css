@@ -25,3 +25,27 @@
 body {
   font-family: var(--primary-font);
 }
+
+/* Primary button */
+
+.btn-primary{
+  width: 30%;
+  height: 60px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 5px;
+  margin-top: 10px;
+  background-color: var(--dark-purple);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btn-primary:hover{
+  background-color: var(--light-purple);
+  color: white;
+}
+.btn-primary:active:focus{
+  outline: none;
+  border: none;
+}

@@ -68,7 +68,7 @@ const PatientSignUp = () => {
                         </Row>
                         <Row className="justify-content-center">
                             <Col lg="6">
-                                <Button variant="primary" type="submit"> Sign Up </Button>
+                                <button className="btn btn-primary" type="submit"> Sign Up </button>
                             </Col>
                         </Row>
                     </Form>
