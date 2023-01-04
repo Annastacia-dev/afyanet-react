@@ -1,16 +1,16 @@
 .partner{
-    padding: 2rem 0;
+    padding: 20px;
     height: 100vh;
 }
 .partner h1{
-    font-size: 2rem;
+    font-size: 25px;
     font-weight: 600;
     text-transform: uppercase;
-   margin-bottom: 1.5rem;
 }
 
 .partner p{
-    margin-bottom: 1.5rem;
+    margin-top: 10px;
+    margin-bottom: 50px;
 }
 
 .partner .card{

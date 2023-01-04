@@ -2,21 +2,24 @@
     padding-top: 100px;
 }
 
-button{
-    background-color: #592C7B;
-    color: white;
-    border-radius: 7px;
-    padding: 10px;
-    font-size: larger;
+.home-title{
+    font-size: 25px;
+    line-height: 1.5;
+    font-weight: 600;
+    margin-top: 100px;
+    text-align: left;
 }
-.homepage .container{
-    margin-top: 40px;
-    padding-top: 40px;
-    display: flex;
-    justify-content: space-evenly;
+
+.home-text{
+    text-align: left;
+    line-height: 2;
+    font-size: 18px;
+    margin-top: 35px;
 }
-#doctor{
-    width:auto;
-    height: 350px;
-    padding-bottom: 40px;
+
+.home .btn-primary{
+    margin-top: 35px;
 }
+
+
+

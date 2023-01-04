@@ -31,25 +31,6 @@
 
 .patient-signup .btn-primary{
     width: 50%;
-    height: 60px;
-    font-size: 1rem;
-    font-weight: 600;
-    border-radius: 5px;
-    margin-top: 10px;
-    background-color: var(--dark-purple);
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-.patient-signup .btn-primary:hover{
-    background-color: var(--light-purple);
-    color: white;
-}
-
-.patient-signup .btn-primary:active:focus{
-    outline: none;
-    border: none;
 }
 
 .patient-signup .btn-link{
