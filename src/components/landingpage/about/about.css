@@ -1,0 +1,16 @@
+.about{
+    padding-top: 100px;
+}
+
+.about .container{
+    margin-top: 40px;
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#nurse{
+    width:auto;
+    height: 350px;
+    padding-bottom: 40px;
+}
