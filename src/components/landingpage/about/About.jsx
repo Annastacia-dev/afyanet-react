@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container,Row, Col } from 'react-bootstrap';
 import image from "../../../assets/images/about/nurse.jpg"
-import "./about.css
+import "./about.css"
 
 
 const About = () => {
