@@ -5,7 +5,7 @@ import customerservice from '../../../assets/images/footer/customerservice.webp'
 
 const Footer = () => {
   return (
-    <div fluid="md" id="contactus" className="container-fluid footer">
+    <div fluid="md" id="contact" className="container-fluid footer">
         <Row>
             <Col xs={12} md={6}>
                 <img src={customerservice} alt="customer service" />

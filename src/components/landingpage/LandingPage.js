@@ -4,7 +4,7 @@ import NavBar from './navbar/NavBar'
 import About from './about/About'
 import Partners from './partners/OurPartners'
 import Footer from './footer/Footer'
-import Services from './services/Services'
+import Services from './ourservices/Services'
 
 function LandingPage() {
   return (
