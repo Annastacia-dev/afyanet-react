@@ -8,20 +8,20 @@ function NavBar () {
 
     return(
         <>
-        <Navbar bg="light" expand="lg" className="home navbar navbar-expand-lg navbar-light fixed-top py-3">
+        <Navbar bg="white" expand="lg" className="home navbar navbar-expand-lg navbar-light fixed-top py-3">
             <Container className="container px-4 px-lg-5">
-                <Navbar.Brand href="#home">
-                    <img src={logo} alt = "logo" className="logo" style={{width: "50px"}}/>
+                <Navbar.Brand  className='brand' href="#home">
+                    <img src={logo} alt = "logo" className="logo"/>
                     <span className="navbar-brand">AfyaNet</span>
                 </Navbar.Brand>
                 <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center">
                     {/* align center */}
                     <Nav className="navbar-nav ms-auto my-2 my-lg-2 me-lg-4">
                     <ul className="navbar-nav ms-auto my-2 my-lg-0">
-                        <li className="nav-item"><Nav.Link href="#about">About Us</Nav.Link></li> 
-                        <li className="nav-item"><Nav.Link href="#services">Services</Nav.Link></li>
-                        <li className="nav-item"><Nav.Link href="#ourpartners">Our Partners</Nav.Link></li>
-                        <li className="nav-item"><Nav.Link href="#contact">Contact Us</Nav.Link></li>
+                        <a className="link" href="#about">About Us</a>
+                        <a className="link" href="#services">Services</a>
+                        <a className="link" href="#ourpartners">Our Partners</a>
+                        <a className="link" href="#contact">Contact Us</a>
                     </ul>
                     </Nav>
                 </Navbar.Collapse>

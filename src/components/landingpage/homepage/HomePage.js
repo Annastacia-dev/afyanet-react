@@ -8,7 +8,7 @@ function HomePage() {
     const navigate = useNavigate();
     return (
         <>
-        <div className="home">
+        <div id='home' className="home">
             <Container>
                 <Row>
                     <Col md={6} className="home-content">
