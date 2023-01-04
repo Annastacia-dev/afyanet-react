@@ -4,6 +4,7 @@ import NavBar from './navbar/NavBar'
 import About from './about/About'
 import Partners from './partners/OurPartners'
 import Footer from './footer/Footer'
+import Services from './services/Services'
 
 function LandingPage() {
   return (
@@ -11,6 +12,7 @@ function LandingPage() {
         <NavBar />
         <HomePage />
         <About />
+        <Services/>
         <Partners />
         <Footer />
     </div>
