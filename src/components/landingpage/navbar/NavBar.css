@@ -11,8 +11,3 @@ a{
     text-decoration: none;
     color: black;
 }
-a:hover {
-    background-color: #9263CB;
-    border-radius: 25px;
-    padding: 8px;
-  }

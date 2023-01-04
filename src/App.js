@@ -1,13 +1,18 @@
 import './App.css';
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import LandingPage from './components/landingpage/LandingPage';
+import PatientSignUp from './components/authforms/patient/PatientSignUp';
 
 
 function App() {
   return (
    
     <div className="App">
-      <LandingPage />
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/patient-signup" element={<PatientSignUp />} />
+      </Routes>
     </div>
   );
 }
