@@ -56,3 +56,20 @@
     border: none;
     outline: none;
 }
+
+/* Media */
+
+@media screen and (max-width: 768px){
+    .btn-outline-success{
+        width: 30%;
+        margin-left: 180px;
+        margin-top: -50px;
+    }
+
+    .navbar a{
+        font-size: 15px;
+        padding: 10px 10px;
+    }
+}
+
+

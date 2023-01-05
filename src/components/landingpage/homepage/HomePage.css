@@ -21,5 +21,17 @@
     margin-top: 35px;
 }
 
+/* Media */
+
+@media screen and (max-width: 768px){
+    .home{
+        padding-top: 30px;
+    }
+    .home .btn-primary{
+        width: 60%;
+        margin-bottom: 20px;
+    }
+}
+
 
 

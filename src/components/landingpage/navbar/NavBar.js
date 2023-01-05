@@ -18,10 +18,10 @@ function NavBar () {
                     {/* align center */}
                     <Nav className="navbar-nav ms-auto my-2 my-lg-2 me-lg-4">
                     <ul className="navbar-nav ms-auto my-2 my-lg-0">
-                        <a className="link" href="#about">About Us</a>
-                        <a className="link" href="#services">Services</a>
-                        <a className="link" href="#ourpartners">Our Partners</a>
-                        <a className="link" href="#contact">Contact Us</a>
+                        <li><Nav.Link href="#about">About Us</Nav.Link></li>
+                        <li><Nav.Link href="#services">Services</Nav.Link></li>
+                        <li><Nav.Link href="#ourpartners">Our Partners</Nav.Link></li>
+                        <li><Nav.Link href="#contact">Contact Us</Nav.Link></li>
                     </ul>
                     </Nav>
                 </Navbar.Collapse>
