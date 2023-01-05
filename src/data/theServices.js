@@ -9,7 +9,7 @@ export const services = [
     {
         id: 1,
         name: "Appointment Scheduling",
-        text:"Easily Schedule appointments with their healthcare providers.",
+        text:"Easily Schedule appointments with your healthcare providers.",
         icon: <AiFillSchedule />
         
     },
@@ -30,7 +30,7 @@ export const services = [
     {
         id: 4,
         name: "Health Tracking",
-        text:"Monitoring various health metrics,such as weight and blood pressure.",
+        text:"Monitor various health metrics,such as weight and blood pressure.",
         icon: <AiOutlineFileDone />
         
     },

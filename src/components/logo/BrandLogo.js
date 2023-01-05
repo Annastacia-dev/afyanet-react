@@ -8,7 +8,8 @@ const BrandLogo = () => {
       <Navbar
       style={{
         backgroundColor: "#eee7f6",
-        height: "60px"
+        height: "60px",
+        boxShadow:'none'
       }}
       expand="lg" className="home navbar navbar-expand-lg fixed-top py-3">
             <Container className="container px-4 px-lg-5">

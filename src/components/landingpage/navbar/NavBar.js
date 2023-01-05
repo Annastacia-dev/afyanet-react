@@ -1,11 +1,12 @@
 import React from "react";
 import { Container,Navbar, Nav, Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import logo from "../../../assets/images/logo/afyanet.png";
 import "./NavBar.css"
 
 
 function NavBar () {
-
+    const navigate = useNavigate();
     return(
         <>
         <Navbar bg="white" expand="lg" className="home navbar navbar-expand-lg navbar-light fixed-top py-3">
@@ -27,7 +28,7 @@ function NavBar () {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" className="navbar-toggler navbar-toggler-left" />
                 <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
                     <Nav className="navbar-nav ms-auto my-2 my-lg-0">
-                     <Button variant="outline-success">Log In</Button>
+                     <Button onClick={() => navigate('/patient-login')} variant="outline-success">Log In</Button>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

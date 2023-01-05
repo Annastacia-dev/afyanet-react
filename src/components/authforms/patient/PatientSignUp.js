@@ -90,7 +90,7 @@ const PatientSignUp = () => {
                 <Col lg="12">
                     <hr />
                     <p className="text-center mt-0">
-                    By Signing up you agree to our terms  & conditions and Our Privacy policy
+                    By Signing up you agree to our terms  &amp; conditions and Our Privacy policy
                     </p>
                 </Col>
 
