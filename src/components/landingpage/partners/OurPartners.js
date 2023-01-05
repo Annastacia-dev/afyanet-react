@@ -14,7 +14,7 @@ const OurPartners = () => {
         </Row>
         <Row>
             {partners.map((partner) => (
-                <Col style={{marginBottom: "60px" }} xs={12} md={5} lg={2} key={partner.id}>
+                <Col style={{marginBottom: "60px" }} xs={12} md={4} sm={12} lg={2} key={partner.id} gap={6}>
                     <a href={partner.link} target="_blank" rel="noreferrer">
                     <Card className="partner-card">
                         <Card.Img variant="top" src={partner.image} />

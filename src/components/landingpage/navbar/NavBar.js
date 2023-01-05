@@ -15,7 +15,6 @@ function NavBar () {
                     <span className="navbar-brand">AfyaNet</span>
                 </Navbar.Brand>
                 <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center">
-                    {/* align center */}
                     <Nav className="navbar-nav ms-auto my-2 my-lg-2 me-lg-4">
                     <ul className="navbar-nav ms-auto my-2 my-lg-0">
                         <li><Nav.Link href="#about">About Us</Nav.Link></li>
