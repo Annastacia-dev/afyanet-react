@@ -28,7 +28,7 @@ function NavBar () {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" className="navbar-toggler navbar-toggler-left" />
                 <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
                     <Nav className="navbar-nav ms-auto my-2 my-lg-0">
-                     <Button onClick={() => navigate('/patient-login')} variant="outline-success">Log In</Button>
+                     <Button onClick={() => navigate('/patient/login')} variant="outline-success">Log In</Button>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

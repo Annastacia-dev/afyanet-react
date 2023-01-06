@@ -5,9 +5,52 @@
 }
 
 .patient-login h2{
-    margin-top: 60px;
+    margin-top: 100px;
     margin-bottom: 20px;
     text-align: center;
     font-size: 1.5rem;
     font-weight: 600;
+}
+
+.patient-login form{
+    padding: 40px;   
+}
+.patient-login input[type="email"], .patient-login input[type="password"]{
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: var(--primary-font);
+    background-color: transparent;
+}
+
+.patient-login input[type="email"]:focus, .patient-login input[type="password"]:focus{
+    outline: none;
+    border: 1px solid var(--dark-purple);
+    color: black;
+}
+
+.patient-login input[type="checkbox"]{
+    background-color: var(--dark-purple);
+    outline: none;
+    border: 1px solid var(--dark-purple);
+    width: 20px;
+    height: 20px;
+}
+
+.patient-login .btn-primary{
+    width: 50%;
+    margin-top: 30px;
+}
+
+.patient-login a{
+    cursor: pointer;
+    color: var(--light-purple);   
+}
+
+.patient-login a:hover{
+    color: var(--dark-purple);
 }
