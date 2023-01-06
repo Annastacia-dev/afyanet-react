@@ -1,0 +1,11 @@
+/* Media */
+
+@media screen and (max-width: 768px){
+    .brandlogo{
+        margin-top: -20px;
+        margin-left: 130px;
+    }
+       
+    
+}
+    

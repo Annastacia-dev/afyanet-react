@@ -1,0 +1,55 @@
+.about{
+    height: 100vh;
+}
+
+.about .container{
+    margin-top: 120px;
+}
+
+.about-image img{
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  margin-left: -200px;
+  margin-top: -70px;
+
+}
+
+.about-title{
+    font-size: 25px;
+    line-height: 1.5;
+    font-weight: 600;
+    text-align: left;
+}
+
+.about-content p{
+    text-align: left;
+    line-height: 2;
+    font-size: 18px;
+    margin-top: 35px;
+}
+
+/* Media */
+
+@media screen and (max-width: 768px){
+  .about-image img{
+    width: 60%;
+    height: 100%;
+    object-fit: cover;
+    margin-left: 50px;
+    margin-top: 0px;
+  }
+  .about-title{
+    text-align: center;
+  }
+  .about-content p{
+    text-align: center;
+    font-size: 16px;
+  }
+}
+
+
+
+
+ 
+ 

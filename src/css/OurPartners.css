@@ -1,37 +1,45 @@
-.partner{
-    padding: 2rem 0;
+.partners{
+    padding: 20px;
+    height: 100vh;
 }
-.partner h1{
-    font-size: 2rem;
+.partners h1{
+    font-size: 25px;
     font-weight: 600;
     text-transform: uppercase;
-   margin-bottom: 1.5rem;
 }
 
-.partner p{
-    margin-bottom: 1.5rem;
+.partners p{
+    margin-top: 10px;
+    margin-bottom: 50px;
 }
 
-.partner .card{
+.partners .card{
     border-radius: 1rem;
     border: none;
 }
-.partner .card img{
+.partners .card img{
     border-radius: 1rem;
 }
 
-.partner a{
+.partners a{
     text-decoration: none;
     color: var(--black);
 }
 
-.partner a :hover{
+.partners a :hover{
     transform: scale(1.02);
 }
 
-.partner h5{
+.partners h5{
     font-size: 1rem;
     font-weight: 400;
     margin-top: 0.5rem;
+}
+
+/* Media */
+@media screen and (max-width: 768px){
+    .partner{
+        width: 50%;
+    }
 }
 
