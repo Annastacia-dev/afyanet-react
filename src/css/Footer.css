@@ -88,3 +88,61 @@
     width: 70%;
 }
 
+/* Media */
+
+@media screen and (max-width: 768px){
+    .footer{
+        margin-top: 800px;
+    }
+    .footer img{
+        width: 100%;
+        height: 100%;
+        margin-left: 0;
+        margin-top: 0;
+    }
+    .footer .content p{
+        text-align: left;
+        font-size: 15px;
+    }
+    .footer h1{
+        font-size: 1.1rem;
+    }
+    .footer .contacts{
+        margin-top: 40px;
+        margin-left: 0;
+    }
+    .footer .contacts .contact i{
+        margin-right: 0.5rem;
+        font-size: 15px;
+    }
+    .footer .contacts .contact span{
+        font-size: 15px;
+    }
+    .footer .socials{
+        margin-top: 40px;
+    }
+    .footer .socials .icons{
+        flex-direction: row;
+        gap: 1rem;
+    }
+    .footer .socials .icons a{
+        width: 50px;
+        height: 50px;
+    }
+    .footer .socials .icons a i{
+        font-size: 16px;
+    }
+    .footer .copy{
+        margin-top: 0;
+    }
+    .footer hr{
+        margin-top: 3rem;
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .footer .copy p{
+        text-align: center;
+    }
+}
+

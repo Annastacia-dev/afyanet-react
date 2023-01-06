@@ -12,8 +12,7 @@ const Footer = () => {
             </Col>
             <Col className='content' xs={12} md={6}>
                 <h1>Contact Us</h1>   
-                <p>Our service is available 24/7 and our dedicated team
-                <br /> is always here to assist you.</p>
+                <p>Our service is available 24/7 and our dedicated team is always here to assist you.</p>
                 <Row className="contacts">
                     <div className="contact">
                         <i className="fa-solid fa-at"></i>
