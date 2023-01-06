@@ -31,7 +31,7 @@ const PatientLogIn = () => {
                             </Col>
                          </Row>
 
-                        <Row style={{marginTop: "20px"}} className='justify-content-center'>
+                        <Row style={{marginTop: "10px"}} className='justify-content-center'>
                             <Col lg='3'>
                             <Form.Group className="mb-3" controlId="formBasicCheckbox">
                                 <Form.Check type="checkbox" label="Remember Me" />    
