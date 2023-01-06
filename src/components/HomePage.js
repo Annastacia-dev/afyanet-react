@@ -1,5 +1,7 @@
 import React from "react";
-import "./HomePage.css"
+import '../css/HomePage.css'
+// import { doc } from '../data/homepage'
+import doctor from '../assets/images/landing-page/doctor.jpg'
 
 function HomePage() {
 
@@ -17,8 +19,7 @@ function HomePage() {
                 <button >Get Started</button>
             </p>
             </div>
-            <img id="doctor" src="https://img.freepik.com/free-photo/woman-doctor-wearing-lab-coat-with-stethoscope-isolated_1303-29791.jpg?w=2000" alt= "doc1"></img>
-            {/* <img  id ="doctor" src="./assets/images/landing-page/doctor.jpg" alt="doc"></img> */}
+            <img id="doctor" src={doctor.image} alt= "doc1"></img>
         
         </div>
 
