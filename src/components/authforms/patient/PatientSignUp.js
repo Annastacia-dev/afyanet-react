@@ -77,13 +77,13 @@ const PatientSignUp = () => {
             <Row>
                 <Col lg="12">
                     <p className="text-center mt-0">Already have an account? 
-                    <Button type='submit' variant='link' href="/patient-login">Login</Button></p>
+                    <Button type='submit' variant='link' href="/patient/login">Login</Button></p>
                 </Col>
             </Row>
             <Row>
                 <Col lg="12">
                     <p className="text-center mt-0">
-                    <Button variant='link' href="/doctor-signup">SignUp As A Healthcare Provider</Button></p>
+                    <Button variant='link' href="/doctor/signup">SignUp As A Healthcare Provider</Button></p>
                 </Col>
             </Row>
             <Row>

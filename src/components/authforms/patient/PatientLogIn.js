@@ -31,14 +31,14 @@ const PatientLogIn = () => {
                             </Col>
                          </Row>
 
-                        <Row className='justify-content-center'>
+                        <Row style={{marginTop: "20px"}} className='justify-content-center'>
                             <Col lg='3'>
                             <Form.Group className="mb-3" controlId="formBasicCheckbox">
                                 <Form.Check type="checkbox" label="Remember Me" />    
                             </Form.Group>
                             </Col>
                             <Col lg='3'>
-                                <a href="/patient/forgot-password">Forgot Password?</a>
+                                <a variant='link' href="/patient/forgot-password">Forgot Password?</a>
                             </Col>
                         </Row>
                         
@@ -52,7 +52,7 @@ const PatientLogIn = () => {
             </Row>
             <Row className="justify-content-center">
                 <Col lg="8">
-                    <p className="text-center">Don't have an account? <a href="/patient/signup">Sign Up</a></p>
+                    <p className="text-center">Don't have an account? <a variant='link' href="/patient/signup">Sign Up</a></p>
                 </Col>
             </Row>
         </Container>

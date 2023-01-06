@@ -38,6 +38,10 @@
     color: var(--light-purple);   
 }
 
+.patient-signup .btn-link:hover{
+    color: var(--dark-purple);
+}
+
 
 
 /* Media */

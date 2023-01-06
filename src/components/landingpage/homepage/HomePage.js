@@ -19,7 +19,7 @@ function HomePage() {
                         Welcome to Afyanet, a platform for connecting patients with healthcare providers.
                         Find and connect with the right healthcare provider, so you can get the care you need when you need it.
                         </p>
-                        <button onClick={() => navigate('/patient-signup')}  className="btn btn-primary" type="submit">Get Started</button>
+                        <button onClick={() => navigate('/patient/signup')}  className="btn btn-primary" type="submit">Get Started</button>
                     </Col>
                     <Col md={6} className="home-image">
                         <img src={image} alt = "doctor" className="doctor" style={{width: "100%"}}/>
