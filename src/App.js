@@ -4,17 +4,15 @@ import { Routes, Route } from 'react-router-dom';
 import LandingPage from './components/landingpage/LandingPage';
 import PatientSignUp from './components/authforms/patient/PatientSignUp';
 import PatientLogIn from './components/authforms/patient/PatientLogIn';
-
-import PatientDashboard from './components/dashboards/PatientDashboard';
+import PatientDashboard from './components/dashboards/patient/PatientDashboard';
+import PatientAppointments from './components/dashboards/patient/PatientAppointments';
+import PatientMedicalRecords from './components/dashboards/patient/PatientMedicalRecords';
+import PatientMessages from './components/dashboards/patient/PatientMessages';
+import PatientProfile from './components/dashboards/patient/PatientProfile';
 import DoctorSideBar from './components/dashboards/doctor/DoctorSideBar';
-
-
-
 import DoctorSignUp from './components/authforms/doctor/DoctorSignUp';
 import DoctorLogIn from './components/authforms/doctor/DoctorLogIn';
 import DoctorAuthenticate from './components/authforms/doctor/DoctorAuthenticate';
-import SideBar from './components/dashboards/doctor/SideBar';
-
 
 
 
@@ -67,8 +65,11 @@ function App() {
         <Route path="/patient/signup" element={<PatientSignUp/>} />
         <Route path="/patient/login" element={<PatientLogIn/>} />
         <Route path="/patient/dashboard" element={<PatientDashboard />} />
+        <Route path="/patient/appointments" element={<PatientAppointments />} />
+        <Route path="/patient/medicalrecords" element={<PatientMedicalRecords />} />
+        <Route path="/patient/messages" element={<PatientMessages />} />
+        <Route path="/patient/profile" element={<PatientProfile />} />
         <Route path="/doctor/sidebar" element={<DoctorSideBar />} />
-
       </Routes>
     </div>
   );
