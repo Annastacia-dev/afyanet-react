@@ -1,5 +1,6 @@
 import React,{ useContext } from 'react'
-import { PatientContext } from '../../context/patient';
+import { PatientContext } from '../../../context/patient';
+import PatientSidebar from './PatientSidebar';
 
 const PatientDashboard = () => {
 
@@ -16,9 +17,14 @@ const PatientDashboard = () => {
   console.log('patient', patient)
 
   return (
-    <div>
-      <p>Patient name: {patient.first_name}</p>
-      <p>Patient age: {patient.age}</p>
+     <div className="d-flex" id="wrapper">
+      <PatientSidebar />
+        <div id="page-content-wrapper">
+          <div className="container-fluid">
+            <h1 className="mt-4">Dashboard</h1>
+          </div>
+        </div>
+      
     </div>
   )
 }
