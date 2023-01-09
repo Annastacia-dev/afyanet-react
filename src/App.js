@@ -7,6 +7,8 @@ import PatientLogIn from './components/authforms/patient/PatientLogIn';
 import PatientDashboard from './components/dashboards/PatientDashboard';
 import DoctorSignUp from './components/authforms/doctor/DoctorSignUp';
 import DoctorLogIn from './components/authforms/doctor/DoctorLogIn';
+import DoctorAuthenticate from './components/authforms/doctor/DoctorAuthenticate';
+
 
 
 function App() {
@@ -54,6 +56,7 @@ function App() {
         <Route path="/patient/dashboard" element={<PatientDashboard patient={patient} />} />
         <Route path="/doctor/signup" element={<DoctorSignUp setDoctor={setDoctor} />} />
         <Route path="/doctor/login" element={<DoctorLogIn setDoctor={doctor} />} />
+        <Route path="/doctor/authenticate" element={<DoctorAuthenticate setDoctor={setDoctor} />} />
       </Routes>
     </div>
   );
