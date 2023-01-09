@@ -22,6 +22,9 @@ const PatientDashboard = () => {
         <div id="page-content-wrapper">
           <div className="container-fluid">
             <h1 className="mt-4">Dashboard</h1>
+            <p>
+              {patient.first_name}
+            </p>
           </div>
         </div>
       
