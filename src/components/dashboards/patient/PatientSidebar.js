@@ -1,38 +1,48 @@
 import React from 'react'
-import logo from '../../../assets/images/logo/afyanet.png'
+import logo from '../../../assets/images/logo/afyanetwhitelogo.png'
+import '../../../css/PatientSidebar.css'
 
 
 const PatientSidebar = () => {
+
+  // toggle active class on sidebar
+  const list = document.querySelectorAll('.list-group-item');
+  list.forEach((item) => {
+    item.addEventListener('click', () => {
+      list.forEach((item) => item.classList.remove('active'));
+      item.classList.add('active');
+    });
+  });
+
   return (
-    <div classNmae='bg-light border-right bg-white shadow-md rounded-lg p-4' id='sidebar-wrapper'>
+    <div className='patient-sidebar border-right'id='sidebar-wrapper'>
       <div className="sidebar-heading">
-          <img src={logo} alt = "logo" className="logo" style={{width: "40px"}}/>
-          <p className="navbar-brand" style={{color:"#592c7b",fontSize: "20px",fontWeight: "500",marginLeft: "10px"}}>AfyaNet</p>
+          <img src={logo} alt = "logo" className="logo" style={{width: "30px",marginTop:"50px"}}/>
+          <p className="navbar-brand" style={{color:"#fff",fontSize: "20px",fontWeight: "500",marginLeft: "10px",marginBottom:"40px"}}>AfyaNet</p>
       </div>
-      <div className="list-group list-group-flush">
-        <a href="/patient/dashboard" className="list-group-item list-group-item-action bg-light">
+      <div className="list list-group list-group-flush">
+        <a href="/patient/dashboard" className="list-group-item list-group-item-action p-4 active">
           <i className="fas fa-home"></i>
-          Homepage
+          <p>Homepage</p>
         </a>
-        <a href="/patient/profile" className="list-group-item list-group-item-action bg-light">
+        <a href="/patient/appointments" className="list-group-item list-group-item-action p-4">
           <i className="fa-solid fa-calendar-check"></i>
-          Appointments 
+          <p>Appointments</p>  
         </a>
-        <a href="/patient/profile" className="list-group-item list-group-item-action bg-light">
+        <a href="/patient/medicalrecords" className="list-group-item list-group-item-action p-4">
          <i className="fa-solid fa-record-vinyl"></i>
-          Medical Records 
+          <p>Medical Records</p>
         </a>
-        <a href="/patient/profile" className="list-group-item list-group-item-action bg-light">
+        <a href="/patient/messages" className="list-group-item list-group-item-action p-4">
           <i className="fa-solid fa-message"></i>
-          Messages
+          <p>Messages</p>
         </a>
-        <a href="/patient/profile" className="list-group-item list-group-item-action bg-light">
+        <a href="/patient/profile" className="list-group-item list-group-item-action p-4">
           <i className="fas fa-user"></i>
-          Profile
+          <p>Profile</p>
         </a>
       </div>
-      
-      
+
     </div>
   )
 }

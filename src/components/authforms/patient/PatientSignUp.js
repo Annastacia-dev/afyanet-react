@@ -60,8 +60,9 @@ const PatientSignUp = () => {
                 setTimeout(() => {
                     notify()
                 }, 1000);
+                setTimeout(() => {
                     navigate('/patient/dashboard')
-                    window.location.reload()
+                } , 2000);
             })
         } else {
             r.json().then(data => {
