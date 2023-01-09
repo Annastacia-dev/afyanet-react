@@ -6,7 +6,6 @@ import PatientSignUp from './components/authforms/patient/PatientSignUp';
 import PatientLogIn from './components/authforms/patient/PatientLogIn';
 import PatientDashboard from './components/dashboards/PatientDashboard';
 
-
 function App() {
 
   return (
