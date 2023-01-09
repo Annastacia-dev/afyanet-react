@@ -1,5 +1,5 @@
 import './App.css';
-import React,{ useState, useEffect } from 'react';
+import React ,{useState,useEffect}from 'react';
 import { Routes, Route } from 'react-router-dom';
 import LandingPage from './components/landingpage/LandingPage';
 import PatientSignUp from './components/authforms/patient/PatientSignUp';
@@ -8,7 +8,6 @@ import PatientDashboard from './components/dashboards/PatientDashboard';
 import DoctorSignUp from './components/authforms/doctor/DoctorSignUp';
 import DoctorLogIn from './components/authforms/doctor/DoctorLogIn';
 import DoctorAuthenticate from './components/authforms/doctor/DoctorAuthenticate';
-
 
 
 function App() {
@@ -57,6 +56,9 @@ function App() {
         <Route path="/doctor/signup" element={<DoctorSignUp setDoctor={setDoctor} />} />
         <Route path="/doctor/login" element={<DoctorLogIn setDoctor={doctor} />} />
         <Route path="/doctor/authenticate" element={<DoctorAuthenticate setDoctor={setDoctor} />} />
+        <Route path="/patient/signup" element={<PatientSignUp/>} />
+        <Route path="/patient/login" element={<PatientLogIn/>} />
+        <Route path="/patient/dashboard" element={<PatientDashboard />} />
       </Routes>
     </div>
   );
