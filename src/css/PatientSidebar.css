@@ -1,0 +1,28 @@
+.patient-sidebar{
+    background-color: var(--primary-color);
+    height: 100vh;
+    border-radius: 5px;
+}
+
+.patient-sidebar .list-group-item{
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+}
+
+.patient-sidebar .list-group-item i{
+    font-size: 35px;
+}
+.patient-sidebar .list-group-item p{
+    margin-top: 5px;
+}
+
+
+.patient-sidebar .list-group-item:hover{
+    background-color: var(--light-purple);
+}
+
+.patient-sidebar .list-group-item.active{
+    color: var(--secondary-color);
+    border: none;
+}

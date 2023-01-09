@@ -4,7 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import LandingPage from './components/landingpage/LandingPage';
 import PatientSignUp from './components/authforms/patient/PatientSignUp';
 import PatientLogIn from './components/authforms/patient/PatientLogIn';
-import PatientDashboard from './components/dashboards/PatientDashboard';
+import PatientDashboard from './components/dashboards/patient/PatientDashboard';
 
 function App() {
 
