@@ -37,7 +37,9 @@ const PatientLogIn = () => {
                 setTimeout(() => {
                     notify()
                 }, 1000);
-                navigate('/patient/dashboard')
+                setTimeout(() => {
+                    navigate('/patient/dashboard')
+                } , 2000);
             })
         } else {
             r.json().then(data => {
