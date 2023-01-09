@@ -1,14 +1,19 @@
-import React,{ useState } from 'react'
+import React,{ useState, useContext } from 'react'
 import { Container,Row, Col, Form, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import BrandLogo from '../../logo/BrandLogo';
 import '../../../css/PatientSignUp.css'
+import { PatientContext } from '../../../context/patient';
 
 const PatientSignUp = () => {
 
     const navigate = useNavigate();
+
+    const { setPatient } = useContext(PatientContext);
+
+
 
     const [formData, setFormData] = useState({
         firstName: '',
@@ -51,12 +56,12 @@ const PatientSignUp = () => {
     .then (r => {
         if (r.ok) {
             r.json().then(data => {
+                setPatient(data)
                 setTimeout(() => {
                     notify()
                 }, 1000);
-                setTimeout(() => {
                     navigate('/patient/dashboard')
-                } , 2000);
+                    window.location.reload()
             })
         } else {
             r.json().then(data => {
@@ -160,7 +165,7 @@ const notify = () => toast.success("You are successfully signed up!",{
                         </Row>
                         <Row className="justify-content-center">
                                 {
-                                    errors.map((error, index) => (
+                                    errors && errors.map((error, index) => (
                                     <Col md={5} sm={12} gap={6}  className="alert alert-danger" role="alert" key={index}>
                                         <p style={{fontSize: "12px"}}>{error}</p>
                                         </Col>
