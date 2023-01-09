@@ -1,13 +1,16 @@
-import React,{useState} from "react";
+import React,{ useState, useContext } from "react";
 import { Container,Row, Col, Form, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import BrandLogo from '../../logo/BrandLogo';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../../../css/DoctorSignUp.css'
+import { DoctorContext } from "../../../context/doctor";
 
 const DoctorSignUp = () => {
     const navigate = useNavigate();
+
+    const { setDoctor } = useContext(DoctorContext);
 
     const [formData, setFormData] = useState({
         firstName: '',
@@ -43,11 +46,12 @@ const DoctorSignUp = () => {
         .then (r => {
             if (r.ok) {
                 r.json().then(data => {
+                    setDoctor(data)
                     setTimeout(() => {
                         notify()
                     },1000);
                     setTimeout(() => {
-                        navigate("/doctor/dashboard")
+                        navigate("/doctor/authenticate")
                     },2000);
                 })
             } else {

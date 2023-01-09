@@ -1,21 +1,24 @@
-import React,{useState} from "react";
+import React,{ useState, useContext} from "react";
 import { Container,Row, Col, Form, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import BrandLogo from '../../logo/BrandLogo';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../../../css/DoctorAuthenticate.css'
+import { DoctorContext } from "../../../context/doctor";
 
 const DoctorAuthenticate = () => {
     const navigate = useNavigate();
+
+    const { doctor, setDoctor } = useContext(DoctorContext);
    
 
 const [formData, setFormData] = useState({
-    licenseNumber: "",
-    speciality: "",
+    licenseNumber: 0,
+    specialityId: "",
     location: "",
     daysAvailable: "",
-    contractLength: "",
+    contractLength: 0,
     timeAvailable: ""
 })
 const [errors, setErrors] = useState([])
@@ -27,21 +30,25 @@ const handleChange = (e) => {
 }
     const handleSubmit = (e) => {
         e.preventDefault();
-        const doctor = {
+        const doctorData = {
             license_number: formData.licenseNumber,
-            speciality: formData.speciality,
+            speciality_id: formData.specialityId,
             location: formData.location,
-            days_available: formData.daysAvailable,
+            days_available_weekly: formData.daysAvailable,
             contract_length: formData.contractLength,
+            specific_days_times_available: formData.timeAvailable,
+            password: doctor.password_digest,
+            password_confirmation: doctor.password_digest
         };
-        fetch("http://localhost:3000/doctor_authenticate", {
-            method: 'POST',
+        fetch("http://localhost:3000/doctor_profile", {
+            method: 'PATCH',
             headers: {"Content-Type": "application/json"},
-            body: JSON.stringify(doctor)
+            body: JSON.stringify(doctorData)
         })
         .then (r => {
             if (r.ok) {
                 r.json().then(data => {
+                    setDoctor(data)
                     setTimeout(() => {
                         notify()
                     },1000);
