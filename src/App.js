@@ -9,12 +9,11 @@ import PatientAppointments from './components/dashboards/patient/PatientAppointm
 import PatientMedicalRecords from './components/dashboards/patient/PatientMedicalRecords';
 import PatientMessages from './components/dashboards/patient/PatientMessages';
 import PatientProfile from './components/dashboards/patient/PatientProfile';
-import PatientDashboard from './components/dashboards/PatientDashboard';
 import DoctorSideBar from './components/dashboards/doctor/DoctorSideBar';
 import DoctorSignUp from './components/authforms/doctor/DoctorSignUp';
 import DoctorLogIn from './components/authforms/doctor/DoctorLogIn';
 import DoctorAuthenticate from './components/authforms/doctor/DoctorAuthenticate';
-import SideBar from './components/dashboards/doctor/SideBar';
+
 
 
 function App() {
@@ -66,15 +65,11 @@ function App() {
         <Route path="/patient/signup" element={<PatientSignUp/>} />
         <Route path="/patient/login" element={<PatientLogIn/>} />
         <Route path="/patient/dashboard" element={<PatientDashboard />} />
-<<<<<<< HEAD
         <Route path="/patient/appointments" element={<PatientAppointments />} />
         <Route path="/patient/medicalrecords" element={<PatientMedicalRecords />} />
         <Route path="/patient/messages" element={<PatientMessages />} />
         <Route path="/patient/profile" element={<PatientProfile />} />
-=======
         <Route path="/doctor/sidebar" element={<DoctorSideBar />} />
-
->>>>>>> dc7d35753c171483db38250704888a3df1d616a7
       </Routes>
     </div>
   );
