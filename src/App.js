@@ -6,7 +6,7 @@ import PatientSignUp from './components/authforms/patient/PatientSignUp';
 import PatientLogIn from './components/authforms/patient/PatientLogIn';
 
 import PatientDashboard from './components/dashboards/PatientDashboard';
-import SideBar from './components/dashboards/doctor/SideBar';
+import DoctorSideBar from './components/dashboards/doctor/DoctorSideBar';
 
 
 
@@ -20,7 +20,7 @@ function App() {
         <Route path="/patient/signup" element={<PatientSignUp/>} />
         <Route path="/patient/login" element={<PatientLogIn/>} />
         <Route path="/patient/dashboard" element={<PatientDashboard />} />
-        <Route path="/doctor/sidebar" element={<SideBar />} />
+        <Route path="/doctor/sidebar" element={<DoctorSideBar />} />
 
       </Routes>
     </div>

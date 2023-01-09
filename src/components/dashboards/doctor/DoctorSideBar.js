@@ -1,6 +1,6 @@
 import React from "react";
 
-function SideBar(){
+function DoctorSideBar(){
 
     return(
 
@@ -10,4 +10,4 @@ function SideBar(){
     )
 }
 
-export default SideBar;
+export default DoctorSideBar;
