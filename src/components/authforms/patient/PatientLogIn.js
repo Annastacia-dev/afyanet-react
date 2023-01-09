@@ -1,19 +1,22 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Container,Row, Col, Form, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import BrandLogo from '../../logo/BrandLogo';
 import '../../../css/PatientLogIn.css'
+import { PatientContext } from '../../../context/patient';
 
-const PatientLogIn = ({ setPatient }) => {
+const PatientLogIn = () => {
 
     const navigate = useNavigate();
+
+    const { setPatient } = useContext(PatientContext);
 
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
     const [rememberMe,setRememberMe] = useState(false);
-    const [error,setError] = useState('');
+    const [errors,setErrors] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -34,13 +37,11 @@ const PatientLogIn = ({ setPatient }) => {
                 setTimeout(() => {
                     notify()
                 }, 1000);
-                setTimeout(() => {
-                    navigate('/patient/dashboard')
-                } , 2000);
+                navigate('/patient/dashboard')
             })
         } else {
             r.json().then(data => {
-                setError(data.message)
+                setErrors(data.errors)
             })
         } 
     } )
@@ -106,12 +107,15 @@ const notify = () => toast.success("You are logged in successfully!",{
                                 </Form.Group>
                             </Col>
                          </Row>
-                        <Row className="justify-content-center">
-                            <Col lg="6">
-                                <p className="text-center">{error}</p>
-                            </Col>
+                         <Row className="justify-content-center">
+                                {
+                                    errors && errors.map((error, index) => (
+                                    <Col md={5} sm={12} gap={6}  className="alert alert-danger" role="alert" key={index}>
+                                        <p style={{fontSize: "12px"}}>{error}</p>
+                                        </Col>
+                                    ))
+                                }
                         </Row>
-
                         <Row style={{marginTop: "10px"}} className='justify-content-center'>
                             <Col lg='3'>
                             <Form.Group className="mb-3" controlId="formBasicCheckbox">
