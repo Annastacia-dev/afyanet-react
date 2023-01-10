@@ -21,10 +21,7 @@ const DoctorDashboard = () => {
       <DoctorSideBar />
         <div id="page-content-wrapper">
           <div className="container-fluid">
-            <h1 className="mt-4">Dashboard</h1>
-            <p>
-              {doctor.first_name}
-            </p>
+            <h1 className="mt-4">Doctor Dashboard</h1>
           </div>
         </div>
       
