@@ -49,10 +49,10 @@ const DoctorSignUp = () => {
                     setDoctor(data)
                     setTimeout(() => {
                         notify()
-                    },1000);
+                    },500);
                     setTimeout(() => {
                         navigate("/doctor/authenticate")
-                    },2000);
+                    },3000);
                 })
             } else {
                 r.json().then(data => {
@@ -71,7 +71,8 @@ const DoctorSignUp = () => {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        theme: 'colored'
+        theme: 'colored',
+        style: { backgroundColor: '#9263CB'}
     });
     
 

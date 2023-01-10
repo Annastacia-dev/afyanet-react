@@ -51,10 +51,10 @@ const handleChange = (e) => {
                     setDoctor(data)
                     setTimeout(() => {
                         notify()
-                    },1000);
+                    },500);
                 setTimeout(() => {
                     navigate("/doctor/dashboard")
-                },2000);
+                },3000);
                 })
             } else {
                 r.json().then(data => {
@@ -71,7 +71,8 @@ const notify = () => toast.success("You are successfully authenticated!",{
     pauseOnHover: true,
     draggable: true,
     progress: undefined,
-    theme: 'colored'
+    theme: 'colored',
+    style: { backgroundColor: '#9263CB'}
 });
 
 return (
