@@ -24,6 +24,7 @@ const PatientProvider = ({ children }) => {
       fetchPatient();
     }, []);
 
+    
 
     return (
         <PatientContext.Provider value={{ patient, setPatient, error, loading }}>
