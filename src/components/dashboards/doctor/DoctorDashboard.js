@@ -1,7 +1,7 @@
 import React,{ useContext } from 'react'
 import { DoctorContext } from '../../../context/doctor';
 import DoctorSideBar from './DoctorSideBar';
-import "../../../css/DoctorDashboard.css"
+import "../../../css/DoctorDashboard.css";
 
 const DoctorDashboard = () => {
 
