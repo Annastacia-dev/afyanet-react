@@ -5,7 +5,7 @@ import LandingPage from './components/landingpage/LandingPage';
 import PatientSignUp from './components/authforms/patient/PatientSignUp';
 import PatientLogIn from './components/authforms/patient/PatientLogIn';
 
-import PatientDashboard from './components/dashboards/PatientDashboard';
+import PatientDashboard from './components/dashboards/patient/PatientDashboard';
 import DoctorSideBar from './components/dashboards/doctor/DoctorSideBar';
 
 
@@ -13,7 +13,6 @@ import DoctorSideBar from './components/dashboards/doctor/DoctorSideBar';
 import DoctorSignUp from './components/authforms/doctor/DoctorSignUp';
 import DoctorLogIn from './components/authforms/doctor/DoctorLogIn';
 import DoctorAuthenticate from './components/authforms/doctor/DoctorAuthenticate';
-import SideBar from './components/dashboards/doctor/SideBar';
 
 
 
