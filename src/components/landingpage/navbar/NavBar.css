@@ -57,6 +57,10 @@
     outline: none;
 }
 
+.navba .btn .outline-success{
+   background-color: red;
+}
+
 /* Media */
 
 @media screen and (max-width: 768px){

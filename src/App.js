@@ -10,8 +10,8 @@ import PatientMedicalRecords from './components/dashboards/patient/PatientMedica
 import PatientMessages from './components/dashboards/patient/PatientMessages';
 import PatientProfile from './components/dashboards/patient/PatientProfile';
 import DoctorSignUp from './components/authforms/doctor/DoctorSignUp';
-import DoctorLogIn from './components/authforms/doctor/DoctorLogIn';
 import DoctorAuthenticate from './components/authforms/doctor/DoctorAuthenticate';
+import DoctorLogIn from './components/authforms/doctor/DoctorLogIn';
 import DoctorDashboard from './components/dashboards/doctor/DoctorDashboard';
 
 
@@ -32,7 +32,7 @@ function App() {
         <Route path="/patient/messages" element={<PatientMessages />} />
         <Route path="/patient/profile" element={<PatientProfile />} />
         <Route path="/doctor/signup" element={<DoctorSignUp  />} />
-        <Route path="/doctor/login" element={<DoctorLogIn />} />
+        <Route path="/doctor/login" element={<DoctorLogIn  />} />
         <Route path="/doctor/authenticate" element={<DoctorAuthenticate  />} />
         <Route path="/doctor/dashboard" element={<DoctorDashboard />} />
       </Routes>

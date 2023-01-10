@@ -49,6 +49,7 @@ body {
 .btn-primary:active:focus{
   outline: none;
   border: none;
+  background-color: var(--dark-purple);
 }
 
 @media screen and (max-width: 768px){

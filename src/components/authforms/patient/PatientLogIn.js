@@ -134,7 +134,7 @@ const notify = () => toast.success("You are logged in successfully!",{
                         
                         <Row className="justify-content-center">
                             <Col lg="6">
-                                <Button className="btn btn-primary btn-xl" type="submit">Log In</Button>
+                            <Button className="btn btn-primary btn-xl" type="submit">Log In</Button>
                             </Col>
                         </Row>
                     </Form>

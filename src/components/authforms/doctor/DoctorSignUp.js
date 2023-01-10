@@ -169,10 +169,6 @@ const DoctorSignUp = () => {
                     <p className="text-center mt-0">Already have an account? 
                     <Button type='submit' variant='link' href="/doctor/login">Login</Button></p>
                 </Col>
-                <Col lg="12">
-                    <p className="text-center mt-0">Are you authenticated? 
-                    <Button type='submit' variant='link' href="/doctor/authenticate">Authenticate</Button></p>
-                </Col>
             </Row>
             <Row>
                 <Col lg="12">

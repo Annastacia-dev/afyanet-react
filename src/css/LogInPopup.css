@@ -1,0 +1,46 @@
+.popup-content {
+    margin: auto;
+    background: transparent;
+    border: none;
+    width: 50%;
+    padding: 5px;
+    position: absolute;
+    top: -200px;
+    right: -870px;
+  }
+  .popup-arrow {
+    color: rgb(255, 255, 255);
+  }
+  [role='tooltip'].popup-content {
+    width: 200px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px;
+  }
+
+  .outline-success {
+    width: 100%;
+    padding: 5px 20px;
+    outline: none;
+    border: 1px solid var(--primary-color);
+    background: transparent;
+    color: var(--primary-color);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+    .outline-success:hover {
+        background: var(--primary-color);
+        color: #fff;
+    }
+
+
+
+  
+  .popup-overlay {
+    background: rgba(0, 0, 0, 0.5);
+  }
+  [data-popup='tooltip'].popup-overlay {
+    background: transparent;
+  }
+
+  /* Media */

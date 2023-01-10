@@ -3,10 +3,15 @@ import { Container,Navbar, Nav, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import logo from "../../../assets/images/logo/afyanet.png";
 import "./NavBar.css"
+import Popup from "reactjs-popup";
+import "reactjs-popup/dist/index.css";
+import '../../../css/LogInPopup.css'
 
 
 function NavBar () {
+
     const navigate = useNavigate();
+
     return(
         <>
         <Navbar bg="white" expand="lg" className="home navbar navbar-expand-lg navbar-light fixed-top py-3">
@@ -27,8 +32,16 @@ function NavBar () {
                 </Navbar.Collapse>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" className="navbar-toggler navbar-toggler-left" />
                 <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
-                    <Nav className="navbar-nav ms-auto my-2 my-lg-0">
-                     <Button onClick={() => navigate('/patient/login')} variant="outline-success">Log In</Button>
+                    <Nav style={{position: "relative"}} className="navbar-nav ms-auto my-2 my-lg-0">
+                      <Popup Popup trigger={<button className="outline-success">Log In</button>} 
+                      modal
+                      closeOnDocumentClick
+                      position='top left'
+                       >
+                        < Button variant="primary" onClick={() => navigate('/patient/login')}>As A Patient</Button>
+                        <br />
+                        <Button variant="primary" onClick={() => navigate('/doctor/login')}>As A Doctor</Button>
+                    </Popup>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
