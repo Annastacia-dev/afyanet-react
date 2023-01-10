@@ -38,7 +38,7 @@ function NavBar () {
                       closeOnDocumentClick
                       position='top left'
                        >
-                        < Button variant="primary" onClick={() => navigate('/patient/login')}>As A Patient</Button>
+                        < button className='popup-btn btn btn-primary'  onClick={() => navigate('/patient/login')}>As A Patient</button>
                         <br />
                         <Button variant="primary" onClick={() => navigate('/doctor/login')}>As A Doctor</Button>
                     </Popup>

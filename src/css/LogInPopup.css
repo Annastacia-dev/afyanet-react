@@ -28,19 +28,37 @@
     transition: all 0.3s ease;
   }
 
-    .outline-success:hover {
+  .outline-success:hover {
         background: var(--primary-color);
         color: #fff;
     }
 
-
-
-  
   .popup-overlay {
     background: rgba(0, 0, 0, 0.5);
   }
+
   [data-popup='tooltip'].popup-overlay {
     background: transparent;
   }
 
   /* Media */
+
+    @media screen and (max-width: 768px) {
+        .outline-success{
+            width: 30%;
+            margin-left: 250px;
+            margin-top: -50px;
+        }
+        .popup-content {
+        width: 100%;
+        top: 2px;
+        right: -150px;
+        }
+        .popup-overlay {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+        }
+        .popup-btn{
+            margin-bottom: 10px;
+        }
+    }
