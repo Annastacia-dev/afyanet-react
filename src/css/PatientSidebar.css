@@ -2,6 +2,7 @@
     background-color: var(--primary-color);
     height: 100vh;
     border-radius: 5px;
+  
 }
 
 .patient-sidebar .list-group-item{

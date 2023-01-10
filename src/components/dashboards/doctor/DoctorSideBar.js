@@ -26,23 +26,23 @@ const DoctorSideBar = () => {
           <p className="navbar-brand" style={{color:"#fff",fontSize: "20px",fontWeight: "500",marginLeft: "10px",marginBottom:"40px"}}>AfyaNet</p>
       </div>
       <div className="list list-group list-group-flush">
-        <a href="/patient/dashboard" className="list-group-item list-group-item-action p-4">
-          <i className="fas fa-home"></i>
-          <p>Dashboard</p>
+        <a href="/doctor/dashboard" className="list-group-item list-group-item-action p-4">
+        <i class="fa-solid fa-bars"></i>
+         <p>Dashboard</p>
         </a>
-        <a href="/patient/appointments" className="list-group-item list-group-item-action p-4">
-          <i className="fa-solid fa-calendar-check"></i>
+        <a href="/doctor/appointments" className="list-group-item list-group-item-action p-4">
+        <i class="fa-solid fa-hospital-user"></i>
           <p>Patients</p>  
         </a>
-        <a href="/patient/medicalrecords" className="list-group-item list-group-item-action p-4">
-         <i className="fa-solid fa-record-vinyl"></i>
+        <a href="/doctor/medicalrecords" className="list-group-item list-group-item-action p-4">
+        <i class="fa-solid fa-table"></i>
           <p>Statistics</p>
         </a>
-        <a href="/patient/messages" className="list-group-item list-group-item-action p-4">
-          <i className="fa-solid fa-message"></i>
+        <a href="/doctor/messages" className="list-group-item list-group-item-action p-4">
+        <i class="fa-solid fa-comments"></i>
           <p>Messages</p>
         </a>
-        <a href="/patient/profile" className="list-group-item list-group-item-action p-4">
+        <a href="/doctor/profile" className="list-group-item list-group-item-action p-4">
           <i className="fas fa-user"></i>
           <p>Profile</p>
         </a>
