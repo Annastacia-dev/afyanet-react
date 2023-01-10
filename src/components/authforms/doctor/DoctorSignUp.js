@@ -35,6 +35,7 @@ const DoctorSignUp = () => {
             first_name: formData.firstName,
             last_name: formData.lastName,
             phone_number: formData.phoneNumber,
+            email: formData.email,
             password: formData.password,
             password_confirmation: formData.passwordConfirmation
         };
@@ -51,7 +52,7 @@ const DoctorSignUp = () => {
                         notify()
                     },500);
                     setTimeout(() => {
-                        navigate("/doctor/authenticate")
+                        navigate("/doctor/dashboard")
                     },3000);
                 })
             } else {
@@ -149,7 +150,7 @@ const DoctorSignUp = () => {
                         </Row>
                         <Row className="justify-content-center">
                                 {
-                                    errors.map((error, index) => (
+                                    errors && errors.map((error, index) => (
                                     <Col md={5} sm={12} gap={6}  className="alert alert-danger" role="alert" key={index}>
                                         <p style={{fontSize: "12px"}}>{error}</p>
                                         </Col>
