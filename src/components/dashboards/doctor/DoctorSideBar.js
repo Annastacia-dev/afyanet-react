@@ -3,7 +3,7 @@ import logo from '../../../assets/images/logo/afyanetwhitelogo.png'
 import '../../../css/PatientSidebar.css'
 
 
-const PatientSidebar = () => {
+const DoctorSideBar = () => {
 
   // remove active class from all list items and add active class to the clicked list item
   const list = document.querySelectorAll('.list-group-item');
@@ -52,4 +52,4 @@ const PatientSidebar = () => {
   )
 }
 
-export default PatientSidebar
+export default DoctorSideBar

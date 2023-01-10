@@ -1,10 +1,10 @@
 import React,{ useContext } from 'react'
-import { PatientContext } from '../../../context/patient';
-import PatientSidebar from './PatientSidebar';
+import { DoctorContext } from '../../../context/doctor';
+import DoctorSideBar from './DoctorSideBar';
 
-const PatientDashboard = () => {
+const DoctorDashboard = () => {
 
-  const { patient, error, loading } = useContext(PatientContext);
+  const { doctor, error, loading } = useContext(DoctorContext);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -14,14 +14,14 @@ const PatientDashboard = () => {
     return <div>Error: {error.message}</div>;
   }
 
-  console.log('patient', patient)
+  console.log('doctor', doctor)
 
   return (
      <div className="d-flex" id="wrapper">
-      <PatientSidebar />
+      <DoctorSideBar />
         <div id="page-content-wrapper">
           <div className="container-fluid">
-            <h1 className="mt-4">Patient Dashboard</h1>
+            <h1 className="mt-4">Doctor Dashboard</h1>
           </div>
         </div>
       
@@ -29,4 +29,4 @@ const PatientDashboard = () => {
   )
 }
 
-export default PatientDashboard
+export default DoctorDashboard
