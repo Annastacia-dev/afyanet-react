@@ -1,13 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Container,Row, Col, Form, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import BrandLogo from '../../logo/BrandLogo';
 import '../../../css/DoctorLogIn.css'
+import { DoctorContext } from '../../../context/doctor';
 
-const DoctorLogIn = ({setDoctor}) => {
+const DoctorLogIn = () => {
     const navigate = useNavigate();
+
+    const { setDoctor } = useContext(DoctorContext);
    
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
