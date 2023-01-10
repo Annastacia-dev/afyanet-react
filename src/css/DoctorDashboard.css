@@ -1,0 +1,36 @@
+.card-container {
+    width: 400px;
+    height: 90px;
+    padding: 70 18px;
+    position: relative;
+    margin-top: 100px;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0;
+    background-color:gainsboro;
+   position: relative;
+  
+}
+.content{
+    font-size: 20px;
+    background-color: gainsboro;
+    text-align: center;
+}
+.title{
+    font-size: 27px;
+    background-color: gainsboro;
+    text-align: left;
+    position: relative;
+    left: 0;
+     top: 10;
+}
+.name{
+    font-size: 21px;
+    background-color: gainsboro;
+    color: violet;
+    text-align: center;
+    margin-bottom: 0 auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
