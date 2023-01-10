@@ -36,10 +36,10 @@ const PatientLogIn = () => {
                 setPatient(data)
                 setTimeout(() => {
                     notify()
-                }, 1000);
+                }, 500);
                 setTimeout(() => {
                     navigate('/patient/dashboard')
-                } , 2000);
+                } , 3000);
             })
         } else {
             r.json().then(data => {
@@ -57,7 +57,8 @@ const notify = () => toast.success("You are logged in successfully!",{
     pauseOnHover: true,
     draggable: true,
     progress: undefined,
-    theme: 'colored'
+    theme: 'colored',
+    style: { backgroundColor: '#9263CB'}
 });
 
 
@@ -134,7 +135,7 @@ const notify = () => toast.success("You are logged in successfully!",{
                         
                         <Row className="justify-content-center">
                             <Col lg="6">
-                                <Button className="btn btn-primary btn-xl" type="submit">Log In</Button>
+                            <Button className="btn btn-primary btn-xl" type="submit">Log In</Button>
                             </Col>
                         </Row>
                     </Form>

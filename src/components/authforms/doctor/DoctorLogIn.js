@@ -15,7 +15,7 @@ const DoctorLogIn = () => {
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
     const [rememberMe,setRememberMe] = useState(false);
-    const [error,setError] = useState('');
+    const [errors,setErrors] = useState('');
 
     
     const handleSubmit = (e) => {
@@ -36,14 +36,14 @@ const DoctorLogIn = () => {
                 setDoctor(data)
                 setTimeout(() => {
                     notify()
-                }, 1000);
+                }, 500);
                 setTimeout(() => {
                     navigate('/doctor/dashboard')
-                } , 2000);
+                } , 3000);
             })
         }  else {
             r.json().then(data => {
-                setError(data.message)
+                setErrors(data.errors)
             })
         } 
     })
@@ -56,7 +56,8 @@ const notify = () => toast.success("You are logged in successfully!",{
     pauseOnHover: true,
     draggable: true,
     progress: undefined,
-    theme: 'colored'
+    theme: 'colored',
+    style: { backgroundColor: '#9263CB'}
 });
 
 return (
@@ -105,9 +106,14 @@ return (
                             </Col>
                          </Row>
                         <Row className="justify-content-center">
-                            <Col lg="6">
-                                <p className="text-center">{error}</p>
-                            </Col>
+                                {
+                                    errors && errors.map((error, index) => (
+                                    <Col md={5} sm={12} gap={6}  className="alert alert-danger" role="alert" key={index}>
+                                        <p style={{fontSize: "12px"}}>{error}</p>
+                                        </Col>
+                                    ))
+                                }
+                           
                         </Row>
 
                         <Row style={{marginTop: "10px"}} className='justify-content-center'>
