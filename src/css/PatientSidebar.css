@@ -6,6 +6,10 @@
   
 }
 
+ .sidebar-nav{
+    display: none;
+}
+
 .patient-sidebar .list-group-item{
     background-color: var(--primary-color);
     color: #fff;
@@ -37,25 +41,11 @@
 /* Media */
 @media screen and (max-width: 768px){
     .patient-sidebar{
-        height: 100%;
-    }
-    .patient-sidebar .list-group-item{
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 20px;
-        margin-bottom: 50px;
-    }
-    .patient-sidebar .list-group-item i{
-      font-size: 20px;
-    }
-    .patient-sidebar .list-group-item span{
-      display: none;
-    }
-
-    .patient-sidebar .navbar-brand{
         display: none;
+    }
+    
+    .sidebar-nav{
+        display: block;
     }
 
 }

@@ -4,7 +4,7 @@ import DoctorSideBar from './DoctorSideBar';
 import "../../../css/DoctorDashboard.css"
 import { Card } from 'react-bootstrap';
 import {Container,Row,Col} from 'react-bootstrap';
-import "bootstrap/dist/css/bootstrap.min.css";
+
 
 
 const DoctorDashboard = () => {
@@ -26,7 +26,7 @@ const DoctorDashboard = () => {
 
 
   return (
-     <div className="d-flex" id="wrapper">
+     <div className="doctor-dashboard d-flex" id="wrapper">
       <DoctorSideBar />
         <div id="page-content-wrapper">
           <div className="container-fluid sidebarcontentcontainer">

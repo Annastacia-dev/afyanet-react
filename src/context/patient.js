@@ -10,20 +10,38 @@ const PatientProvider = ({ children }) => {
 
     useEffect(() => {
       fetch('http://localhost:3000/patient_profile')
-        .then(response => response.json())
-        .then(data => {
-          setPatient(data);
-          setLoading(false);
-        })
-        .catch(error => {
-          setError(error);
-          setLoading(false);
+        .then(r => {
+          if (r.ok){
+            r.json().then(data => {
+              setPatient(data)
+              setLoading(false)
+            })
+          } else {
+            r.json().then(data => {
+              setError(data.error)
+              setLoading(false)
+            })
+          }
+        } )
+        
+    }, []);
+
+    
+    // Specialists
+
+    const [specialists, setSpecialists] = useState([]);
+
+    useEffect(() => {
+      fetch('http://localhost:3000/specialties')
+        .then((res) => res.json())
+        .then((data) => {
+          setSpecialists(data);
         });
     }, []);
 
   
     return (
-        <PatientContext.Provider value={{ patient, setPatient, error, loading }}>
+        <PatientContext.Provider value={{ patient, specialists, setPatient, error, loading }}>
             {children}
         </PatientContext.Provider>
     );
