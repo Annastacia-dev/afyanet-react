@@ -5,7 +5,7 @@ import BrandLogo from '../../logo/BrandLogo';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../../../css/DoctorAuthenticate.css'
-import { DoctorContext } from "../../../context/doctor";
+import { DoctorContext } from '../../../context/doctor';
 
 const DoctorAuthenticate = () => {
 
@@ -65,16 +65,16 @@ const handleChange = (e) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const doctorData = {
-            license_number: formData.licenseNumber,
-            speciality_id: formData.specialityId,
+            licence_no: formData.licenseNumber,
+            specialty_id: formData.specialityId,
             location: formData.location,
             days_available_weekly: selectedDays.join(', '),
             contract_length: formData.contractLength,
             specific_days_times_available: startTime + " - " + endTime,
-            password: doctor.password_digest,
-            password_confirmation: doctor.password_digest
+            password: '@Richard11',
+            password_confirmation: '@Richard11'
         };
-        fetch("http://localhost:3000/doctor_profile", {
+        fetch(`http://localhost:3000/doctors/${doctor.id}`, {
             method: 'PATCH',
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(doctorData)

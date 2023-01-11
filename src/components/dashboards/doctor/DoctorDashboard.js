@@ -27,7 +27,7 @@ const DoctorDashboard = () => {
      <div className="d-flex" id="wrapper">
       <DoctorSideBar />
         <div id="page-content-wrapper">
-          <div className="container-fluid">
+          <div className="container-fluid sidebarcontentcontainer">
             <Container>
               <Row>
               <Col  md={6}>
