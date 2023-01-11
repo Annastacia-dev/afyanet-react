@@ -37,7 +37,7 @@
 .time-card {
     margin-top: 90px;
     margin-bottom: 180px;
-    margin-left: 750px;
+    margin-left: 50px;
     padding: 80px 120px;
     width: 100px;
     border: 1px solid #ccc;
@@ -51,7 +51,7 @@
   .first-card {
     margin-top: 90px;
     margin-bottom: 110px;
-    margin-left: 10px;
+    margin-left: 130px;
     padding: 47px 170px;
     border: 1px solid #ccc;
     border-radius:27px;
@@ -65,7 +65,7 @@
   .titles{
     margin-top: 1px;
     margin-bottom: 10px;
-    margin:left;
+    margin:"left";
     padding: 47px 10px;
     border: 1px solid #ccc;
     border-radius: 15px;
@@ -78,14 +78,14 @@
   }
 
   .appointment-card{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 1px;
-    padding: 47px 50px;
+    margin-top: 1px;
+    margin-bottom: 90px;
+    margin-left: 130px;
+    padding: 40px 4px;
     border: 1px solid #ccc;
     border-radius: 25px;
     box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
-    width: 1850px;
+    width: 1340px;
     height: 300px;
     float: left;
     position: relative;
@@ -97,7 +97,7 @@
     padding: 10px 10px;
     width: 1250px;
     border-radius: 25px;
-    margin-right:1700px;
+    margin-right:800px;
     /* margin:left;
     padding: 10px 720px;
     border: 1px solid #ccc;
@@ -109,7 +109,7 @@
     position: relative; */
   }
   h1{
-    margin-top: 60px;
+    margin-top: 20px;
     margin-bottom: 1px;
     margin-right: 200px;
     font-size: 30px;
@@ -133,8 +133,8 @@
     color: green;
   }
   .appointments-title{
-    padding: 10px 20px;
-    margin-left: 130px;
+    padding: 10px 10px ;
+    margin-right: 270px;
   }
   .profile1{
     color: violet;
@@ -145,12 +145,5 @@
   .profile3{
     color: violet;
   }
-  .container-fluid{
-
-  }
-  @media (max-width: 600px) {
-    .container-fluid {
-      /* Styles for screens smaller than 600px */
-      font-size: 16px;
-    }
-  }
+  
+  
