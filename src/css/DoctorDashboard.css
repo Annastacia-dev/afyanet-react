@@ -37,7 +37,7 @@
 .time-card {
     margin-top: 90px;
     margin-bottom: 180px;
-    margin-left: 150px;
+    margin-left: 650px;
     padding: 80px 120px;
     width: 100px;
     border: 1px solid #ccc;
@@ -56,7 +56,7 @@
     border: 1px solid #ccc;
     border-radius:27px;
     box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
-    width: '28rem';
+    width: 850px;
     height: '40px';
     float: left;
     position: relative;
@@ -85,7 +85,7 @@
     border: 1px solid #ccc;
     border-radius: 25px;
     box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
-    width: 850px;
+    width: 1850px;
     height: 300px;
     float: left;
     position: relative;
@@ -95,8 +95,9 @@
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 10px 10px;
-    width: 740px;
+    width: 1250px;
     border-radius: 25px;
+    margin-right:1700px;
     /* margin:left;
     padding: 10px 720px;
     border: 1px solid #ccc;
@@ -118,7 +119,7 @@
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 10px 10px;
-    width: 740px;
+    width: 1250px;
     border-radius: 25px;
   }
   .third-icon{
