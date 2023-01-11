@@ -4,6 +4,8 @@ import DoctorSideBar from './DoctorSideBar';
 import "../../../css/DoctorDashboard.css"
 import { Card } from 'react-bootstrap';
 import {Container,Row,Col} from 'react-bootstrap';
+import "bootstrap/dist/css/bootstrap.min.css";
+
 
 const DoctorDashboard = () => {
 
