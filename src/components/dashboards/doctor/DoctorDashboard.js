@@ -77,8 +77,8 @@ const DoctorDashboard = () => {
 
      <Card className='first-appointment'>
           <Row>
-             <Col><i className="fa-solid fa-user profile1"></i>
-</Col> 
+             {/* <Col><i className="fa-solid fa-user profile1"></i>
+</Col>  */}
           <Col>Josphine</Col>
           <Col>Karen</Col>
           <Col>11/01/2023</Col>
@@ -93,8 +93,8 @@ const DoctorDashboard = () => {
      <Card className='second-appointment'>
      {/* <img src="bolt" style="border-radius:50%;"/> */}
           <Row>
-          <Col> <i className="fa-solid fa-user profile2"></i>
-</Col>
+          {/* <Col> <i className="fa-solid fa-user profile2"></i>
+</Col> */}
           <Col>Sylvia</Col>
           <Col>Nairobi</Col>
           <Col>11/01/2023</Col>
@@ -110,8 +110,8 @@ const DoctorDashboard = () => {
   
      <Card className='first-appointment'>
           <Row>
-          <Col> <i className="fa-solid fa-user profile3"></i>
-</Col>
+          {/* <Col> <i className="fa-solid fa-user profile3"></i>
+</Col> */}
           <Col>Kenny</Col>
           <Col>Kiambu</Col>
           <Col>11/01/2023</Col>
