@@ -1,13 +1,16 @@
-import React,{useState} from "react";
+import React,{ useState, useContext } from "react";
 import { Container,Row, Col, Form, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import BrandLogo from '../../logo/BrandLogo';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../../../css/DoctorSignUp.css'
+import { DoctorContext } from "../../../context/doctor";
 
 const DoctorSignUp = () => {
     const navigate = useNavigate();
+
+    const { setDoctor } = useContext(DoctorContext);
 
     const [formData, setFormData] = useState({
         firstName: '',
@@ -32,6 +35,7 @@ const DoctorSignUp = () => {
             first_name: formData.firstName,
             last_name: formData.lastName,
             phone_number: formData.phoneNumber,
+            email: formData.email,
             password: formData.password,
             password_confirmation: formData.passwordConfirmation
         };
@@ -43,12 +47,13 @@ const DoctorSignUp = () => {
         .then (r => {
             if (r.ok) {
                 r.json().then(data => {
+                    setDoctor(data)
                     setTimeout(() => {
                         notify()
-                    },1000);
+                    },500);
                     setTimeout(() => {
                         navigate("/doctor/dashboard")
-                    },2000);
+                    },3000);
                 })
             } else {
                 r.json().then(data => {
@@ -67,7 +72,8 @@ const DoctorSignUp = () => {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        theme: 'colored'
+        theme: 'colored',
+        style: { backgroundColor: '#9263CB'}
     });
     
 
@@ -144,7 +150,7 @@ const DoctorSignUp = () => {
                         </Row>
                         <Row className="justify-content-center">
                                 {
-                                    errors.map((error, index) => (
+                                    errors && errors.map((error, index) => (
                                     <Col md={5} sm={12} gap={6}  className="alert alert-danger" role="alert" key={index}>
                                         <p style={{fontSize: "12px"}}>{error}</p>
                                         </Col>
@@ -164,10 +170,6 @@ const DoctorSignUp = () => {
                 <Col lg="12">
                     <p className="text-center mt-0">Already have an account? 
                     <Button type='submit' variant='link' href="/doctor/login">Login</Button></p>
-                </Col>
-                <Col lg="12">
-                    <p className="text-center mt-0">Are you authenticated? 
-                    <Button type='submit' variant='link' href="/doctor/authenticate">Authenticate</Button></p>
                 </Col>
             </Row>
             <Row>
