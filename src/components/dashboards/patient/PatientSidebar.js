@@ -16,11 +16,9 @@ const PatientSidebar = () => {
     })
   })
 
-  console.log(list)
-
 
   return (
-    <div className='patient-sidebar border-right'id='sidebar-wrapper'>
+    <div className='patient-sidebar border-right' id='sidebar-wrapper'>
       <div className="sidebar-heading">
           <img src={logo} alt = "logo" className="logo" style={{width: "30px",marginTop:"50px"}}/>
           <p className="navbar-brand" style={{color:"#fff",fontSize: "20px",fontWeight: "500",marginLeft: "10px",marginBottom:"40px"}}>AfyaNet</p>
@@ -28,23 +26,23 @@ const PatientSidebar = () => {
       <div className="list list-group list-group-flush">
         <a href="/patient/dashboard" className="list-group-item list-group-item-action p-4">
           <i className="fas fa-home"></i>
-          <p>Homepage</p>
+          <span>Homepage</span>
         </a>
         <a href="/patient/appointments" className="list-group-item list-group-item-action p-4">
           <i className="fa-solid fa-calendar-check"></i>
-          <p>Appointments</p>  
+          <span>Appointments</span>  
         </a>
         <a href="/patient/medicalrecords" className="list-group-item list-group-item-action p-4">
          <i className="fa-solid fa-record-vinyl"></i>
-          <p>Medical Records</p>
+          <span>Medical Records</span>
         </a>
         <a href="/patient/messages" className="list-group-item list-group-item-action p-4">
           <i className="fa-solid fa-message"></i>
-          <p>Messages</p>
+          <span>Messages</span>
         </a>
         <a href="/patient/profile" className="list-group-item list-group-item-action p-4">
           <i className="fas fa-user"></i>
-          <p>Profile</p>
+          <span>Profile</span>
         </a>
       </div>
 

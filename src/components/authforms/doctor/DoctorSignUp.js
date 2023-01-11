@@ -52,7 +52,7 @@ const DoctorSignUp = () => {
                         notify()
                     },500);
                     setTimeout(() => {
-                        navigate("/doctor/dashboard")
+                        navigate("/doctor/authenticate")
                     },3000);
                 })
             } else {
