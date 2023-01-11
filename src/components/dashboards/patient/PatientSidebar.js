@@ -1,6 +1,7 @@
 import React from 'react'
 import logo from '../../../assets/images/logo/afyanetwhitelogo.png'
 import '../../../css/PatientSidebar.css'
+import PatientNavBar from './PatientNavBar'
 
 
 const PatientSidebar = () => {
@@ -18,6 +19,10 @@ const PatientSidebar = () => {
 
 
   return (
+    <>
+    <div className='sidebar-nav'>
+      <PatientNavBar />
+    </div>
     <div className='patient-sidebar border-right' id='sidebar-wrapper'>
       <div className="sidebar-heading">
           <img src={logo} alt = "logo" className="logo" style={{width: "30px",marginTop:"50px"}}/>
@@ -47,6 +52,7 @@ const PatientSidebar = () => {
       </div>
 
     </div>
+    </>
   )
 }
 

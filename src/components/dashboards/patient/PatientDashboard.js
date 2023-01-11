@@ -1,26 +1,14 @@
-import React,{ useContext, useEffect, useState } from 'react'
+import React,{ useContext } from 'react'
 import { Row, Col, Card  } from 'react-bootstrap';
 import { PatientContext } from '../../../context/patient';
 import PatientSidebar from './PatientSidebar';
 import { Link } from 'react-router-dom';
 import '../../../css/PatientHomepage.css'
+import PatientNavBar from './PatientNavBar';
 
 const PatientDashboard = () => {
 
-  const { patient, error, loading } = useContext(PatientContext);
-
-  const [specialists, setSpecialists] = useState([]);
-
-  useEffect(() => {
-    fetch('http://localhost:3000/specialties')
-      .then((res) => res.json())
-      .then((data) => {
-        setSpecialists(data);
-      });
-  }, []);
-
-  console.log('specialists', specialists);
-
+  const { patient, error, specialists, loading } = useContext(PatientContext);
 
 
   if (loading) {
@@ -34,6 +22,12 @@ const PatientDashboard = () => {
   console.log('patient', patient)
 
   return (
+
+    <>
+    <div className="patient-navbar">
+      <PatientNavBar />
+    </div>
+
      <div className="patient-homepage d-flex" id="wrapper">
       <PatientSidebar />
         <div id="page-content-wrapper">
@@ -94,6 +88,8 @@ const PatientDashboard = () => {
         </div>
       
     </div>
+
+    </>
   )
 }
 
