@@ -5,7 +5,7 @@ import BrandLogo from '../../logo/BrandLogo';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../../../css/DoctorAuthenticate.css'
-import { DoctorContext } from "../../../context/doctor";
+import { DoctorContext } from '../../../context/doctor';
 
 const DoctorAuthenticate = () => {
 
