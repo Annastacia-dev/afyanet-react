@@ -2,7 +2,6 @@ import React from 'react'
 import logo from '../../../assets/images/logo/afyanetwhitelogo.png'
 import '../../../css/PatientSidebar.css'
 
-
 const DoctorSideBar = () => {
 
   // remove active class from all list items and add active class to the clicked list item
@@ -30,11 +29,12 @@ const DoctorSideBar = () => {
         <i class="fa-solid fa-bars"></i>
          <p>Dashboard</p>
         </a>
-        <a href="/doctor/appointments" className="list-group-item list-group-item-action p-4">
+        <a href="/doctor/patients" className="list-group-item list-group-item-action p-4">
         <i class="fa-solid fa-hospital-user"></i>
+       
           <p>Patients</p>  
         </a>
-        <a href="/doctor/medicalrecords" className="list-group-item list-group-item-action p-4">
+        <a href="/doctor/statistics" className="list-group-item list-group-item-action p-4">
         <i class="fa-solid fa-table"></i>
           <p>Statistics</p>
         </a>
