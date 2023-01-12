@@ -5,6 +5,7 @@ import PatientSidebar from './PatientSidebar';
 import { Link } from 'react-router-dom';
 import '../../../css/PatientDashboard.css'
 import PatientNavBar from './PatientNavBar';
+import '../../../css/PatientDashboard.css'
 
 const PatientDashboard = () => {
 
