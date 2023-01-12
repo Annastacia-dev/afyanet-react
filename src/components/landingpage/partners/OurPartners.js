@@ -16,10 +16,10 @@ const OurPartners = () => {
             {partners.map((partner) => (
                 <Col className='partner' style={{marginBottom: "60px" }} xs={12} md={4} sm={12} lg={2} key={partner.id} gap={6}>
                     <a href={partner.link} target="_blank" rel="noreferrer">
-                    <Card className="partner-card">
+                    <Card className="patients-card">
                         <Card.Img variant="top" src={partner.image} />
                     </Card>
-                    <Card.Title as="h5">{partner.name}</Card.Title>
+                    {/* <Card.Title as="h5">{partner.name}</Card.Title> */}
                     </a>
                 </Col>
             ))}
