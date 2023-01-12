@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { PatientContext } from '../../../context/patient'
 import { useContext } from 'react'
 import {Container, Row, Col, Card, Button} from 'react-bootstrap'
+import '../../../css/PatientViewSpecialists.css'
 
 
 const PatientViewSpecialists = () => {
@@ -17,36 +18,37 @@ const PatientViewSpecialists = () => {
 
   const doctors = specialist && specialist.doctors
 
+  console.log('patient', patient)
+
+  
 
   return (
-    <Container className="mt-5" fluid>
+    <Container className="specialists mt-5" fluid>
       <Row>
-        <Col md={6}>
-          <h1>{specialist && specialist.name}s</h1>
+        <Col md={12}>
+          <h2 className='text-center'>{specialist && specialist.name}s</h2>
         </Col>
-        </Row>
-      <Row>
-        {
-           doctors ? doctors.length > 0 ? doctors.map(doctor => {
+       {
+          doctors && doctors.length > 0 ? doctors.map(doctor => {
             return (
-              <Col key={doctor.id} md={4} className="mt-5">
-                <Card>
+              <Col key={doctor.id} className="specialist mt-3" md={4}>
+                <Card className="card shadow">
+                  <Col md={3}>
+                  <Card.Img className='avatar' src={doctor.profile_picture ? doctor.profile_picture : "https://www.w3schools.com/howto/img_avatar.png"} />
+                  </Col>
                   <Card.Body>
-                    <Card.Title>{doctor.first_name} {doctor.last_name}</Card.Title>
-                    <Card.Text>
-                      {doctor.bio}
-                    </Card.Text>
-                    <Button onClick={() => navigate(`/patient/bookappointment/${doctor.id}`)}>Book Appointment</Button>
+                    <Card.Title>Dr. {doctor.first_name} {doctor.last_name}</Card.Title>
+                    <Card.Subtitle className="mb-2 text-muted">{doctor.location}</Card.Subtitle>
+                    <Button onClick={() => navigate(`/patient/bookappointment/${doctor.id}`)} variant="primary">Book Appointment</Button>
                   </Card.Body>
                 </Card>
               </Col>
             )
-          }) : <h1>No doctors found</h1> : <h1>Loading...</h1>
-        }
+          }
+          ) : <h1>No doctors found</h1>
+       }
       </Row>
-      
-
-
+     
     </Container>
   )
 }
