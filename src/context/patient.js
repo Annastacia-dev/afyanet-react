@@ -9,7 +9,12 @@ const PatientProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-      fetch('http://localhost:3000/patient_profile')
+      fetch('http://localhost:3000/patient_profile',{
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        }
+      })
         .then(r => {
           if (r.ok){
             r.json().then(data => {

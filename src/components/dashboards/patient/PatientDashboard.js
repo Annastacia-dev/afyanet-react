@@ -19,7 +19,7 @@ const PatientDashboard = () => {
     return <div>Error: {error.message}</div>;
   }
 
-  console.log('patient', patient)
+
 
   return (
 

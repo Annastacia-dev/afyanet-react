@@ -27,12 +27,16 @@ const PatientLogIn = () => {
         };
         fetch('http://localhost:3000/patient_login', {
             method: 'POST',
-            headers: { "Content-Type": "application/json" },
+            headers: {
+                Accepts: "application/json", 
+                "Content-Type": "application/json"
+             },
             body: JSON.stringify(patient)
     })
     .then (r => {
         if (r.ok) {
             r.json().then(data => {
+                localStorage.setItem("token", data.jwt)
                 setPatient(data)
                 setTimeout(() => {
                     notify()
