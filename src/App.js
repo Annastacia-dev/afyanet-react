@@ -10,6 +10,7 @@ import PatientMedicalRecords from './components/dashboards/patient/PatientMedica
 import PatientMessages from './components/dashboards/patient/PatientMessages';
 import PatientProfile from './components/dashboards/patient/PatientProfile';
 import PatientViewSpecialists from './components/dashboards/patient/PatientViewSpecialists';
+import PatientBookAppointment from './components/dashboards/patient/PatientBookAppointment';
 import DoctorSignUp from './components/authforms/doctor/DoctorSignUp';
 import DoctorAuthenticate from './components/authforms/doctor/DoctorAuthenticate';
 import DoctorLogIn from './components/authforms/doctor/DoctorLogIn';
@@ -44,10 +45,7 @@ function App() {
         <Route path="/doctor/statistics" element={<DoctorStatistics />} />
         <Route path="/doctor/messages" element={<DoctorMessages />} />
         <Route path="/doctor/profile" element={<DoctorProfile/>} />
-
-
-
-
+        <Route path="/patient/bookappointment/:id" element={<PatientBookAppointment />} />
       </Routes>
     </div>
   );

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { PatientContext } from '../../../context/patient'
 import { useContext } from 'react'
 import {Container, Row, Col, Card, Button} from 'react-bootstrap'
@@ -7,13 +7,15 @@ import {Container, Row, Col, Card, Button} from 'react-bootstrap'
 
 const PatientViewSpecialists = () => {
 
+  const navigate = useNavigate()
+
   const { id } = useParams()
 
   const { patient, specialists } = useContext(PatientContext)
 
   const specialist = specialists.find(specialist => specialist.id === parseInt(id))
 
-  console.log(specialist)
+
 
 
 
@@ -32,7 +34,9 @@ const PatientViewSpecialists = () => {
                 <Card className="card">
                   <Card.Body>
                     <Card.Title className="card-title">{doctor.first_name}</Card.Title>
-                    <Button variant="primary">Book Appointment</Button>
+                    <Button 
+                    onClick={() => navigate(`/patient/bookappointment/${doctor.id}`)}
+                    variant="primary">Book Appointment</Button>
                   </Card.Body>
                 </Card>
               </Col>
