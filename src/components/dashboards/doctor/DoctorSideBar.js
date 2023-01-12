@@ -28,19 +28,19 @@ const DoctorSideBar = () => {
       </div>
       <div className="list list-group list-group-flush">
         <a href="/doctor/dashboard" className="list-group-item list-group-item-action p-4">
-        <i class="fa-solid fa-bars"></i>
+        <i className="fa-solid fa-bars"></i>
          <p>Dashboard</p>
         </a>
         <a href="/doctor/appointments" className="list-group-item list-group-item-action p-4">
-        <i class="fa-solid fa-hospital-user"></i>
+        <i className="fa-solid fa-hospital-user"></i>
           <p>Patients</p>  
         </a>
         <a href="/doctor/medicalrecords" className="list-group-item list-group-item-action p-4">
-        <i class="fa-solid fa-table"></i>
+        <i className="fa-solid fa-table"></i>
           <p>Statistics</p>
         </a>
         <a href="/doctor/messages" className="list-group-item list-group-item-action p-4">
-        <i class="fa-solid fa-comments"></i>
+        <i className="fa-solid fa-comments"></i>
           <p>Messages</p>
         </a>
         <a href="/doctor/profile" className="list-group-item list-group-item-action p-4">

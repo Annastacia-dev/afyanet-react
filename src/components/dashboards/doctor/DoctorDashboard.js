@@ -95,7 +95,7 @@ const DoctorDashboard = () => {
                 </Col>
               </Row>
 
-              <Row className="mt-5 sidecontent">
+              <Row className=" appointments-table mt-5 sidecontent">
                 <Col md={10}>
                   <Table striped bordered hover>
                     <thead>

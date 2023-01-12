@@ -1,3 +1,9 @@
+ .doctor-dashboard {
+    background-color: #fff;
+    height: 100vh;
+ }
+ 
+ 
  .greeting.card{
     margin-top: 20px;
     margin-bottom: 20px;
@@ -40,6 +46,31 @@
 
 .phone-time{
     display: none;
+}
+
+.doctor-dashboard table{
+    width: 180%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: none;
+}
+
+.doctor-dashboard tr, .doctor-dashboard td, .doctor-dashboard th{
+    border: none;
+}
+
+.doctor-dashboard thead{
+    background-color: none;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.doctor-dashboard tbody tr{
+    border-radius: 30px;
+}
+
+.doctor-dashboard tbody td{
+   padding: 30px;
 }
 
 
