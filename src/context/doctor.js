@@ -1,4 +1,4 @@
-import React, { useState, useMemo, createContext } from "react";
+import React, { useState, useEffect, createContext } from "react";
 
 const DoctorContext = createContext();
 
@@ -8,22 +8,27 @@ const DoctorProvider = ({ children }) => {
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
   
-    useMemo(() => {
-      async function fetchDoctor() {
-        try {
-          const response = await fetch('http://localhost:3000/doctor_profile');
-          const data = await response.json();
-          setDoctor(data);
-        } catch (err) {
-          setError(err);
-        } finally {
-          setLoading(false);
-        }
-      }
-  
-      fetchDoctor();
+    useEffect(() => {
+        fetch("http://localhost:3000/doctor_profile", {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        })
+        .then (r => {
+            if (r.ok) {
+                r.json().then(data => {
+                    setDoctor(data)
+                    setLoading(false)
+                })
+            } else {
+                r.json().then(data => {
+                    setError(data.error)
+                    setLoading(false)
+                })
+            }
+        })
     }, []);
-
 
     return (
         <DoctorContext.Provider value={{ doctor, setDoctor, error, loading }}>

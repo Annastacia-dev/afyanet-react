@@ -17,9 +17,7 @@ const DoctorSideBar = () => {
     })
   })
 
-  console.log(list)
-
-
+ 
   return (
     <div className='patient-sidebar border-right'id='sidebar-wrapper'>
       <div className="sidebar-heading">
@@ -47,7 +45,7 @@ const DoctorSideBar = () => {
           <i className="fas fa-user"></i>
           <p>Profile</p>
         </a>
-      </div>
+      </div>  
 
     </div>
   )

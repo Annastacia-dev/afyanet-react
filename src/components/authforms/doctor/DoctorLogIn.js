@@ -33,6 +33,7 @@ const DoctorLogIn = () => {
     .then (r => {
         if (r.ok) {
             r.json().then(data => {
+                localStorage.setItem("token", data.jwt)
                 setDoctor(data)
                 setTimeout(() => {
                     notify()

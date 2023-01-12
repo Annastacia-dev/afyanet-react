@@ -74,7 +74,7 @@ const handleChange = (e) => {
             password: '@Richard11',
             password_confirmation: '@Richard11'
         };
-        fetch(`http://localhost:3000/doctors/${doctor.id}`, {
+        fetch(`http://localhost:3000/doctor_profile`, {
             method: 'PATCH',
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(doctorData)
