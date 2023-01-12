@@ -1,4 +1,4 @@
-.patient-homepage .sidecontentcontainer{
+.sidecontentcontainer{
     height: 100vh;
     background-color: #fff;
     border-radius: 5px;
@@ -9,7 +9,7 @@
 }
 
 
-.patient-homepage .sidecontent{
+.sidecontent{
     margin-left: 150px;
 }
 
