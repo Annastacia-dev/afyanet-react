@@ -17,9 +17,7 @@ const DoctorSideBar = () => {
     })
   })
 
-  console.log(list)
-
-
+ 
   return (
     <div className='patient-sidebar border-right'id='sidebar-wrapper'>
       <div className="sidebar-heading">
@@ -39,12 +37,12 @@ const DoctorSideBar = () => {
         <i className="fa-solid fa-table"></i>
         </a>
         <a href="/doctor/patients" className="list-group-item list-group-item-action p-4">
-        <i class="fa-solid fa-hospital-user"></i>
+        <i className="fa-solid fa-hospital-user"></i>
        
           <p>Patients</p>  
         </a>
         <a href="/doctor/statistics" className="list-group-item list-group-item-action p-4">
-        <i class="fa-solid fa-table"></i>
+        <i className="fa-solid fa-table"></i>
           <p>Statistics</p>
         </a>
         <a href="/doctor/messages" className="list-group-item list-group-item-action p-4">
