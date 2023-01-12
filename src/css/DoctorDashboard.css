@@ -1,9 +1,23 @@
  .greeting.card{
     margin-top: 20px;
     margin-bottom: 20px;
-    width: 150%;
+    width: 130%;
     color: #000;
-    text-align: center;
+    text-align: left;
+}
+
+.greeting.card .card-title{
+    padding: 10px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.greeting.card .card-title span{
+    color: var(--light-purple);
+}
+
+.greeting.card .card-text{
+    padding: 10px;
 }
 
 .time.card{
@@ -24,6 +38,10 @@
     font-size: 50px;
 }
 
+.phone-time{
+    display: none;
+}
+
 
 
 
@@ -32,5 +50,38 @@
     .doctor-dashboard .doctor-container{
         margin-top:100px;
     }
+    .greeting.card{
+        width: 100%;
+    }
+    .greeting.card .card-title{
+        padding: 5px;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .time.card{
+        display: none;
+        
+    }
 
+    .phone-time{
+        display: block;
+    }
+
+    .phone-time .card{
+        background-color: var(--background-color-3);
+        border: none;
+        padding: 20px;
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .phone-time .card .card-title{
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+
+    .phone-time .card .card-text{
+        font-size: 30px;
+    }
+    
 }

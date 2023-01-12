@@ -56,10 +56,10 @@ const DoctorDashboard = () => {
       <DoctorSideBar />
         <div id="page-content-wrapper">
           <div className="doctor-container container-fluid px-5 py-5 sidebarcontentcontainer">
-              <Row className='mt-5 top-card sidecontent'>
+              <Row className='dispaly-cards mt-5 top-card sidecontent'>
                   <Col md={6}>
                     <Card className="greeting card" >
-                      <Card.Title >{greeting()}, Dr. {doctor ? doctor.first_name : "Doctor"}</Card.Title>
+                      <Card.Title >{greeting()},<span> Dr. {doctor ? doctor.first_name : "Doctor"}</span></Card.Title>
                         <Card.Text >{greetingWishes()}</Card.Text>
                     </Card>
                   </Col>
@@ -77,11 +77,52 @@ const DoctorDashboard = () => {
                     </Card>
                   </Col>
               </Row>
+              <Col md={6} className='phone-time'>
+                    <Card className="card" >
+                          <Card.Title>{new Date().toDateString().split(' ').slice(0, 4).join(' ')}</Card.Title>
+                            <Card.Text>{
+                              new Date().toLocaleTimeString('en-US', {
+                                hour: 'numeric',
+                                minute: 'numeric',
+                                hour12: true,
+                              })}
+                            </Card.Text>
+                    </Card>
+                  </Col>
               <Row className="mt-5 sidecontent">
                 <Col md={10}>
                    <h2 className='appointment'>Today's Appointments</h2>
                 </Col>
               </Row>
+
+              <Row className="mt-5 sidecontent">
+                <Col md={10}>
+                  <Table striped bordered hover>
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Location</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Julian Wan</td>
+                        <td>Karen</td>
+                        <td>12/01/2023</td>
+                        <td>10:00 AM - 11:30AM</td>
+                        <td>Upcoming</td>
+                      </tr>
+                    </tbody>
+                  </Table>
+                </Col>
+              </Row>
+
+
+
+
           </div>
         </div>
       </div>
