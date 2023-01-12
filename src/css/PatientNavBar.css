@@ -1,0 +1,21 @@
+.patient-navbar{
+    background-color: var(--primary-color);
+}
+
+.patient-navbar a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.patient-navbar .navbar-toggler{
+    background-color: #fff;
+    border: none;
+}
+
+.patient-navbar .navbar-toggler i{
+    color: var(--primary-color);
+}
+
+.patient-navbar .navbar-toggler:hover{
+    background-color: #fff;
+}
