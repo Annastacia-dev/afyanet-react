@@ -31,14 +31,13 @@ const DoctorSideBar = () => {
         <i className="fa-solid fa-bars"></i>
          <p>Dashboard</p>
         </a>
-<<<<<<< HEAD
         <a href="/doctor/appointments" className="list-group-item list-group-item-action p-4">
         <i className="fa-solid fa-hospital-user"></i>
           <p>Patients</p>  
         </a>
         <a href="/doctor/medicalrecords" className="list-group-item list-group-item-action p-4">
         <i className="fa-solid fa-table"></i>
-=======
+        </a>
         <a href="/doctor/patients" className="list-group-item list-group-item-action p-4">
         <i class="fa-solid fa-hospital-user"></i>
        
@@ -46,7 +45,6 @@ const DoctorSideBar = () => {
         </a>
         <a href="/doctor/statistics" className="list-group-item list-group-item-action p-4">
         <i class="fa-solid fa-table"></i>
->>>>>>> 7e5ccde32a987a248f7080aa0ddccb7c1d64e7f6
           <p>Statistics</p>
         </a>
         <a href="/doctor/messages" className="list-group-item list-group-item-action p-4">
@@ -57,7 +55,7 @@ const DoctorSideBar = () => {
           <i className="fas fa-user"></i>
           <p>Profile</p>
         </a>
-      </div>
+      </div>  
 
     </div>
   )
