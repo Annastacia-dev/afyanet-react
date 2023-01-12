@@ -1,10 +1,15 @@
-.sidecontentcontainer{
+.patient-homepage .sidecontentcontainer{
     height: 100vh;
     background-color: #fff;
     border-radius: 5px;
 }
 
-.sidecontent{
+.patient-navbar{
+    display: none;
+}
+
+
+.patient-homepage .sidecontent{
     margin-left: 150px;
 }
 
@@ -20,30 +25,48 @@
     margin-top: -50px;
 }
 
-.specialist .card{
+.patient-homepage .specialist .card{
     background-color: var(--background-color-4);
     
 }
 
-.specialist .card:hover{
+.patient-homepage .specialist .card:hover{
     background: none;
     border: none;
 }
 
-.specialist .card i{
+.patient-homepage .specialist .card i{
     color: var(--primary-color);
     font-size: 60px;
     margin-top: 10px;
 }
 
-.specialist .card-title{
+.patient-homepage .specialist .card-title{
     color: var(--primary-color);
     font-size: 17px;
     margin-top: 30px;
 }
 
-.specialist a{
+.patient-homepage .specialist a{
     text-decoration: none;
+}
+
+/* Media */
+
+@media screen and (max-width: 768px){
+    .sidecontent{
+        margin-left: 0px;
+    }
+
+    .patient-homepage h1{
+        margin-top: 80px;
+        font-size: 19px;
+    }
+
+    .patient-navbar{
+        display: block;
+    }
+
 }
 
 

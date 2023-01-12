@@ -2,6 +2,8 @@ import React from 'react'
 import logo from '../../../assets/images/logo/afyanetwhitelogo.png'
 import '../../../css/PatientSidebar.css'
 
+
+
 const DoctorSideBar = () => {
 
   // remove active class from all list items and add active class to the clicked list item
