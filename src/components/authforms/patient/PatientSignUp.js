@@ -50,7 +50,10 @@ const PatientSignUp = () => {
         };
         fetch('http://localhost:3000/patient_signup', {
             method: 'POST',
-            headers: { "Content-Type": "application/json" },
+            headers: { 
+                Accepts: "application/json",
+                "Content-Type": "application/json" 
+            },
             body: JSON.stringify(patient)
     })
     .then (r => {

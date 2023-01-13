@@ -3,8 +3,9 @@ import { Row, Col, Card  } from 'react-bootstrap';
 import { PatientContext } from '../../../context/patient';
 import PatientSidebar from './PatientSidebar';
 import { Link } from 'react-router-dom';
-import '../../../css/PatientHomepage.css'
+import '../../../css/PatientDashboard.css'
 import PatientNavBar from './PatientNavBar';
+import '../../../css/PatientDashboard.css'
 
 const PatientDashboard = () => {
 
@@ -19,8 +20,6 @@ const PatientDashboard = () => {
     return <div>Error: {error.message}</div>;
   }
 
-  console.log('patient', patient)
-
   return (
 
     <>
@@ -34,25 +33,65 @@ const PatientDashboard = () => {
           <div className="container-fluid px-5 py-5 sidecontentcontainer">
             <Row className="sidecontent justify-content-center">
             <Col md={6} className="mb-4">
-                <h1>Welcome, {patient ? patient.first_name : "Patient"}</h1>
+                <h1>Welcome, <span>{patient ? patient.first_name : "Patient"}</span></h1>
               </Col>
             </Row>
             <Row className="mt-5 top-card sidecontent">
               <Col md={3} className="mb-4">
-                <Card className="card">
+                <Card className="patient-appointment card">
                   <Card.Body>
-                    <Card.Title className="card-title">Today's Appointment</Card.Title>
-                    <Card.Text className="card-title">Dr. John Doe - 12:00PM</Card.Text>
+                    <Card.Title className="card-title">{
+                      // if appointment is more than 1, show appointments, else show appointment
+                      patient && patient.appointments && patient.appointments.length > 1 ? "Today's Appointments" : "Today's Appointment"
+                    }</Card.Title>
+                    <Card.Text>{
+                      // check if patient has an appointment today
+                      patient && patient.appointments && patient.appointments.length > 0 ? patient.appointments.map(appointment => {
+                        if (new Date(appointment.date).toDateString() === new Date().toDateString()) {
+
+                          const appointmentTime = new Date(appointment.time).toLocaleTimeString('en-US', {
+                            hour: 'numeric',
+                            minute: 'numeric',
+                            hour12: true,
+                          })
+
+                          const currentTime = new Date().toLocaleTimeString('en-US', {
+                            hour: 'numeric',
+                            minute: 'numeric',
+                            hour12: true,
+                          })
+
+                          const checkStatus = () => {
+                            if (appointmentTime > currentTime) {
+                              return <i  className="fa-solid fa-spinner" style={{color:"#9263CB"}}></i>
+                            } else if (appointmentTime < currentTime) {
+                              return <i className="fa-solid fa-check" style={{color:"green"}}></i>
+                            } else {
+                              return <i className="fa-solid fa-ellipsis" style={{color:"#e36e2c"}}></i>
+                            }
+                          }
+                          return (
+                            <div key={appointment.id}>
+                              <p>{appointment.doctor.first_name} {appointment.doctor.last_name} - <span  className='doctor-time'>{appointmentTime}</span>
+                              <span className='status'>{checkStatus()}</span>
+                              </p>
+                              
+                            </div>
+                          )
+                        }
+                      }
+                      ) : "No Appointment Today"
+                    }</Card.Text>
                   </Card.Body>
                 </Card>
               </Col>
               <Col md={3} className="mb-4">
-                <Card className="card">
+                <Card className="patient-time card">
                   <Card.Body>
                     <Card.Title className="card-title">
                       {new Date().toDateString().split(' ').slice(0, 4).join(' ')}
                     </Card.Title>
-                    <Card.Title className="card-title">
+                    <Card.Text>
                       {
                         new Date().toLocaleTimeString('en-US', {
                           hour: 'numeric',
@@ -60,7 +99,7 @@ const PatientDashboard = () => {
                           hour12: true,
                         })
                       }
-                    </Card.Title>
+                    </Card.Text>
                   </Card.Body>
                 </Card>
               </Col>
@@ -72,9 +111,9 @@ const PatientDashboard = () => {
             </Row>
             <Row className="mt-5 sidecontent">
               {specialists.map((specialist) => (
-                  <Col key={specialist.id} md={3} className="specialist mb-4">
+                  <Col key={specialist.id} md={3} className="specialist-home mb-4">
                     <Link to={`/patient/specialists/${specialist.id}`}>
-                      <Card className="card h-100">
+                      <Card>
                         <Card.Body>
                           <i className={specialist.image}></i>
                           <Card.Title className="card-title">{specialist.name}</Card.Title>
