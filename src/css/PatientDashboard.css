@@ -54,29 +54,29 @@
     margin-top: -50px;
 }
 
-.patient-homepage .specialist .card{
+.patient-homepage .specialist-home .card{
     background-color: var(--background-color-4);
     
 }
 
-.patient-homepage .specialist .card:hover{
+.patient-homepage .specialist-home .card:hover{
     background: none;
     border: none;
 }
 
-.patient-homepage .specialist .card i{
+.patient-homepage .specialist-home .card i{
     color: var(--primary-color);
     font-size: 60px;
     margin-top: 10px;
 }
 
-.patient-homepage .specialist .card-title{
+.patient-homepage .specialist-home .card-title{
     color: var(--primary-color);
     font-size: 17px;
     margin-top: 30px;
 }
 
-.patient-homepage .specialist a{
+.patient-homepage .specialist-home a{
     text-decoration: none;
 }
 

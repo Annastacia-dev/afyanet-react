@@ -111,9 +111,9 @@ const PatientDashboard = () => {
             </Row>
             <Row className="mt-5 sidecontent">
               {specialists.map((specialist) => (
-                  <Col key={specialist.id} md={3} className="specialist mb-4">
+                  <Col key={specialist.id} md={3} className="specialist-home mb-4">
                     <Link to={`/patient/specialists/${specialist.id}`}>
-                      <Card className="card h-100">
+                      <Card>
                         <Card.Body>
                           <i className={specialist.image}></i>
                           <Card.Title className="card-title">{specialist.name}</Card.Title>
