@@ -23,7 +23,7 @@ function Patients(){
           <div className="container-fluid sidebarcontentcontainer">
            <Card className="first-patient">
            
-          <Card.Title >doctors.first_na</Card.Title>
+          <Card.Title ></Card.Title>
              <Card.Text >
              <i class="fa-solid fa-location-dot"></i>
               Karen
