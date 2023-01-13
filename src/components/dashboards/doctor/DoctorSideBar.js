@@ -29,7 +29,7 @@ const DoctorSideBar = () => {
         <i className="fa-solid fa-bars"></i>
          <p>Dashboard</p>
         </a>
-        <a href="/doctor/appointments" className="list-group-item list-group-item-action p-4">
+        <a href="/doctor/patients" className="list-group-item list-group-item-action p-4">
         <i className="fa-solid fa-hospital-user"></i>
           <p>Patients</p>  
         </a>
