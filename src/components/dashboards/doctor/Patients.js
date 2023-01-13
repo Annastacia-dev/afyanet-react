@@ -23,14 +23,15 @@ function Patients(){
           <div className="container-fluid sidebarcontentcontainer">
            <Card className="first-patient">
            
-          <Card.Title ></Card.Title>
+          <Card.Title >{doctor && doctor.first_name} {doctor &&doctor.last_name}
+</Card.Title>
              <Card.Text >
              <i class="fa-solid fa-location-dot"></i>
-              Karen
+             {doctor &&doctor.location}
               </Card.Text>
              <Card.Text >
              <i class="fa-solid fa-cake-candles"></i>
-              35
+             {doctor &&doctor.appointments}
               </Card.Text>
 
 
