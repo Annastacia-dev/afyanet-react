@@ -20,20 +20,17 @@ const PatientBookAppointment = () => {
 
 
     const doctor = doctors && doctors.find(doctor => doctor.id === parseInt(id))
-
-    console.log (doctor)
+   
 
     const { patient } = useContext(PatientContext)
 
-    console.log(patient)
-
-    // formData
+   
 
     const [formData, setFormData] = useState({
         date: '',
+        description: '',
         startTime: '',
         endTime: '',
-        description: '',
         mode: ''
     })
 
@@ -44,8 +41,7 @@ const PatientBookAppointment = () => {
         })
     }
 
-
-    const appointment2 = {
+    const appointment1 = {
         date: formData.date,
         time: formData.startTime + ' - ' + formData.endTime,
         description: formData.description,
@@ -56,8 +52,19 @@ const PatientBookAppointment = () => {
 
     const handleConsoleLog = (e) => {
         e.preventDefault()
-        console.log(appointment2)
+        console.log(appointment1)
     }
+
+    const doctorAvailableTime = new Date(doctor && doctor.specific_days_times_available).toLocaleTimeString('en-US', {
+        hour: 'numeric',
+        minute: 'numeric',
+        hour12: true,
+    })
+    
+
+
+
+
 
     const handleSubmit = (e) => {
         const appointment = {
@@ -78,6 +85,15 @@ const PatientBookAppointment = () => {
         })
         .then(res => res.json())
         .then(data => console.log(data))
+        // clear form
+        setFormData({
+            date: '',
+            description: '',
+            startTime: '',
+            endTime: '',
+            mode: ''
+        })
+
     }
 
   return (
@@ -90,13 +106,13 @@ const PatientBookAppointment = () => {
                 <p className="days">Available: {doctor ? doctor.days_available_weekly : null}</p>
                 <p className="time-range">
                     <i className="far fa-clock"></i>
-                    {doctor ? doctor.specific_days_times_available : null}
+                    {doctorAvailableTime}
                 </p>
             </Col>
         </Row>
         <Row className="justify-content-center">
             <Col lg="8">
-                <Form onSubmit={handleConsoleLog}>
+                <Form onSubmit={handleSubmit}>
                     <Row className="mt-5 justify-content-center">
                         <Col md={6}>
                             <Form.Group controlId="formBasicDate">

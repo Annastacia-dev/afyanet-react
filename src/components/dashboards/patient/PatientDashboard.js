@@ -72,7 +72,7 @@ const PatientDashboard = () => {
                           }
                           return (
                             <div key={appointment.id}>
-                              <p>{appointment.doctor.first_name} {appointment.doctor.last_name} - <span  className='doctor-time'>{appointmentTime}</span>
+                              <p>Dr.{appointment.doctor.first_name} {appointment.doctor.last_name} - <span  className='doctor-time'>{appointmentTime}</span>
                               <span className='status'>{checkStatus()}</span>
                               </p>
                               

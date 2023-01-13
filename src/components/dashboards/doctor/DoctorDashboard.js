@@ -110,9 +110,7 @@ const DoctorDashboard = () => {
                     {
                       // appointments who have the same date as today's date
 
-                      doctor.appointments ? doctor.appointments.map(appointment => {
-
-                        console.log('app', appointment.date)
+                      doctor.appointments && doctor.appointments.length > 0 ? doctor.appointments.map(appointment => {
 
                         const date = new Date(appointment.date).toDateString().split(' ').slice(0, 4).join(' ')
                         const today = new Date().toDateString().split(' ').slice(0, 4).join(' ')
@@ -164,7 +162,7 @@ const DoctorDashboard = () => {
                         <div>
                           <h1>You have no appointments today!</h1>
                         </div>
-                      )
+                      ) 
                       
                     }
                   </Table>
