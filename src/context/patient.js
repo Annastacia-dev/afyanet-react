@@ -9,7 +9,7 @@ const PatientProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-      fetch('http://localhost:3000/patient_profile',{
+      fetch('https://afyanet-127t.onrender.com/patient_profile',{
         method: 'GET',
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -37,7 +37,7 @@ const PatientProvider = ({ children }) => {
     const [specialists, setSpecialists] = useState([]);
 
     useEffect(() => {
-      fetch('http://localhost:3000/specialties')
+      fetch('https://afyanet-127t.onrender.com/specialties')
         .then((res) => res.json())
         .then((data) => {
           setSpecialists(data);

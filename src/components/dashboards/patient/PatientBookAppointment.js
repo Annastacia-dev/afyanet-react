@@ -17,7 +17,7 @@ const PatientBookAppointment = () => {
     const [doctors, setDoctors] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:3000/doctors`)
+        fetch(`https://afyanet-127t.onrender.com/doctors`)
         .then(res => res.json())
         .then(data => setDoctors(data))
     },[])
@@ -90,7 +90,7 @@ const PatientBookAppointment = () => {
             patient_id: patient && patient.id
         }
         e.preventDefault()
-        fetch(`http://localhost:3000/appointments`, {
+        fetch(`https://afyanet-127t.onrender.com/appointments`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

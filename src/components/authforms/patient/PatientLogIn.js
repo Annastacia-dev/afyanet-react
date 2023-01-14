@@ -25,7 +25,7 @@ const PatientLogIn = () => {
             password,
             remember_me: rememberMe
         };
-        fetch('http://localhost:3000/patient_login', {
+        fetch('https://afyanet-127t.onrender.com/patient_login', {
             method: 'POST',
             headers: {
                 Accepts: "application/json", 
