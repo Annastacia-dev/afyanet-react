@@ -1,10 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { PatientContext } from '../../../context/patient'
 import { Container, Row, Form, Col,Button } from 'react-bootstrap'
 import '../../../css/PatientBookAppointment.css'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const PatientBookAppointment = () => {
+
+    const navigate = useNavigate()
 
     const { id } = useParams()
 
@@ -29,8 +33,7 @@ const PatientBookAppointment = () => {
     const [formData, setFormData] = useState({
         date: '',
         description: '',
-        startTime: '',
-        endTime: '',
+        time:"",
         mode: ''
     })
 
@@ -41,35 +44,46 @@ const PatientBookAppointment = () => {
         })
     }
 
-    const appointment1 = {
-        date: formData.date,
-        time: formData.startTime + ' - ' + formData.endTime,
-        description: formData.description,
-        mode: formData.mode,
-        doctor_id: doctor && doctor.id,
-        patient_id: patient && patient.id
-    }
-
-    const handleConsoleLog = (e) => {
-        e.preventDefault()
-        console.log(appointment1)
-    }
-
     const doctorAvailableTime = new Date(doctor && doctor.specific_days_times_available).toLocaleTimeString('en-US', {
         hour: 'numeric',
         minute: 'numeric',
         hour12: true,
     })
+
+    // formData.time cannot be earlier than doctorAvailableTime
+    const validateTime = (e) => {
+        const time = e.target.value
+        const timeArray = time.split(':')
+        const hour = parseInt(timeArray[0])
+        const minute = parseInt(timeArray[1])
+        const doctorTimeArray = doctorAvailableTime.split(':')
+        const doctorHour = parseInt(doctorTimeArray[0])
+        const doctorMinute = parseInt(doctorTimeArray[1])
+        if (hour < doctorHour || (hour === doctorHour && minute < doctorMinute)) {
+            toast.error('Please select a time that is later than the doctor\'s available time',{
+                position: 'top-center',
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'colored'
+            })
+            setFormData({
+                ...formData,
+                time: ''
+            })
+        }
+    }
+
+
+
     
-
-
-
-
-
     const handleSubmit = (e) => {
         const appointment = {
             date: formData.date,
-            time: formData.startTime + ' - ' + formData.endTime,
+            time: formData.time,
             description: formData.description,
             mode: formData.mode,
             doctor_id: doctor && doctor.id,
@@ -83,31 +97,79 @@ const PatientBookAppointment = () => {
             },
             body: JSON.stringify(appointment)
         })
-        .then(res => res.json())
-        .then(data => console.log(data))
-        // clear form
-        setFormData({
-            date: '',
-            description: '',
-            startTime: '',
-            endTime: '',
-            mode: ''
+        .then(res => {
+            if (res.ok){
+                res.json().then(data => {
+                    console.log(data)
+                    setTimeout(() => {
+                        notify()
+                    }, 500)
+                })
+                setTimeout(() => {
+                    navigate('/patient/dashboard')
+                }, 3000)
+            } else {
+                res.json().then(data => {
+                    console.log(data)
+                    toast.error(data.error,{
+                        position: 'top-center',
+                        autoClose: 1000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: 'colored'
+                    })
+                })
+            }
         })
 
     }
 
+    const notify = () => toast.success('Appointment booked successfully!',{
+        position: 'top-center',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'colored',
+        style: { backgroundColor: '#9263CB'}
+    });
+
+
+
+
   return (
     <div>
     <Container className="book-appointment mt-5" fluid>
+        <ToastContainer
+            position="top-center"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme='colored'
+         />
         <Row className='justify-content-center'>
             <Col md={12}>
+                < div className='doc-details'>
                 <img src={doctor ? doctor.profile_picture ? doctor.profile_picture : "https://www.w3schools.com/howto/img_avatar.png" : null} alt="avatar" className="avatar-bookappointment" />
+                <div className='doc-info'>
                 <h3>You are booking an appointment with Dr. {doctor && doctor.first_name} {doctor &&doctor.last_name}</h3>
                 <p className="days">Available: {doctor ? doctor.days_available_weekly : null}</p>
                 <p className="time-range">
                     <i className="far fa-clock"></i>
                     {doctorAvailableTime}
                 </p>
+                </div>
+                </div>
             </Col>
         </Row>
         <Row className="justify-content-center">
@@ -121,26 +183,23 @@ const PatientBookAppointment = () => {
                             </Form.Group>    
                         </Col>
                         <Col md={3}>
-                            <Form.Group controlId="formBasicStartTime">
-                                <Form.Label>Start Time</Form.Label>
-                                <Form.Control type="time" placeholder="Enter start time" name="startTime" value={formData.startTime} onChange={handleChange} />
-                            </Form.Group>
-                        </Col>
-                        <Col md={3}>
-                            <Form.Group controlId="formBasicEndTime">
-                                <Form.Label>End Time</Form.Label>
-                                <Form.Control type="time" placeholder="Enter end time" name="endTime" value={formData.endTime} onChange={handleChange} />
+                            <Form.Group controlId="formBasicTime">
+                                <Form.Label>Time</Form.Label>
+                                <Form.Control  type="time" placeholder="Enter time" name="time" value={formData.time} onChange={(e) => {
+                                    handleChange(e)
+                                    validateTime()
+                                }} />
                             </Form.Group>
                         </Col>
                     </Row>
-                    <Row className="justify-content-center">
+                    <Row className="mt-5 justify-content-center">
                         <Col md={6}>
                             <Form.Group controlId="formBasicDescription">
                                 <Form.Label>Description</Form.Label>
                                 <Form.Control as="textarea" rows={3} placeholder="Enter description" name="description" value={formData.description} onChange={handleChange} />
                             </Form.Group>
                         </Col>
-                        <Col md={6}>
+                        <Col md={3}>
                             <Form.Group controlId="formBasicMode">
                                 <Form.Label>Mode</Form.Label>
                                 <Form.Control as="select" name="mode" value={formData.mode} onChange={handleChange}>
