@@ -38,7 +38,7 @@
 
 .book-appointment .doc-details .doc-info{
     margin-top: 20px;
-    margin-left: -550px;
+    margin-left: -350px;
 }
 
 .book-appointment form {
@@ -67,4 +67,17 @@
     width: 100%;
     height: 150px;
     padding: 10px;
+}
+
+.book-appointment form select {
+    border: 1px solid var(--primary-color);
+    background: none;
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+}
+
+.book-appointment .btn-primary{
+    width: 100%;
+    margin-top: 20px;
 }

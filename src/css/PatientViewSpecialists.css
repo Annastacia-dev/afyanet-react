@@ -14,7 +14,6 @@
 .specialist .card{
     background-color: var(--background-color-4);
     border: none;
-    width: 90% ;
     border-radius: 20px;
 }
 .specialist .card .card-body{

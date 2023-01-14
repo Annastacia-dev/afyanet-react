@@ -1,12 +1,10 @@
 .doctor-login{
-    margin-top: 50px;
     background-color: var(--background-color-4);
     height: 100vh;
 }
 
 .doctor-login h2{
-    margin-top: 100px;
-    margin-bottom: 20px;
+    margin-top: 90px;
     text-align: center;
     font-size: 1.5rem;
     font-weight: 600;

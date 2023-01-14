@@ -15,10 +15,6 @@ const DoctorAuthenticate = () => {
 
     const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 
-    const [startTime, setStartTime] = useState('')
-    const [endTime, setEndTime] = useState('')
-    const [timeErrors, setTimeErrors] = useState([])
-
     const [selectedDays, setSelectedDays] = useState([])
 
     const handleDaysChange = (e) => {
@@ -31,15 +27,6 @@ const DoctorAuthenticate = () => {
         }
     }
 
-    function validatesTime(){
-
-            if(startTime > endTime){
-                setTimeErrors(['Start time must be before end time'])
-            }else{
-                setTimeErrors([])
-            }
-
-    }
 
 console.log('doctor',doctor)
 
@@ -50,6 +37,7 @@ const [formData, setFormData] = useState({
     licenseNumber: 0,
     specialityId: "",
     location: "",
+    time: "",
     contractLength: 1
 })
 
@@ -70,13 +58,16 @@ const handleChange = (e) => {
             location: formData.location,
             days_available_weekly: selectedDays.join(', '),
             contract_length: formData.contractLength,
-            specific_days_times_available: startTime + " - " + endTime,
-            password: '@Richard11',
-            password_confirmation: '@Richard11'
+            specific_days_times_available: formData.time,
+            password: 'doctor.password_digest',
+            password_confirmation: 'doctor.password_digest'
         };
-        fetch(`https://afyanet-127t.onrender.com/doctor_profile`, {
+        fetch(`https://afyanet-127t.onrender.com/doctors/${doctor.id}`, {
             method: 'PATCH',
-            headers: {"Content-Type": "application/json"},
+            headers: {
+                Accepts: "application/json",
+                "Content-Type": "application/json"
+            },
             body: JSON.stringify(doctorData)
         })
         .then (r => {
@@ -224,7 +215,7 @@ return (
                             </Col>
                             <Col lg="6">
                                 <Form.Group className="mb-3" controlId="formBasicSpecialty">
-                                    <Form.Select name="specialityId" aria-label = "Select Your Specialty" onChange={handleSpecialtyChange} required>
+                                    <Form.Select className='select-specialty' name="specialityId" aria-label = "Select Your Specialty" onChange={handleSpecialtyChange} required>
                                         <option value="">Select Your Specialty*</option>
                                         <option value="General Practitioner">General Practitioner</option>
                                         <option value="Optician">Optician</option>
@@ -286,22 +277,8 @@ return (
                             </Col>
                             <Col lg="3">
                                 <Form.Label>Start Time*</Form.Label>
-                                <Form.Group className="mb-3" controlId="formBasicStartTime">
-                                    <Form.Control name="timeAvailable" type="time" required autoComplete='on' value={startTime} 
-                                    onChange={(e) => {
-                                        setStartTime(e.target.value)
-                                        validatesTime()
-                                        }} />
-                                </Form.Group>
-                            </Col>
-                            <Col lg="3">
-                                <Form.Label>End Time*</Form.Label>
-                                <Form.Group className="mb-3" controlId="formBasicEndTime">
-                                    <Form.Control name="timeAvailable" type="time" placeholder="Time Available*" required autoComplete='on' value={endTime}
-                                    onChange={(e) => {
-                                        setEndTime(e.target.value)
-                                        validatesTime()
-                                        }} />
+                                <Form.Group className="mb-3" controlId="formBasicTime">
+                                    <Form.Control name="time" type="time" required autoComplete='on' value={formData.time} onChange={handleChange} />
                                 </Form.Group>
                             </Col>
                         </Row>
@@ -312,16 +289,7 @@ return (
                                         <p style={{fontSize: "12px"}}>{error}</p>
                                         </Col>
                                     ))
-                                }
-                                {
-                                timeErrors && timeErrors.map((error, index) => (
-                                    <Col md={5} sm={12} gap={6}  className="alert alert-danger" role="alert" key={index}>
-                                        <p style={{fontSize: "12px"}}>{error}</p>
-                                        </Col>
-                                    ))
-                                    
-                            }
-                           
+                                }   
                         </Row>
                         <Row className="justify-content-center">
                             <Col lg="6">

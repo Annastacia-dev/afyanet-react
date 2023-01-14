@@ -1,19 +1,17 @@
 .patient-login{
-    margin-top: 50px;
     background-color: var(--background-color-4);
     height: 100vh;
 }
 
 .patient-login h2{
-    margin-top: 100px;
-    margin-bottom: 20px;
+    margin-top: 90px;
     text-align: center;
     font-size: 1.5rem;
     font-weight: 600;
 }
 
 .patient-login form{
-    padding: 40px;   
+    padding: 20px;   
 }
 .patient-login input[type="email"], .patient-login input[type="password"]{
     width: 100%;

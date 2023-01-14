@@ -107,6 +107,7 @@ const PatientBookAppointment = () => {
                 })
                 setTimeout(() => {
                     navigate('/patient/dashboard')
+                    window.location.reload()
                 }, 3000)
             } else {
                 res.json().then(data => {

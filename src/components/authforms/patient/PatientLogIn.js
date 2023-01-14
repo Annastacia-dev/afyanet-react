@@ -43,6 +43,7 @@ const PatientLogIn = () => {
                 }, 500);
                 setTimeout(() => {
                     navigate('/patient/dashboard')
+                    window.location.reload()
                 } , 3000);
             })
         } else {
