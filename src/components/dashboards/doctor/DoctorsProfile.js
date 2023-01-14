@@ -2,6 +2,8 @@ import React from "react";
 import DoctorSideBar from './DoctorSideBar';
 import DoctorProfile from './DoctorProfile';
 
+function DoctorsProfile(){
+
 <section style="background-color: #eee;">
   <div class="container py-5">
     <div class="row">
@@ -95,5 +97,6 @@ import DoctorProfile from './DoctorProfile';
           </div>
         </div>
    </section>
+};
 
 export default DoctorsProfile
