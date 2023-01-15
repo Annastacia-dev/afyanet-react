@@ -33,7 +33,7 @@ const DoctorSideBar = () => {
         <i className="fa-solid fa-hospital-user"></i>
           <p>Patients</p>  
         </a>
-        <a href="/doctor/statistics" className="list-group-item list-group-item-action p-4">
+        <a href="/doctor/medicalrecords" className="list-group-item list-group-item-action p-4">
         <i className="fa-solid fa-table"></i>
           <p>Statistics</p>
         </a>

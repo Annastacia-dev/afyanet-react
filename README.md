@@ -3,6 +3,9 @@
 AfyaNet is a platform for connecting patients with health care providers, including tools for 
 scheduling appointments, managing medical records, and tracking health data.
 
+## Live Link
+https://afyanetapp.onrender.com/
+
 ## Users
 The platform is used with patients and health care providers who are able to login and access the following services;
 1. The user/patient is able to search for and find 

@@ -1,7 +1,9 @@
-.doctor-dashboard {
+ .doctor-dashboard {
     background-color: #fff;
     height: 100vh;
  }
+ 
+ 
  .greeting.card{
     margin-top: 20px;
     margin-bottom: 20px;

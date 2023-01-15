@@ -48,7 +48,7 @@ const PatientSignUp = () => {
             password: formData.password,
             password_confirmation: formData.passwordConfirmation
         };
-        fetch('http://localhost:3000/patient_signup', {
+        fetch('https://afyanet-127t.onrender.com/patient_signup', {
             method: 'POST',
             headers: { 
                 Accepts: "application/json",
@@ -65,6 +65,7 @@ const PatientSignUp = () => {
                 }, 500);
                 setTimeout(() => {
                     navigate('/patient/dashboard')
+                    window.location.reload()
                 } , 3000);
             })
         } else {

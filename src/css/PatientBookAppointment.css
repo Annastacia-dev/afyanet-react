@@ -1,0 +1,94 @@
+.avatar-bookappointment{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: block;
+    object-fit: cover;
+}
+
+.book-appointment h3{
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.book-appointment .days{
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 20px;
+    text-transform: capitalize;
+}
+
+.book-appointment .time-range i{
+    margin-right: 10px;
+}
+
+.book-appointment .time-range{
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.book-appointment .doc-details{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+}
+
+.book-appointment .doc-details .doc-info{
+    margin-top: 20px;
+    margin-left: -350px;
+}
+
+.book-appointment form {
+    background-color: var(--background-color-3);
+    padding: 40px;
+}
+
+.book-appointment label {
+    font-weight: 500;
+    text-align: left;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.book-appointment form input {
+    border: 1px solid var(--primary-color);
+    background: none;
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+}
+
+ .book-appointment form textarea{
+    border: 1px solid var(--primary-color);
+    background: none;
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+}
+
+.book-appointment form select {
+    border: 1px solid var(--primary-color);
+    background: none;
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+}
+
+.book-appointment .btn-primary{
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Media */
+@media screen and (max-width: 768px) {
+    .book-appointment .doc-details{
+        display: block;
+    }
+    .book-appointment .doc-details .doc-info{
+        margin-top: 20px;
+        margin-left: 0px;
+    }
+}

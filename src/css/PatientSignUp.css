@@ -1,12 +1,12 @@
 .patient-signup{
     background-color: var(--background-color-4); 
-    padding-top: 74px;  
+    padding-top: 70px;  
 }
 
 .patient-signup h2{
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 20px;
     font-weight: 600;
 }
 .patient-signup form{
@@ -14,8 +14,8 @@
 }
 .patient-signup input[type="text"], .patient-signup input[type="email"], .patient-signup input[type="password"], .patient-signup input[type="tel"], .patient-signup input[type="date"]{
     width: 100%;
-    height: 60px;
-    padding: 10px;
+    height: 50px;
+    padding: 5px;
     margin-bottom: 30px;
     border: 1px solid #ddd;
     border-radius: 5px;

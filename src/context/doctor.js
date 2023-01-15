@@ -9,7 +9,7 @@ const DoctorProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
   
     useEffect(() => {
-        fetch("http://localhost:3000/doctor_profile", {
+        fetch("https://afyanet-127t.onrender.com/doctor_profile", {
           method: "GET",
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
