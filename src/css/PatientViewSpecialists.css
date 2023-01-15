@@ -27,3 +27,20 @@
 .specialist .btn-primary{
     width: 70%;
 }
+
+/* Media */
+@media screen and (max-width: 768px) {
+    .specialists{
+        margin: 0 auto;
+    }
+    .specialist .card .card-body{
+        margin-left: 0px;
+        text-align: center;
+    }
+    .specialist .card .card-title{
+        margin-top: 0px;
+    }
+    .specialist .btn-primary{
+        width: 100%;
+    }
+}

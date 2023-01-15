@@ -52,3 +52,19 @@
 .patient-login a:hover{
     color: var(--dark-purple);
 }
+
+/* Media */
+@media screen and (max-width: 768px) {
+    .patient-login{
+        height: 100%;
+    }
+    .patient-login h2{
+        font-size: 1.2rem;
+    }
+    .patient-login input[type="email"], .patient-login input[type="password"]{
+        height: 60px;
+    }
+    .patient-login .btn-primary{
+        width: 100%;
+    }
+}

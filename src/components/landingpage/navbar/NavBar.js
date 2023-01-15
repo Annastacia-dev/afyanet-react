@@ -38,9 +38,9 @@ function NavBar () {
                       closeOnDocumentClick
                       position='top left'
                        >
-                        < button className='popup-btn btn btn-primary'  onClick={() => navigate('/patient/login')}>As A Patient</button>
+                        <button className='popup-btn btn btn-primary'  onClick={() => navigate('/patient/login')}>As A Patient</button>
                         <br />
-                        <Button variant="primary" onClick={() => navigate('/doctor/login')}>As A Doctor</Button>
+                        <Button className='popup-btn btn btn-primary' variant="primary" onClick={() => navigate('/doctor/login')}>As A Doctor</Button>
                     </Popup>
                     </Nav>
                 </Navbar.Collapse>

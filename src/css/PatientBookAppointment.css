@@ -81,3 +81,14 @@
     width: 100%;
     margin-top: 20px;
 }
+
+/* Media */
+@media screen and (max-width: 768px) {
+    .book-appointment .doc-details{
+        display: block;
+    }
+    .book-appointment .doc-details .doc-info{
+        margin-top: 20px;
+        margin-left: 0px;
+    }
+}
