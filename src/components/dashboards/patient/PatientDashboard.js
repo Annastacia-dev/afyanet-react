@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import '../../../css/PatientDashboard.css'
 import PatientNavBar from './PatientNavBar';
 import '../../../css/PatientDashboard.css'
+import Loading from '../../display/Loading';
 
 const PatientDashboard = () => {
 
@@ -13,7 +14,7 @@ const PatientDashboard = () => {
 
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <Loading />
   }
 
   if (error) {
