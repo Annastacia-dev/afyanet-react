@@ -10,7 +10,6 @@
 .book-appointment h3{
     font-size: 25px;
     font-weight: bold;
-    margin-top: 20px;
 }
 
 .book-appointment .days{
@@ -20,8 +19,17 @@
     text-transform: capitalize;
 }
 
-.book-appointment .time-range i{
+.book-appointment  i{
     margin-right: 10px;
+    font-size: 17px;
+    color: var(--primary-color);
+}
+
+.book-appointment p{
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 20px;
+    text-transform: capitalize;
 }
 
 .book-appointment .time-range{

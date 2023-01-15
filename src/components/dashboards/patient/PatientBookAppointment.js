@@ -44,6 +44,8 @@ const PatientBookAppointment = () => {
         })
     }
 
+    const [errors, setErrors] = useState([])
+
     const doctorAvailableTime = new Date(doctor && doctor.specific_days_times_available).toLocaleTimeString('en-US', {
         hour: 'numeric',
         minute: 'numeric',
@@ -111,17 +113,7 @@ const PatientBookAppointment = () => {
                 }, 3000)
             } else {
                 res.json().then(data => {
-                    console.log(data)
-                    toast.error(data.error,{
-                        position: 'top-center',
-                        autoClose: 1000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: 'colored'
-                    })
+                    setErrors(data.errors)
                 })
             }
         })
@@ -140,13 +132,15 @@ const PatientBookAppointment = () => {
         style: { backgroundColor: '#9263CB'}
     });
 
+   
 
 
-
+   
   return (
     <div>
     <Container className="book-appointment mt-5" fluid>
         <ToastContainer
+            limit={2}
             position="top-center"
             autoClose={5000}
             hideProgressBar={false}
@@ -164,7 +158,8 @@ const PatientBookAppointment = () => {
                 <img src={doctor ? doctor.profile_picture ? doctor.profile_picture : "https://www.w3schools.com/howto/img_avatar.png" : null} alt="avatar" className="avatar-bookappointment" />
                 <div className='doc-info'>
                 <h3>You are booking an appointment with Dr. {doctor && doctor.first_name} {doctor &&doctor.last_name}</h3>
-                <p className="days">Available: {doctor ? doctor.days_available_weekly : null}</p>
+                <p className="location"><i className="fa-solid fa-location-dot"></i>{doctor && doctor.location }</p>
+                <p className="days"><i className="fa-solid fa-calendar-days"></i>{doctor ? doctor.days_available_weekly : null}</p>
                 <p className="time-range">
                     <i className="far fa-clock"></i>
                     {doctorAvailableTime}
@@ -173,6 +168,16 @@ const PatientBookAppointment = () => {
                 </div>
             </Col>
         </Row>
+        <Col md={6} className="justify-content-center">
+                {
+                  errors && errors.map((error, index) => (
+                    <Col md={5} sm={12} gap={6}  className=" justify-content-center alert alert-danger" role="alert" key={index}>
+                        <p style={{fontSize: "12px"}}>{error}</p>
+                     </Col>
+                ))
+                }
+                           
+        </Col>
         <Row className="justify-content-center">
             <Col lg="8">
                 <Form onSubmit={handleSubmit}>
