@@ -34,7 +34,7 @@ const PatientViewSpecialists = () => {
               <Col key={doctor.id} className="specialist mt-3" md={4}>
                 <Card className="card shadow">
                   <Col md={3}>
-                  <Card.Img className='avatar' src={doctor.profile_picture ? doctor.profile_picture : "https://www.w3schools.com/howto/img_avatar.png"} />
+                  <Card.Img className='avatar' src={doctor.profile_picture ? doctor.profile_picture : "https://www.w3schools.com/howto/img_avatar.png"}/>
                   </Col>
                   <Card.Body>
                     <Card.Title>Dr. {doctor.first_name} {doctor.last_name}</Card.Title>
