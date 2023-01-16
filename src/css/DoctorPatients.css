@@ -36,7 +36,7 @@
   border: none;
   margin-top:60px;
   margin-left:30px;
-  width: 50% ;
+  width: 45% ;
   border-radius: 20px;
   text-align: right;
   padding: 60px 30px;
@@ -64,6 +64,7 @@
   width: 100% ;
   border-radius: 20px;
   text-align: right;
+  margin-top: -150px;
 
 }
 .patient-name{
@@ -119,6 +120,76 @@
   text-align: right;
 }
 
+/* health-data */
+.health-data {
+  background-color: white;
+  float: left; 
+  height: 45%;
+  width: 45%; 
+  padding: 10px; 
+  margin-top: -840px;
+  margin-bottom: 100px;
+  margin-left: 900px;
+  /* background-color: var(--background-color-4); */
+  /* border: none;
+  margin-left: -200px;
+  width: 100% ;
+  border-radius: 20px; */
+  text-align: right;
+  padding: 100px 20px;
+
+}
+.health-title{
+  margin-top:-80px;
+  /* margin-right: 130px; */
+  text-align:center;
+}
+.healthdata-table{
+  margin-top:-30px;
+  margin-left:-55px;
+  background-color: white;
+  border-radius: 25px;
+}
+
+/* medication */
+.medication-card{
+  background-color: white;
+  float: left; 
+  height: 45%;
+  width: 45%; 
+  padding: 10px; 
+  margin-top: -600px;
+  margin-bottom: 100px;
+  margin-left: 900px;
+  text-align: center;
+  padding: 140px 20px;
+
+}
+.medication-title{
+  margin-top:-100px;
+  /* margin-right: 130px; */
+  text-align:center;
+}
+.allergies-card{
+  background-color: white;
+  float: left; 
+  height: 45%;
+  width: 45%; 
+  padding: 10px; 
+  margin-top: -280px;
+  margin-bottom: 100px;
+  margin-left: 900px;
+  text-align: center;
+  padding: 140px 20px;
+}
+.allergies-ul{
+  /* margin-top: -120px; */
+}
+.allergies-title{
+  margin-top:-120px;
+  /* margin-right: 130px; */
+  text-align:center;
+}
 @media screen and (max-width: 768px) {
     .patients{
         margin: 0 auto;
