@@ -55,6 +55,20 @@ const EditAllergies = () => {
 
   return (
     <div>
+        <ToastContainer
+            position="top-center"
+            autoClose={1000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme='colored'
+            transition='slide'
+            style={{ backgroundColor: '#9263CB'}}
+         />
         <Form onSubmit={handleSubmit}>
             <Form.Group as={Row} controlId="formHorizontalEmail">
                 <Form.Label column sm={2}>
@@ -70,7 +84,6 @@ const EditAllergies = () => {
                 </Col>
             </Form.Group>
         </Form>
-        <ToastContainer />
     </div>
   )
 }
