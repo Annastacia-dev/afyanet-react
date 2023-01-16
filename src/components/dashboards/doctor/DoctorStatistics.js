@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
 import DoctorSideBar from './DoctorSideBar';
 import { Row, Col, Card } from 'react-bootstrap';
 import { BsFillPersonFill } from "react-icons/bs";
@@ -7,7 +7,8 @@ import { TiMessages } from "react-icons/ti";
 import { AiOutlineFileSearch } from "react-icons/ai";
 import { GoGraph } from "react-icons/go";
 import { IoPieChartSharp } from "react-icons/io5";
-import '../../../css/DoctorStatistics.css'
+import '../../../css/DoctorStatistics.css';
+import { DoctorContext } from '../../../context/doctor';
 
 
 
@@ -15,39 +16,9 @@ function Statistics() {
 
   const style = { color: "var(--light-purple)" }
 
-  const baseUrl = "https://afyanet-127t.onrender.com/";
-  const [active, setActive] = useState("");
-  const [total, setTotal] = useState("");
-  const [messages, setMessages] = useState("");
-
-
-  useEffect(() => {
-    getActive();
-    getTotal();
-    message();
-  }, []);
-
-  // get active patients
-  function getActive() {
-    fetch(`{$baseUrl}active patients`)
-    .then((res)=> res.json())
-    .then((res) => setActive(res))
-  }
-
-  // get total appointments
-  function getTotal() {
-    fetch(`{$baseUrl}total appointments`)
-    .then((res) => res.json())
-    .then((res) => setTotal(res))
-  }
-
-  // get messages
-  function message() {
-    fetch(`{$baseUrl}messages`)
-    .then((res) => res.json())
-    .then((res) => setMessages(res))
-  }
-
+  const {doctor} = useContext(DoctorContext);
+  console.log(doctor)
+  
 
   return (
 
@@ -65,7 +36,7 @@ function Statistics() {
                   <Card.Body>
                     <Card.Title>Total Patients</Card.Title>
                     <Card.Text>
-                      {active}
+                      {doctor.patients }
                     </Card.Text>
                   </Card.Body>
                 </Card>
@@ -75,7 +46,7 @@ function Statistics() {
                   <BsCalendarCheckFill size={100} style={style} />
                   <Card.Body>
                     <Card.Title>Total Appointments</Card.Title>
-                    <Card.Text>{total}</Card.Text>
+                    <Card.Text>5</Card.Text>
                   </Card.Body>
                 </Card>
               </Col>
@@ -85,7 +56,7 @@ function Statistics() {
                   <Card.Body>
                     <Card.Title>Total Messages</Card.Title>
                     <Card.Text>
-                      {messages}
+                      15
                     </Card.Text>
                   </Card.Body>
                 </Card>
