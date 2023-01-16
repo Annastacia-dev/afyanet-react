@@ -14,10 +14,10 @@
   padding-left: 190px;
  }
 
- .patient .card{
+ .patient-card{
   background-color: var(--background-color-4);
   border: none;
- 
+  margin-left: -110px;
   width: 100% ;
   border-radius: 20px;
   text-align: right;
@@ -28,12 +28,31 @@
   height: 40%;
 
 }
+.appointment-card{
+  background-color: var(--background-color-4);
+  border: none;
+  margin-top:120px;
+  margin-left:100px;
+  width: 50% ;
+  border-radius: 20px;
+  text-align: right;
+  padding: 100px 20px;
+}
 /* .patient .card .card-title{
   margin-top: -70px;
 } */
 .patient-name{
   margin-top:-90px;
   margin-left: 90px;
+}
+.appointment-name{
+  margin-top:-92px;
+  /* margin-right: 130px; */
+  text-align:center;
+}
+.appointment-history{
+  margin-top:-40px;
+  margin-left:-95px;
 }
 
 @media screen and (max-width: 768px) {
