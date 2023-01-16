@@ -2,7 +2,7 @@
     width: 90px;
     height: 100px;
     border-radius: 50%;
-    margin-top: 19px;
+    margin-top: 59px;
     display: block;
     object-fit: cover;
     position: relative;
@@ -14,10 +14,12 @@
   padding-left: 190px;
  }
 
- .patient .card{
-  background-color: var(--background-color-4);
+ .patient-card{
+  background-color: white;
+
+  /* background-color: var(--background-color-4); */
   border: none;
- 
+  margin-left: -170px;
   width: 100% ;
   border-radius: 20px;
   text-align: right;
@@ -28,12 +30,64 @@
   height: 40%;
 
 }
+.appointment-card{
+  background-color: white;
+  /* background-color: var(--background-color-4); */
+  border: none;
+  margin-top:60px;
+  margin-left:30px;
+  width: 50% ;
+  border-radius: 20px;
+  text-align: right;
+  padding: 60px 30px;
+  margin-bottom: 50px;
+}
+.patientdetails-card{
+  background-color: var(--background-color-4);
+  padding: 30px -20px;
+  /* background-color: white; */
+
+}
 /* .patient .card .card-title{
   margin-top: -70px;
 } */
+/* .patient-body{
+  text-align: left;
+  margin-left: 100px;
+} */
 .patient-name{
-  margin-top:-90px;
-  margin-left: 90px;
+  margin-top:-100px;
+  margin-right: 100px;
+ 
+
+}
+.patient-location{
+  text-align: left;
+  margin-left: 150px;
+  /* margin-top: -90px; */
+
+}
+.patient-age{
+  text-align: left;
+  margin-left: 150px;
+  /* margin-top: -10px; */
+}
+.appointment-name{
+  margin-top:-30px;
+  /* margin-right: 130px; */
+  text-align:center;
+}
+.appointment-history{
+  margin-top:-20px;
+  margin-left:-95px;
+  background-color: white;
+}
+.appointment-body{
+  background-color: white;
+  text-align: left;
+}
+.diagnosis{
+  text-align: right;
 }
 
 @media screen and (max-width: 768px) {

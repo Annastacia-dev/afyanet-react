@@ -12,27 +12,25 @@ const AddAllergies = () => {
     setAllergies(e.target.value)
   }
 
-//  A patient has one medical record , path "https://afyanet-127t.onrender.com/patient_profile"
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`https://afyanet-127t.onrender.com/patient_profile`, {
-      method: "PATCH",
+    fetch(`https://afyanet-127t.onrender.com/medical_records`, {
+      method: "POST",
       headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        medical_record: {
           allergies: allergies,
           patient_id: patient.id
-        }
       }),
     })
     .then(r => {
       if (r.ok) {
         r.json().then(data => {
           console.log(data)
+          window.location.reload();
         })
       } else {
         r.json().then(data => {

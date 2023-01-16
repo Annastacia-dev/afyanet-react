@@ -30,8 +30,19 @@ const DoctorProvider = ({ children }) => {
         })
     }, []);
 
+    // fetch patient
+//     const [patients, setPatients] = useState(null);
+
+//  useEffect(() => {
+//       fetch('https://afyanet-127t.onrender.com/patients')
+//         .then((res) => res.json())
+//         .then((data) => {
+//           setPatients(data);
+//         });
+//     }, []);
+
     return (
-        <DoctorContext.Provider value={{ doctor, setDoctor, error, loading }}>
+        <DoctorContext.Provider value={{ doctor, setDoctor, error, loading  }}>
             {children}
         </DoctorContext.Provider>
     );

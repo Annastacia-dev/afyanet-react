@@ -25,7 +25,6 @@
 
 .patient-medical-records .allergies {
     background-color: var(--background-color-4);
-    list-style: none;
     margin: 0 auto;
     width: 50%;
     border-radius: 20px;
@@ -33,12 +32,17 @@
     position: relative;
     
 }
+.patient-medical-records .allergies ul{
+    list-style: none;
+    text-align: left;
+}
 .patient-medical-records .allergies i{
     font-size: 20px;
     margin-right: 10px;
 }
 .patient-medical-records .allergies li{
     text-align: left;
+    text-transform: capitalize;
 }
 
 .patient-medical-records .medications {
@@ -56,6 +60,7 @@
 }
 .patient-medical-records .medications li{
     text-align: left;
+    text-transform: capitalize;
 }
 
 .patient-medical-records .btn-primary{
@@ -65,4 +70,35 @@
     color: var(--primary-color);
     right: 10px;
     top: 1px;
+}
+.patient-medical-records .medications ul{
+    list-style: none;
+    text-align: left;
+}
+
+.healthdata-edit{
+    background-color: var(--primary-color);
+    padding: 10px;
+    color: #fff;
+    margin-left: 50px;
+    border: none;
+    border-radius: 5px;
+}
+
+.healthdata-edit i{
+    margin-right: 10px;
+}
+
+
+.healthdata-add{
+    background-color: var(--primary-color);
+    padding: 10px;
+    color: #fff;
+    margin-left: 50px;
+    border: none;
+    border-radius: 5px;
+}
+
+.healthdata-add i{
+    margin-right: 10px;
 }
