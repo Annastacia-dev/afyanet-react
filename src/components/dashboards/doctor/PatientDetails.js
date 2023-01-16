@@ -23,7 +23,7 @@ function PatientDetails(){
 
     return(
         <>
-      
+      <Card className="patientdetails-card">
        <Container>
         <Row>
       <Col  className="patient mt-3" md={4} key={patient && patient.id}>
@@ -32,12 +32,12 @@ function PatientDetails(){
                   <Card.Img className='avatar-patient' src={patient && patient.profile_picture ? patient && patient.profile_picture : "https://www.w3schools.com/howto/img_avatar.png"} />
                   </Col>
                   <Card.Body>
-                    <Card.Title className="patient-name"> {patient && patient.first_name} {patient && patient.last_name}</Card.Title>
-                    <Card.Subtitle className="mb-2 ">
+                    <Card.Title className=" patient-name"> {patient && patient.first_name} {patient && patient.last_name}</Card.Title>
+                    <Card.Subtitle className="mb-2 patient-location ">
                     {patient && patient.location}</Card.Subtitle>
 
-                    <Card.Subtitle className="mb-2  age">
-                    {patient && patient.age}
+                    <Card.Subtitle className="patient-age">
+                    {patient && patient.age} Yrs Old
                     </Card.Subtitle>
                   </Card.Body>
                 </Card>
@@ -57,11 +57,22 @@ function PatientDetails(){
                     <Col md={12}>
                         <Table striped bordered hover className="appointment-history">
                         <thead>
-                      <tr>
+                      <tr className="appointment-subtitles">
                        <th>Date</th>
-                        <th>Diagnosis</th>
+                        <th className="diagnosis">Diagnosis</th>
                        </tr>
                     </thead>
+                      { patient && patient.appointments && patient.appointments.length > 0 && patient.appointments.map((appointment) => {
+
+                        return(
+                            <tbody className="appointment-body"key={appointment.id}>
+                            <tr>
+                              <td>{appointment.date}</td>
+                              <td>{appointment.diagnosis}</td>
+                                 </tr>
+                          </tbody>
+                        )
+                      })}
                         </Table>
                     </Col>
 
@@ -71,7 +82,7 @@ function PatientDetails(){
                   
                   </Col>
 
-                                  
+                  </Card>          
       <Container>
                   {/* <Row>
                {patient && patient.appointments && patient.appointments.length > 0 && patient.appointments.map((appointment) =>
