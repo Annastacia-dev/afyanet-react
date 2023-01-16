@@ -36,7 +36,6 @@ function Patients(){
        <DoctorSideBar />
        
           <Container className="patients mt-5" fluid>
-             {/* <AgeCalculator/>  */}
             <Row>
                {doctor && doctor.appointments && doctor.appointments.length > 0 && doctor.appointments.map((appointment) =>
                {
@@ -44,9 +43,7 @@ function Patients(){
                   <Col  className="patient mt-3" md={4}>
                     <Card className="patient-card">
                   <Col md={3}>
-                  {/* <Card.Img className='avatar' src={doctor.profile_picture ? doctor.profile_picture : "https://www.w3schools.com/howto/img_avatar.png"} /> */}
                   <Card.Img className='avatar-patient' src={appointment.patient.profile_picture ? appointment.patient.profile_picture : "https://www.w3schools.com/howto/img_avatar.png"} />
-                  {/* <i class="fa-solid fa-user"></i> */}
                   </Col>
                   <Card.Body>
                     <Card.Title className="patient-name"> {appointment.patient.first_name} {appointment.patient.last_name}</Card.Title>
@@ -57,7 +54,7 @@ function Patients(){
                     <Card.Subtitle className="mb-2 text-muted age">
                       <AgeCalculator/>
                     </Card.Subtitle>
-                    <Button className="btn"  onClick={() => navigate(`/doctor/PatientDetails/${appointment.patient.id}`)} variant="primary">View Details</Button>
+                    <Button className="btn"  onClick={() => navigate(`/doctor/patientdetails/${appointment.patient.id}`)} variant="primary">View Details</Button>
                   </Card.Body>
                 </Card>
 
