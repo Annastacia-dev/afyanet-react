@@ -36,7 +36,7 @@ const PatientAppointments = () => {
                         hour12: true,
                       })
                    
-                      if (appointmentDate > currentDate && appointmentTime > currentTime) {
+                      if (appointmentDate > currentDate || (appointmentDate === currentDate && appointmentTime > currentTime)) {
                         return (
                           <Table>
                             <thead>
@@ -89,7 +89,7 @@ const PatientAppointments = () => {
                       // return the first 30 characters of the diagnosis
                       const diagnosis = appointment.diagnosis && appointment.diagnosis.substring(0, 15)
 
-                      if (appointmentDate < currentDate && appointmentTime < currentTime) {
+                      if (appointmentDate < currentDate) {
                         return (
                           <Table >
                             <thead>
