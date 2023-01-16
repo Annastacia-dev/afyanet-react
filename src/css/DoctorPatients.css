@@ -15,11 +15,11 @@
  }
 
  .patient-card{
-  background-color: white;
+  /* background-color: white; */
 
-  /* background-color: var(--background-color-4); */
+  background-color: var(--background-color-4);
   border: none;
-  margin-left: -170px;
+  margin-left: -30px;
   width: 100% ;
   border-radius: 20px;
   text-align: right;
@@ -44,7 +44,7 @@
 }
 .patientdetails-card{
   background-color: var(--background-color-4);
-  padding: 30px -20px;
+  padding: 140px 70px;
   /* background-color: white; */
 
 }
@@ -55,9 +55,26 @@
   text-align: left;
   margin-left: 100px;
 } */
+.a-patient-card{
+  background-color: white;
+
+  /* background-color: var(--background-color-4); */
+  border: none;
+  margin-left: -100px;
+  width: 100% ;
+  border-radius: 20px;
+  text-align: right;
+
+}
 .patient-name{
   margin-top:-100px;
-  margin-right: 100px;
+  margin-right: 10px;
+ 
+
+}
+.a-patient-name{
+  margin-top:-100px;
+  margin-right: 82px;
  
 
 }
@@ -67,9 +84,21 @@
   /* margin-top: -90px; */
 
 }
+
+.a-patient-location{
+  text-align: left;
+  margin-left: 230px;
+  /* margin-top: -90px; */
+
+}
 .patient-age{
   text-align: left;
   margin-left: 150px;
+  /* margin-top: -10px; */
+}
+.a-patient-age{
+  text-align: left;
+  margin-left: 230px;
   /* margin-top: -10px; */
 }
 .appointment-name{
