@@ -7,6 +7,8 @@ const PatientMedicalRecords = () => {
 
   const { patient } = useContext(PatientContext);
 
+  console.log(patient)
+
 
   return (
     <div className="d-flex" id="wrapper">
@@ -26,24 +28,37 @@ const PatientMedicalRecords = () => {
                     </tr>
                   </thead>
                   <tbody>
-                      {
-                        patient && patient.medical_records && patient.medical_records.map((record, index) => {
-                          return (
-                            <tr key={index}>
-                              <td>{record.blood_pressure ? record.blood_pressure : '0' }</td>
-                              <td>{record.weight ? record.weight : '0' }</td>
-                              <td>{record.height ? record.height : '0' }</td>
-                              <td>{record.temperature ? record.temperature : '0' }</td>
-                            </tr>
-                          )
-                        })
-                      }
+                     {
+                      <tr>
+                        <td>{patient && patient.medical_record.blood_pressure} mmHg</td>
+                        <td>{patient && patient.medical_record.weight} kgs</td>
+                        <td>{patient && patient.medical_record.height} ft</td>
+                        <td>{patient && patient.medical_record.temperature}&deg;C</td>
+                      </tr>
+                     }
                   </tbody>
                 </Table>
               </Col>
               <Col md={12} className="mb-4">
                 <p>Allergies</p>
+                {
+                  // convert string to list
+                  patient && patient.medical_record.allergies.split(',').map((allergy, index) => {
+                    return <li key={index}>{allergy}</li>
+                  }
+                  )
+                }
                  
+              </Col>
+              <Col md={12} className="mb-4">
+                <p>Medications</p>
+                {
+                  // convert string to list
+                  patient && patient.medical_record.medications.split(',').map((medication, index) => {
+                    return <li key={index}>{medication}</li>
+                  }
+                  )
+                }
               </Col>
             </Row>
           </div>

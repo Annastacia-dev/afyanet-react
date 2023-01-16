@@ -64,7 +64,7 @@ const PatientSignUp = () => {
                     notify()
                 }, 500);
                 setTimeout(() => {
-                    navigate('/patient/dashboard')
+                    navigate('/patient/login')
                 } , 3000);
             })
         } else {
