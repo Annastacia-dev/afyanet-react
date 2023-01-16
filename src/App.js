@@ -19,7 +19,7 @@ import Patients from './components/dashboards/doctor/Patients';
 import DoctorMessages from './components/dashboards/doctor/DoctorMessages';
 import DoctorProfile from './components/dashboards/doctor/DoctorProfile';
 import DoctorStatistics from './components/dashboards/doctor/DoctorStatistics';
-
+import PatientDetails from './components/dashboards/doctor/PatientDetails';
 
 function App() {
 
@@ -46,6 +46,8 @@ function App() {
         <Route path="/doctor/messages" element={<DoctorMessages />} />
         <Route path="/doctor/profile" element={<DoctorProfile/>} />
         <Route path="/patient/bookappointment/:id" element={<PatientBookAppointment />} />
+        <Route path="/doctor/patientdetails/:id" element={<PatientDetails />} />
+
       </Routes>
     </div>
   );
