@@ -1,4 +1,4 @@
-import React,  { useContext } from "react";
+import React,  { useContext, useState, useEffect } from "react";
 import DoctorSideBar from './DoctorSideBar';
 import DoctorNavBar from './DoctorNavBar';
 import "../../../css/DoctorDashboard.css"
@@ -15,10 +15,9 @@ function Patients(){
   const { id } = useParams()
 
 
-  const { doctor } = useContext(DoctorContext);
+  const { doctor } = useContext(DoctorContext)
   console.log(doctor)
-
-
+  
 // const appointment = doctor && doctor.appointments.map((appointment)=>{
 //   return(
 //   appointment
