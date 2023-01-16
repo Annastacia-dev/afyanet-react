@@ -25,13 +25,18 @@ const PatientAppointments = () => {
 
                       const appointmentDate = new Date(appointment.date)
                       const currentDate = new Date()
+                      const currentTime = new Date().toLocaleTimeString('en-US', {
+                        hour: 'numeric',
+                        minute: 'numeric',
+                        hour12: true,
+                      })
                       const appointmentTime = new Date(appointment.time).toLocaleTimeString('en-US', {
                         hour: 'numeric',
                         minute: 'numeric',
                         hour12: true,
                       })
                    
-                      if (appointmentDate > currentDate) {
+                      if (appointmentDate > currentDate && appointmentTime > currentTime) {
                         return (
                           <Table>
                             <thead>
@@ -70,6 +75,11 @@ const PatientAppointments = () => {
 
                       const appointmentDate = new Date(appointment.date)
                       const currentDate = new Date()
+                      const currentTime = new Date().toLocaleTimeString('en-US', {
+                        hour: 'numeric',
+                        minute: 'numeric',
+                        hour12: true,
+                      })
                       const appointmentTime = new Date(appointment.time).toLocaleTimeString('en-US', {
                         hour: 'numeric',
                         minute: 'numeric',
@@ -79,7 +89,7 @@ const PatientAppointments = () => {
                       // return the first 30 characters of the diagnosis
                       const diagnosis = appointment.diagnosis && appointment.diagnosis.substring(0, 15)
 
-                      if (appointmentDate < currentDate) {
+                      if (appointmentDate < currentDate && appointmentTime < currentTime) {
                         return (
                           <Table >
                             <thead>

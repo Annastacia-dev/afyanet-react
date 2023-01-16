@@ -4,6 +4,7 @@ import DoctorSideBar from './DoctorSideBar';
 import DoctorNavBar from './DoctorNavBar';
 import "../../../css/DoctorDashboard.css"
 import {Row, Col,Card,Table } from 'react-bootstrap';
+import Loading from '../../display/Loading';
 
 
 
@@ -12,7 +13,7 @@ const DoctorDashboard = () => {
   const { doctor, error, loading } = useContext(DoctorContext);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   if (error) {
@@ -97,7 +98,7 @@ const DoctorDashboard = () => {
 
               <Row className=" appointments-table mt-5 sidecontent">
                 <Col md={10}>
-                  <Table striped bordered hover>
+                  <Table>
                     <thead>
                       <tr>
                         <th>Name</th>
