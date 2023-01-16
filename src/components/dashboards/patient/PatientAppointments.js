@@ -21,6 +21,16 @@ const PatientAppointments = () => {
             <Row className="mt-5 upcoming-appointments  sidecontent">
               <Col md={12} className="mb-4">
                 <h3>Upcoming Appointments</h3>
+                <Table>
+                            <thead>
+                             <tr>
+                              <th>Doctor</th>
+                              <th>Date</th>
+                              <th>Time</th>
+                              <th>Location</th>
+                              <th>Mode</th>
+                              </tr>
+                            </thead>
                     {patient && patient.appointments && patient.appointments.length > 0 ? patient.appointments.map(appointment => {
 
                       const appointmentDate = new Date(appointment.date)
@@ -38,16 +48,6 @@ const PatientAppointments = () => {
                    
                       if (appointmentDate > currentDate || (appointmentDate === currentDate && appointmentTime > currentTime)) {
                         return (
-                          <Table>
-                            <thead>
-                             <tr>
-                              <th>Doctor</th>
-                              <th>Date</th>
-                              <th>Time</th>
-                              <th>Location</th>
-                              <th>Mode</th>
-                              </tr>
-                            </thead>
                             <tbody>
                             <tr key={appointment.id}>
                               <td>
@@ -60,17 +60,28 @@ const PatientAppointments = () => {
                               <td><p>{appointment.mode}</p></td>
                             </tr>
                           </tbody>
-                          </Table>
                         )
                       }
                     }) : <h3 colSpan="4">No upcoming appointments</h3>
                     }
+                 </Table>
               </Col>
             </Row>
             {/* Past Appointments */}
             <Row className="mt-5 past-appointments sidecontent">
               <Col md={12} className="mb-4">
                 <h3>Past Appointments</h3>
+                <Table >
+                            <thead>
+                              <tr>
+                                <th>Doctor</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Location</th>
+                                <th>Mode</th>
+                                <th>Diagnosis</th>
+                              </tr>
+                            </thead>
                     {patient && patient.appointments && patient.appointments.length > 0 ? patient.appointments.map(appointment => {
 
                       const appointmentDate = new Date(appointment.date)
@@ -91,17 +102,6 @@ const PatientAppointments = () => {
 
                       if (appointmentDate < currentDate) {
                         return (
-                          <Table >
-                            <thead>
-                              <tr>
-                                <th>Doctor</th>
-                                <th>Date</th>
-                                <th>Time</th>
-                                <th>Location</th>
-                                <th>Mode</th>
-                                <th>Diagnosis</th>
-                              </tr>
-                            </thead>
                             <tbody>
                               <tr key={appointment.id}>
                                 <td>
@@ -115,11 +115,12 @@ const PatientAppointments = () => {
                                 <td><p>{diagnosis}...</p></td>
                               </tr>
                             </tbody>
-                          </Table>
+                         
                         )
                       }
                     }) : <h3 colSpan="4">No past appointments</h3>
                     }
+                </Table>
               </Col>
             </Row>  
           </div>
