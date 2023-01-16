@@ -108,7 +108,7 @@ const PatientBookAppointment = () => {
                     }, 500)
                 })
                 setTimeout(() => {
-                    navigate('/patient/dashboard')
+                    navigate('/patient/appointments')
                     window.location.reload()
                 }, 3000)
             } else {

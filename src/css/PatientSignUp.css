@@ -1,6 +1,7 @@
 .patient-signup{
     background-color: var(--background-color-4); 
     padding-top: 70px;  
+    height: 100vh;
 }
 
 .patient-signup h2{
@@ -48,6 +49,7 @@
 @media screen and (max-width: 768px){
     .patient-signup{
       padding-top: 100px;
+      height: 100%;
     }
     .patient-signup h2{
         font-size: 1.1rem;

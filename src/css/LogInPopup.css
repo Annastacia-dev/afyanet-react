@@ -1,4 +1,4 @@
-.popup-content {
+.navbar-popup-content{
     margin: auto;
     background: transparent;
     border: none;
@@ -8,7 +8,7 @@
     top: -150px;
     right: -700px;
   }
-  .popup-arrow {
+ .navbar-popup-arrow {
     color: rgb(255, 255, 255);
   }
   [role='tooltip'].popup-content {
@@ -33,7 +33,7 @@
         color: #fff;
     }
 
-  .popup-overlay {
+  .navbar-popup-overlay {
     background: rgba(0, 0, 0, 0.5);
   }
 
@@ -49,16 +49,16 @@
             margin-left: 130px;
             margin-top: -50px;
         }
-        .popup-content {
+        .navbar-popup-content {
         width: 100%;
         top: 200px;
         right: -100px;
         }
-        .popup-overlay {
+        .navbar-popup-overlay {
             background: rgba(255, 255, 255, 0.5);
             backdrop-filter: blur(10px);
         }
-        .popup-btn{
+        .navbar-popup-btn{
             margin-bottom: 10px;
             width: 40%;
         }

@@ -32,8 +32,8 @@ function NavBar () {
                 </Navbar.Collapse>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" className="navbar-toggler navbar-toggler-left" />
                 <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
-                    <Nav style={{position: "relative"}} className="navbar-nav ms-auto my-2 my-lg-0">
-                      <Popup Popup trigger={<button className="outline-success">Log In</button>} 
+                    <Nav style={{position: "relative"}} className="navbar-popup navbar-nav ms-auto my-2 my-lg-0">
+                      <Popup className="navbar-popup" Popup trigger={<button className="outline-success">Log In</button>} 
                       modal
                       closeOnDocumentClick
                       position='top left'

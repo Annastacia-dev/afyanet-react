@@ -1,6 +1,7 @@
 .doctor-signup{
     background-color: var(--background-color-4); 
     padding-top: 74px;  
+    height: 100vh;
 }
 
 .doctor-signup h2{
@@ -48,6 +49,7 @@
 @media screen and (max-width: 768px){
     .doctor-signup{
       padding-top: 100px;
+      height: 100%;
     }
     .doctor-signup h2{
         font-size: 1.1rem;
