@@ -5,6 +5,10 @@ import { PatientContext } from '../../../context/patient';
 import '../../../css/PatientMedicalRecords.css'
 import AddAllergies from './AddAllergies';
 import AddMedications from './AddMedications';
+import AddHealthData from './AddHealthData';
+import EditAllergies from './EditAllergies';
+import EditMedications from './EditMedications';
+import EditHealthData from './EditHealthData';
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 
@@ -23,7 +27,27 @@ const PatientMedicalRecords = () => {
           <div className="container-fluid sidecontentcontainer">
             <Row className="sidecontent px-5 mt-5">
               <Col md={12} className="health-data mb-4">
-                <p>Health Data</p>
+                <p style={{marginTop:"10px"}}>Health Data <span>
+                {
+                          patient && patient.medical_record && patient.medical_record.blood_pressure && patient.medical_record.weight && patient.medical_record.height && patient.medical_record.temperature ? (
+                            <Popup trigger={<button className='healthdata-edit'><i className="fa-solid fa-edit"></i>Edit</button>}
+                            modal
+                            nested
+                            >
+                              <EditHealthData/>
+                            </Popup>
+                          ) : (
+                            <Popup trigger={<button className='healthdata-add'><i className="fa-solid fa-plus"></i>Add</button>}
+                            modal
+                            nested
+                            >
+                              <AddHealthData/>
+                            </Popup>
+                          )
+
+                }
+                  </span></p>
+                
                 <Table>
                   <thead>
                     <tr>
@@ -50,7 +74,12 @@ const PatientMedicalRecords = () => {
                 {
                   // if patient has no allergies, render add allergies button,else edit allergies button
                   patient && patient.medical_record && patient.medical_record.allergies && patient.medical_record.allergies.length > 0 ? (
-                    <button className="btn btn-primary"><i className="fa-solid fa-pen"></i>Edit</button>
+                    <Popup trigger={<button className="btn btn-primary"><i className="fa-solid fa-pen"></i>Edit</button>}
+                    modal
+                    nested
+                    >
+                      <EditAllergies/>
+                    </Popup>
                   ) : (
                     <Popup trigger={<button className="btn btn-primary"><i className="fa-solid fa-plus"></i>Add</button>} 
                     modal
@@ -81,7 +110,13 @@ const PatientMedicalRecords = () => {
                 {
                   // if patient has no medications, render add medications button,else edit medications button
                   patient && patient.medical_record && patient.medical_record.medications && patient.medical_record.medications.length > 0 ? (
-                    <button className="btn btn-primary"><i className="fa-solid fa-pen"></i>Edit</button>
+                    <Popup trigger={<button className="btn btn-primary"><i className="fa-solid fa-pen"></i>Edit</button>}
+                    modal
+                    nested
+                    >
+                      <EditMedications/>
+                    </Popup>
+                    
                   ) : (
                     <Popup trigger={<button className="btn btn-primary"><i className="fa-solid fa-plus"></i>Add</button>}
                     modal

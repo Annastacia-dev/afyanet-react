@@ -41,7 +41,7 @@ const DoctorSideBar = () => {
         <i className="fa-solid fa-comments"></i>
           <p>Messages</p>
         </a>
-        <a href="/doctor/profile" className="list-group-item list-group-item-action p-4">
+        <a href="/doctors/profile" className="list-group-item list-group-item-action p-4">
           <i className="fas fa-user"></i>
           <p>Profile</p>
         </a>
