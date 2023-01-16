@@ -8,11 +8,12 @@ import AddMedications from './AddMedications';
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 
+
 const PatientMedicalRecords = () => {
 
   const { patient } = useContext(PatientContext);
 
-  console.log(patient)
+  console.log('patient',patient)
 
 
   return (
@@ -48,8 +49,8 @@ const PatientMedicalRecords = () => {
                 <p>Allergies</p>
                 {
                   // if patient has no allergies, render add allergies button,else edit allergies button
-                  patient && patient.medical_record && patient.medical_record.allergies.length > 0 ? (
-                    <button className="btn btn-primary"><i className="fa-solid fa-pen"></i></button>
+                  patient && patient.medical_record && patient.medical_record.allergies && patient.medical_record.allergies.length > 0 ? (
+                    <button className="btn btn-primary"><i className="fa-solid fa-pen"></i>Edit</button>
                   ) : (
                     <Popup trigger={<button className="btn btn-primary"><i className="fa-solid fa-plus"></i>Add</button>} 
                     modal
@@ -62,11 +63,11 @@ const PatientMedicalRecords = () => {
                 {
                   // if patient has allergies, convert the string to list
 
-                  patient && patient.medical_record && patient.medical_record.allergies.length > 0 ? (
+                  patient && patient.medical_record && patient.medical_record.allergies && patient.medical_record.allergies.length > 0 ? (
                     <ul>
                       {
                         patient.medical_record.allergies.split(',').map((allergy, index) => (
-                          <li key={index}>{allergy}</li>
+                          <li key={index}><i className="fa-solid fa-angle-right"></i>{allergy}</li>
                         ))
                       }
                     </ul>
@@ -79,20 +80,25 @@ const PatientMedicalRecords = () => {
                 <p>Medications</p>
                 {
                   // if patient has no medications, render add medications button,else edit medications button
-                  patient && patient.medical_record && patient.medical_record.medications.length > 0 ? (
-                    <button className="btn btn-primary"><i className="fa-solid fa-pen"></i></button>
+                  patient && patient.medical_record && patient.medical_record.medications && patient.medical_record.medications.length > 0 ? (
+                    <button className="btn btn-primary"><i className="fa-solid fa-pen"></i>Edit</button>
                   ) : (
-                    <button className="btn btn-primary"><i className="fa-solid fa-plus"></i>Add</button>
+                    <Popup trigger={<button className="btn btn-primary"><i className="fa-solid fa-plus"></i>Add</button>}
+                    modal
+                    nested
+                    >
+                      <AddMedications/>
+                    </Popup>
                   )
                 }
                 {
                   // if patient has medications, convert the string to list
 
-                  patient && patient.medical_record && patient.medical_record.medications.length > 0 ? (
+                  patient && patient.medical_record && patient.medical_record.medications && patient.medical_record.medications.length > 0 ? (
                     <ul>
                       {
                         patient.medical_record.medications.split(',').map((medication, index) => (
-                          <li key={index}>{medication}</li>
+                          <li key={index}><i className="fa-solid fa-angle-right"></i> {medication}</li>
                         ))
                       }
                     </ul>

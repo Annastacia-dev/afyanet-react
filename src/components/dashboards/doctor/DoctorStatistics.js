@@ -16,8 +16,9 @@ function Statistics() {
 
   const style = { color: "var(--light-purple)" }
 
-  const {doctor} = useContext(DoctorContext);
-  console.log(doctor)
+ const { doctor } = useContext(DoctorContext);
+
+ console.log(doctor)
   
 
   return (
@@ -36,7 +37,15 @@ function Statistics() {
                   <Card.Body>
                     <Card.Title>Total Patients</Card.Title>
                     <Card.Text>
-                      {doctor.patients }
+                      {
+                        // A doctor has patients through appointments
+                        doctor && doctor.appointments && doctor.appointments.length > 0 ? (
+                          doctor.appointments.map(appointment => appointment.patient).length
+                        ) : (
+                          0
+                        )
+                      }
+                      
                     </Card.Text>
                   </Card.Body>
                 </Card>
@@ -46,7 +55,13 @@ function Statistics() {
                   <BsCalendarCheckFill size={100} style={style} />
                   <Card.Body>
                     <Card.Title>Total Appointments</Card.Title>
-                    <Card.Text>5</Card.Text>
+                    <Card.Text>{
+                        doctor && doctor.appointments && doctor.appointments.length > 0 ? (
+                          doctor.appointments.length
+                        ) : (
+                          0
+                        )
+                      }</Card.Text>
                   </Card.Body>
                 </Card>
               </Col>
