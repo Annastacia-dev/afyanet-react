@@ -1,0 +1,68 @@
+.patient-medical-records p{
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.patient-medical-records table {
+    border: none;
+}
+
+.patient-medical-records table td , .patient-medical-records table th , .patient-medical-records table tr {
+    border: none;
+}
+
+.patient-medical-records table th {
+    text-transform: uppercase;
+    padding: 10px 30px;
+}
+
+.patient-medical-records table td {
+    background-color: var(--background-color-4);
+    border-radius: 10px;
+}
+
+.patient-medical-records .allergies {
+    background-color: var(--background-color-4);
+    list-style: none;
+    margin: 0 auto;
+    width: 50%;
+    border-radius: 20px;
+    padding: 20px;
+    position: relative;
+    
+}
+.patient-medical-records .allergies i{
+    font-size: 20px;
+    margin-right: 10px;
+}
+.patient-medical-records .allergies li{
+    text-align: left;
+}
+
+.patient-medical-records .medications {
+    background-color: var(--background-color-4);
+    list-style: none;
+    margin: 0 auto;
+    width: 50%;
+    border-radius: 20px;
+    padding: 20px;
+    position: relative;
+}
+.patient-medical-records .medications i{
+    font-size: 20px;
+    margin-right: 10px;
+}
+.patient-medical-records .medications li{
+    text-align: left;
+}
+
+.patient-medical-records .btn-primary{
+    position: absolute;
+    width: 20%;
+    background: none;
+    color: var(--primary-color);
+    right: 10px;
+    top: 1px;
+}
