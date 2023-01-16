@@ -17,9 +17,14 @@ import DoctorLogIn from './components/authforms/doctor/DoctorLogIn';
 import DoctorDashboard from './components/dashboards/doctor/DoctorDashboard';
 import Patients from './components/dashboards/doctor/Patients';
 import DoctorMessages from './components/dashboards/doctor/DoctorMessages';
-import DoctorProfile from './components/dashboards/doctor/DoctorProfile';
+import DoctorsProfile from './components/dashboards/doctor/DoctorsProfile';
 import DoctorStatistics from './components/dashboards/doctor/DoctorStatistics';
 import PatientDetails from './components/dashboards/doctor/PatientDetails';
+import Profile from './components/dashboards/doctor/DoctorProfile';
+
+
+
+
 
 function App() {
 
@@ -44,10 +49,10 @@ function App() {
         <Route path="/doctor/patients" element={<Patients />} />
         <Route path="/doctor/statistics" element={<DoctorStatistics />} />
         <Route path="/doctor/messages" element={<DoctorMessages />} />
-        <Route path="/doctor/profile" element={<DoctorProfile/>} />
+        <Route path="/doctors/profile" element={<DoctorsProfile/>} />
         <Route path="/patient/bookappointment/:id" element={<PatientBookAppointment />} />
         <Route path="/doctor/patientdetails/:id" element={<PatientDetails />} />
-
+        <Route path="/doctor/profile" element={<Profile/>} />
       </Routes>
     </div>
   );
