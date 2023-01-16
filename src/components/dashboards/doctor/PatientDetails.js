@@ -27,16 +27,16 @@ function PatientDetails(){
        <Container>
         <Row>
       <Col  className="patient mt-3" md={4} key={patient && patient.id}>
-                    <Card className="patient-card">
+                    <Card className="a-patient-card">
                   <Col md={3}>
                   <Card.Img className='avatar-patient' src={patient && patient.profile_picture ? patient && patient.profile_picture : "https://www.w3schools.com/howto/img_avatar.png"} />
                   </Col>
                   <Card.Body>
-                    <Card.Title className=" patient-name"> {patient && patient.first_name} {patient && patient.last_name}</Card.Title>
-                    <Card.Subtitle className="mb-2 patient-location ">
+                    <Card.Title className=" a-patient-name"> {patient && patient.first_name} {patient && patient.last_name}</Card.Title>
+                    <Card.Subtitle className="mb-2 a-patient-location ">
                     {patient && patient.location}</Card.Subtitle>
 
-                    <Card.Subtitle className="patient-age">
+                    <Card.Subtitle className="a-patient-age">
                     {patient && patient.age} Yrs Old
                     </Card.Subtitle>
                   </Card.Body>
