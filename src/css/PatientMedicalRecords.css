@@ -42,6 +42,7 @@
 }
 .patient-medical-records .allergies li{
     text-align: left;
+    text-transform: capitalize;
 }
 
 .patient-medical-records .medications {
@@ -59,6 +60,7 @@
 }
 .patient-medical-records .medications li{
     text-align: left;
+    text-transform: capitalize;
 }
 
 .patient-medical-records .btn-primary{
