@@ -1,97 +1,53 @@
-.first-patient{
-    margin-top: 80px;
-    margin-bottom: 90px;
-    margin-left: 150px;
-    padding: 99px 20px;
-    width: 250px;
-    border: 1px solid #ccc;
-    border-radius: 25px;
-    box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
-  
-    height: 40px;
-    float: right;
-    position: absolute;
-    text-align: right;
+.avatar-patient{
+    width: 90px;
+    height: 100px;
+    border-radius: 50%;
+    margin-top: 19px;
+    display: block;
+    object-fit: cover;
+    position: relative;
+    align-items: center;
+  justify-content: center;
+  margin-left: 10px;
 }
-.patients-card{
-    margin-left: 720px;
+.patients {
+  padding-left: 190px;
+ }
+
+ .patient .card{
+  background-color: var(--background-color-4);
+  border: none;
+ 
+  width: 100% ;
+  border-radius: 20px;
+  text-align: right;
 }
-.sec-patient{
-    margin-top: 1px;
-    margin-bottom: 180px;
-    margin-left: 470px;
-    padding: 97px 120px;
-    width: 100px;
-    border: 1px solid #ccc;
-    border-radius: 25px;
-    box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
-  
-    height: 40px;
-    float: right;
-    position: absolute;
-    text-align: right;
+.patients .btn-primary{
+  width: 50%;
+  margin-right: 90px;
+  height: 40%;
+
+}
+/* .patient .card .card-title{
+  margin-top: -70px;
+} */
+.patient-name{
+  margin-top:-90px;
+  margin-left: 90px;
 }
 
-.third-patient{
-    margin-top: 1px;
-    margin-bottom: 180px;
-    margin-left: 770px;
-    padding: 97px 120px;
-    width: 100px;
-    border: 1px solid #ccc;
-    border-radius: 25px;
-    box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
-  
-    height: 40px;
-    float: right;
-    position: absolute;
-    text-align: right;
-}
-.fourth-patient{
-    margin-top: 1px;
-    margin-bottom: 180px;
-    margin-left: 1070px;
-    padding: 97px 120px;
-    width: 100px;
-    border: 1px solid #ccc;
-    border-radius: 25px;
-    box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
-  
-    height: 40px;
-    float: right;
-    position: absolute;
-    text-align: right;
-}
-.fifth-patient{
-    margin-top: 1px;
-    margin-bottom: 180px;
-    margin-left: 1370px;
-    padding: 97px 120px;
-    width: 100px;
-    border: 1px solid #ccc;
-    border-radius: 25px;
-    box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
-  
-    height: 40px;
-    float: right;
-    position: absolute;
-    text-align: right;
-    display: flex;
-}
-
-.sixth-patient{
-    margin-top: 1px;
-    margin-bottom: 180px;
-    margin-left: 1670px;
-    padding: 97px 120px;
-    width: 100px;
-    border: 1px solid #ccc;
-    border-radius: 25px;
-    box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
-  
-    height: 40px;
-    float: right;
-    position: absolute;
-    text-align: right;
-    display: flex;
+@media screen and (max-width: 768px) {
+    .patients{
+        margin: 0 auto;
+    }
+    .patient .card .card-body{
+        margin-left: 0px;
+        text-align: center;
+    }
+    .patient .card .card-title{
+        margin-top: 0px;
+    }
+    .patient .btn-primary{
+        width: 100%;
+    }
 }
