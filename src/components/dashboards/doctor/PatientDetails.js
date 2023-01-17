@@ -103,19 +103,16 @@ function PatientDetails(){
 
                        </tr>
                     </thead>
-                    {patient && patient.medical_record && patient.medical_record.length > 0 && patient.medical_record.map((medical_record) =>{
-                      
-                       return(
-                        <tbody key={medical_record.id}>
+                    
+                        <tbody key={patient && patient.medical_record.id}>
                         <tr>
-                          <td>{medical_record.blood_pressure}</td>
-                          <td>{medical_record.weight}</td>
-                          <td>{medical_record.temperature}</td>
+                          <td>{patient && patient.medical_record.blood_pressure}</td>
+                          <td>{patient && patient.medical_record.weight}</td>
+                          <td>{patient && patient.medical_record.temperature}</td>
 
                              </tr>
                       </tbody>
-                    )
-                    })}
+                   
                   
                          </Table>
                           </Col>
@@ -134,14 +131,11 @@ function PatientDetails(){
                             </Card.Title>
                            
                             <ul class="list-group list-group-flush">
-                              { patient && patient.medical_record && patient.medical_record.length > 0 && patient.medical_record.map((medical_record, index)=>{
-                                return (
-                        <li key={index} class="list-group-item"
->                          {medical_record.medications}
+                             
+                        <li key={patient && patient.medical_record.id} class="list-group-item"
+>                          {patient && patient.medical_record.medications}
                         </li>
-                                )
-                              })}
-
+                                
                             </ul>
                             </Card.Body>
                           </Card>
@@ -156,13 +150,11 @@ function PatientDetails(){
                             </Card.Title>
                            
                             <ul className="list-group list-group-flush allergies-ul">
-                              { patient && patient.medical_record && patient.medical_record.length > 0 && patient.medical_record.map((medical_record, index)=>{
-                                return (
-                        <li key={index} class="list-group-item"
->                          {medical_record.allergies}
+                             
+                        <li key={patient && patient.medical_record.id} class="list-group-item"
+>                          {patient && patient.medical_record.allergies}
                         </li>
-                                )
-                              })}
+                               
 
                             </ul>
                             </Card.Body>
