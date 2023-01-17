@@ -15,37 +15,56 @@ const EditProfile = () => {
     const [email, setEmail] = useState(patient && patient.email)
     const [phone, setPhone] = useState(patient && patient.phone_number)
     const [location, setLocation] = useState(patient && patient.location)
-    const [profilePicture, setProfilePicture] = useState('')
-
-    const uploadProfilePicture = (files) => {
-        const formData = new FormData()
-        formData.append('file', files[0])
-        formData.append('upload_preset', 'afyanet')
-
-        Axios.post('https://api.cloudinary.com/v1_1/dauveffyr/image/upload', formData)
-        .then(res => res.json())
-        .then(data => {
-            setProfilePicture(data.secure_url)
-        })
-    }
-
-
-
-
-
+   
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(
-            'profile picture: ', profilePicture,
-            'first name: ', firstName,
-            'last name: ', lastName,
-            'email: ', email,
-            'phone: ', phone,
-            'location: ', location  
-        )
+        setTimeout(() => {
 
+            fetch(`https://afyanet-127t.onrender.com/patients/${patient.id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accepts': 'application/json',
+                Authorization: `Bearer ${localStorage.getItem("token")}`,
+
+            },
+            body: JSON.stringify({
+                first_name: firstName,
+                last_name: lastName,
+                email: email,
+                phone_number: phone,
+                location: location
+            })
+        })
+        .then(r => {
+            if (r.ok) {
+                r.json().then(data => {
+                    console.log(data)
+                    toast.success('Profile updated successfully',{
+                        position: 'top-center',
+                        autoClose: 1000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: 'colored',
+                        transition: 'slide',
+                        style: {backgroundColor: '#9263CB'}
+                    })
+                    window.location.reload()
+                })
+            } else {
+                r.json().then(data => {
+                    console.log(data.errors)
+                })
+            }
+        })
+
+        },100);
     }
+
 
     if (loading) {
         return <div><Loading /></div>
@@ -67,17 +86,11 @@ const EditProfile = () => {
             progress={undefined}
             theme='colored'
             transition='slide'
-            style={{backgroundColor: '#9263CB'}}
         />
         <Row className="justify-content-center">
             <Col md={8}>
-                <Form onSubmit={handleSubmit}>
-                    {/* profilepicture */}
-                    <Form.Group controlId="formBasicProfilePicture">
-                        <Form.Label>Profile Picture</Form.Label>
-                        {/* file input */}
-                        <Form.Control type="file" onChange={(e) => uploadProfilePicture(e.target.files)} />
-                    </Form.Group>
+                <Form onSubmit={handleSubmit}
+                >
                     <Form.Group controlId="formBasicFirstName">
                         <Form.Label>First Name</Form.Label>
                         <Form.Control type="text" placeholder="Enter first name" value={firstName} onChange={(e) => setFirstName(e.target.value)} />

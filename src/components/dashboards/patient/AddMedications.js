@@ -33,7 +33,7 @@ const AddMedications = () => {
         r.json().then(data => {
           setTimeout(() => {
             toast.success('Medications saved successfully', {
-              position: "top-right",
+              position: "top-center",
               autoClose: 5000,
               hideProgressBar: false,
               closeOnClick: true,
@@ -57,6 +57,18 @@ const AddMedications = () => {
 
   return (
     <div>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+       />
       <Row className="mt-5">
         <Col md={12} className="medications mb-4">
           <p>Medications</p>

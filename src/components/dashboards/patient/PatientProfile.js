@@ -10,6 +10,7 @@ import Loading from '../../display/Loading'
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import EditProfile from './EditProfile';
+import AddProfilePicture from './AddProfilePicture';
 
 const PatientProfile = () => {
 
@@ -73,6 +74,12 @@ const PatientProfile = () => {
               <Col md={6} className="mb-4">
                 <Card className="card">
                   <Card.Img className='profile-avatar' variant="top" src={patient && patient.profile_picture ? patient.profile_picture : "https://www.w3schools.com/howto/img_avatar.png"} />
+                  <Popup trigger={<button className="btn btn-primary">Add Profile Picture</button>}
+                    modal
+                    nested
+                  >
+                    <AddProfilePicture />
+                  </Popup>
                   <Card.Body>
                     <Card.Title className="card-title">{patient && patient.first_name} {patient && patient.last_name}</Card.Title>
                     <Card.Text>
