@@ -1,6 +1,13 @@
 import axios  from "axios";
+import DoctorSideBar from './DoctorSideBar';
+import { Row, Col, Card } from 'react-bootstrap';
 import React, { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom";
+
+import { ToastContainer, toast } from 'react-toastify';
+import Popup from 'reactjs-popup';
+import Profile from "./Profile";
+import '../../../css/DoctorsProfile.css';
 
 
 function DoctorsProfile(){
@@ -17,6 +24,28 @@ function DoctorsProfile(){
     days_available_weekly:"", 
     specific_days_times_available:""
   });
+
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    toast.success('Logged out successfully',{
+      position: "top-center",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'colored',
+      transition: 'slide',
+      style: { backgroundColor: '#9263CB'}
+    });
+    setTimeout(() => {
+      navigate('/doctor/login');
+    }
+    , 2000);
+  }
+
 
 const {first_name, last_name, email, phone_number, location, specialty, contract_length, days_available_weekly, specific_days_times_available} = doctor;
 const onInputchange = e =>{
@@ -43,158 +72,63 @@ const loadDocter = async () => {
 
 return(
 
-<section>
-  <div class="container py-5">
-    <div class="row">
-      <div class="col">
-        <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
-          <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item active" aria-current="page">Profile</li>
-          </ol>
-        </nav>
-      </div>
-    </div>
-    </div>
-
-    <div class="row">
-      <div class="col-lg-4">
-        <div class="card mb-4">
-          <div class="card-body text-center">
-            <form onSubmit={e => onSubmit(e)}></form>
-            <div>
-              <br/>
-              <input
-              type="text"
-              placeholder="Enter Doctor first_name"
-              name="first_name"
-              value={first_name}
-              onChange={e =>onInputchange(e)}
-              />
-            </div>
-            <div>
-              <br/>
-              <input
-              type="text"
-              placeholder="Enter Doctor last_name"
-              name="last_name"
-              value={last_name}
-              onChange={e =>onInputchange(e)}
-              />
-            </div>
-            <div>
-              <br/>
-              <input
-              type="text"
-              placeholder="Enter Doctor email"
-              name="email"
-              value={email}
-              onChange={e =>onInputchange(e)}
-              />
-            </div>
-            <div>
-              <br/>
-              <input
-              type="text"
-              placeholder="Enter Doctor phone_number"
-              name="phone_number"
-              value={phone_number}
-              onChange={e =>onInputchange(e)}
-              />
-            </div>
-            <div>
-              <br/>
-              <input
-              type="text"
-              placeholder="Enter Doctor location"
-              name="location"
-              value={location}
-              onChange={e =>onInputchange(e)}
-              />
-            </div>
-            <div>
-              <br/>
-              <input
-              type="text"
-              placeholder="Enter Doctor specialty"
-              name="specialty"
-              value={specialty}
-              onChange={e =>onInputchange(e)}
-              />
-            </div>
-            <div class="d-flex justify-content-center mb-2">
-              <button type="button" class="btn btn-primary">Edit Personal Details</button>
-            </div>
-            </div>
+<div className="Doctor-profile d-flex" id="wrapper">
+      <DoctorSideBar/>
+        <div className="body" id="page-content-wrapper">
+          <ToastContainer
+            position="top-center"
+            autoClose={1000}
+            hideProgressBar={false}
+            closeOnClick
+            pauseOnHover
+            draggable
+            progress={undefined}
+            theme='colored'
+            transition='slide'
+            style={{ backgroundColor: '#9263CB'}}
+           />
+          <div className="container-fluid px-5 sidecontentcontainer">
+            <Row className="sidecontent justify-content-center">
+            <h3 className="mt-4">Profile
+            <button className="login-button btn btn-danger"
+                  onClick={handleLogout}>Log Out</button>
+              </h3>
+            </Row>
+            <Row className="sidecontent">
+              <Col md={6} className="mb-4">
+                <Card className="card">
+                  <Card.Img className='profile-avatar' variant="top" src={doctor && doctor.profile_picture ? doctor.profile_picture : "https://www.w3schools.com/howto/img_avatar.png"} />
+                  <Card.Body>
+                    <Card.Title className="card-title">{doctor && doctor.first_name} {doctor && doctor.last_name}</Card.Title>
+                    <Card.Text>
+                      <p><strong>Email:</strong> {doctor && doctor.email}</p>
+                      <p><strong>phone:</strong> {doctor && doctor.phone_number}</p>
+                      <p><strong>location</strong> {doctor && doctor.location}</p>
+                      <p><strong>specialty:</strong> {doctor && doctor.specialty}</p>
+                      
+                      <p><strong>contract_length:</strong> {doctor && doctor.contract_length}</p>
+                      <p><strong>days_available_weekly:</strong> {doctor && doctor.days_available_weekly}</p>
+                      <p><strong>specific_days_times_available</strong> {doctor && doctor.specific_days_times_available}</p>
+                      
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+                <Popup trigger={<button className="btn btn-primary">Edit Personal Details</button>} 
+                modal
+                nested
+                >
+                  <Popup trigger={<button className="btn btn-primary">Edit Schedule Details</button>} 
+                modal
+                nested
+                />
+                  <Profile/>
+                </Popup>
+              </Col>
+            </Row>
           </div>
         </div>
-        </div>
-       
-      <div class="col-lg-8">
-        <div class="card mb-4">
-          <div class="card-body">
-            <div class="row">
-              <div class="col-sm-9">
-                <p class="text-muted mb-0">Schedule Details</p>
-              </div>
-            </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-9">
-              <div>
-              <br/>
-              <input
-              type="text"
-              placeholder="Enter Doctor contract_length"
-              name="contract_length"
-              value={contract_length}
-              onChange={e =>onInputchange(e)}
-              />
-            </div>
-              </div>
-            </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-9">
-              <div>
-              <br/>
-              <input
-              type="text"
-              placeholder="Enter Doctor days_available_weekly"
-              name="days_available_weekly"
-              value={days_available_weekly}
-              onChange={e =>onInputchange(e)}
-              />
-            </div>
-              </div>
-            </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-9">
-              <div>
-              <br/>
-              <input
-              type="text"
-              placeholder="Enter Doctor specific_days_times_available"
-              name="specific_days_times_available"
-              value={specific_days_times_available}
-              onChange={e =>onInputchange(e)}
-              />
-            </div>
-              </div>
-            </div>
-            <div>
-            <div class="row">
-              <div class="col-sm-9">
-                <div class="d-flex justify-content-center mb-2">
-              <button type="button" class="btn btn-primary">Edit Schedule Details</button>
-              
-            </div>
-
-              </div>
-            </div>
-          </div>
-        
-   </section>
+      
+    </div>
 )
 };
 
