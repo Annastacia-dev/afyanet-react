@@ -102,3 +102,69 @@
 .patient-medical-records .healthdata-add i{
     margin-right: 10px;
 }
+
+.medical-records-phone{
+    display: none;
+}
+
+/* Media */
+@media screen and (max-width: 768px){
+    .medical-records-phone{
+        display: block;
+    }
+    .medical-records-phone p{
+        text-transform: none;
+        font-size: 12px;
+        font-weight: 400;
+        color: black;
+    }
+    .medical-records-phone .heading{
+        margin-top: 60px;
+        font-weight: 500;
+        font-size: 20px;
+    }
+    .medical-records-phone .healthdata-edit i{
+        font-size: 25px;
+    }
+
+    .medical-records-phone .allergies i{
+        font-size: 5px;
+    }
+    .medical-records-phone .patient-records-medications i{
+        font-size: 5px;
+    }
+
+    .medical-records-phone ul{
+        font-size: 10px;
+    }
+
+    .medical-records-phone .healthdata-edit{
+        width: 30%;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+    .medical-records-desktop{
+        display: none;
+    }
+
+    .medical-records-phone .allergies{
+        width: 300%;
+    }
+
+    .medical-records-phone .patient-records-medications{
+        width: 300%;
+    }
+
+    .medical-records-phone .btn-primary{
+        position: absolute;
+        width: 50%;
+        background: none;
+        color: var(--primary-color);
+        right: -10px;
+        top: -30px;
+        font-size: 10px;
+    }
+
+
+   
+}
