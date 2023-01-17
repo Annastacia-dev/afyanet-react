@@ -76,7 +76,7 @@
     text-align: left;
 }
 
-.healthdata-edit{
+.patient-medical-records .healthdata-edit{
     background-color: var(--primary-color);
     padding: 10px;
     color: #fff;
@@ -85,12 +85,12 @@
     border-radius: 5px;
 }
 
-.healthdata-edit i{
+.patient-medical-records .healthdata-edit i{
     margin-right: 10px;
 }
 
 
-.healthdata-add{
+.patient-medical-records .healthdata-add{
     background-color: var(--primary-color);
     padding: 10px;
     color: #fff;
@@ -99,6 +99,6 @@
     border-radius: 5px;
 }
 
-.healthdata-add i{
+.patient-medical-records .healthdata-add i{
     margin-right: 10px;
 }

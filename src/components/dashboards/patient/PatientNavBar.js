@@ -20,7 +20,6 @@ function PatientNavBar () {
                         <li><Nav.Link href="/patient/dashboard">Dashboard</Nav.Link></li>
                         <li><Nav.Link href="/patient/appointments">Appointments</Nav.Link></li>
                         <li><Nav.Link href="/patient/medicalrecords">Medical Records</Nav.Link></li>
-                        <li><Nav.Link href="/patient/messages">Messages</Nav.Link></li>
                         <li><Nav.Link href="/patient/profile">Profile</Nav.Link></li>
                     </ul>
                     </Nav>
