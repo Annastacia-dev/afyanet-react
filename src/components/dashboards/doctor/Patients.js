@@ -20,7 +20,6 @@ function Patients(){
   
 // const appointment = doctor && doctor.appointments.map((appointment)=>{
 //   return(
-//   appointment
 //   )
 // })
   
@@ -72,9 +71,11 @@ function Patients(){
 
                   </Col>
 
-                )
+                ) 
                }
-              )}
+              ) 
+              
+              }
             </Row>
 
           </Container>
