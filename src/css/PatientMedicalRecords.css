@@ -45,7 +45,7 @@
     text-transform: capitalize;
 }
 
-.patient-medical-records .medications {
+.patient-medical-records .patient-records-medications {
     background-color: var(--background-color-4);
     list-style: none;
     margin: 0 auto;
@@ -54,11 +54,11 @@
     padding: 20px;
     position: relative;
 }
-.patient-medical-records .medications i{
+.patient-medical-records .patient-records-medications i{
     font-size: 20px;
     margin-right: 10px;
 }
-.patient-medical-records .medications li{
+.patient-medical-records .patient-records-medications li{
     text-align: left;
     text-transform: capitalize;
 }
@@ -71,7 +71,7 @@
     right: 10px;
     top: 1px;
 }
-.patient-medical-records .medications ul{
+.patient-medical-records .patient-records-medications ul{
     list-style: none;
     text-align: left;
 }

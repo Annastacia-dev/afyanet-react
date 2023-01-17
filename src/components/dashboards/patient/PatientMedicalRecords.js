@@ -105,7 +105,7 @@ const PatientMedicalRecords = () => {
                   )
                 }   
               </Col>
-              <Col md={12} className="medications mb-4">
+              <Col md={12} className="patient-records-medications mb-4">
                 <p>Medications</p>
                 {
                   // if patient has no medications, render add medications button,else edit medications button
