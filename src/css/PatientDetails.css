@@ -1,3 +1,176 @@
-.patient-details{
-    
+.patient-detail.card{
+    background-color: var(--background-color-4);
+    border: none;
+    margin-right: -10px;
+    width: 78% ;
+    border-radius: 20px;
+    text-align: right;
+    padding: -5px -5px;
+    margin-top: -40px;
 }
+.patient-detail.card-title{
+    margin-top: -100px;
+}
+
+.appointment-history-table{
+    margin-top: 20px;
+    margin-bottom: 120px;
+    border: none;
+}
+.table {
+    margin: 0 auto;
+    width: 80%;
+    margin-left: -0px;
+    margin-top: 80px;
+  }
+  
+  .table th {
+    background-color: var(--background-color-4);
+
+    /* background-color: #f2f2f2; */
+    font-weight: bold;
+  }
+  
+  .table td {
+    text-align: left;
+    background-color: var(--background-color-4);
+
+  }
+  .table-right {
+    /* float: right; */
+    margin-top: -100px;
+    margin-left: 100px;
+    text-align: center;
+  }
+   .title{
+    text-align: center;
+  }
+
+  .table-left{
+    float: right;
+    margin-top: -450px;
+    margin-right: -650px;
+    /* margin-bottom: 900px; */
+    width: 30%;
+    position: relative;
+  }
+  .patient-medz.card{
+    background-color: var(--background-color-4);
+    margin-left: 490px;
+    margin-top: -490px;
+    width: 475px;
+
+  }
+
+
+  .patient-allergy.card{
+    background-color: var(--background-color-4);
+    margin-left: 490px;
+    margin-top: -350px;
+    width: 475px;
+
+  }
+  .health-data .card .card-body{
+    background-color: var(--background-color-4);
+    margin-left: 490px;
+    margin-top: -390px;
+    width:100%;
+    padding: 100px 120px;
+  }
+  /* .health-data{
+    margin-top: -150px;
+    margin-bottom: -50px;
+    text-align: center;
+    text-transform: uppercase;
+  } */
+
+.appointment-history{
+    margin-top: 50px;
+    margin-bottom: -50px;
+    text-align: center;
+    text-transform: uppercase;
+}
+@media screen and (max-width: 576px) {
+    .patient-allergy.card{
+        flex-direction: column;
+        margin-top: 35px;
+        margin-left: -80px;
+    }
+
+    .patient-medz.card{
+        /* margin: 0 auto; */
+        flex-direction: column;
+        margin-top: 75px;
+        margin-left: -80px;
+
+
+    }
+    .patient-detail.card{
+        /* margin: 0 auto; */
+        flex-direction: column;
+        margin-top: 80px;
+        margin-left: -0px;
+
+    }
+    .patient-detail .card .card-body{
+        margin-left: 0px;
+        text-align: center;
+
+    }
+    .patient-detail .card .card-title{
+        margin-top: 0px;
+    }
+    
+
+}
+@media (max-width: 576px) {
+    .table-left{
+        float: none;
+        margin-top: 30px;
+        width: 100%;
+        margin-left: -650px;
+    }
+    .table-right {
+        float: none;
+        margin-top: 80px;
+        width: 100%;
+        margin-left: 10px;
+      }
+    .table {
+      display: block;
+      overflow-x: auto;
+    }
+  }
+  
+  .table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  .table td {
+    text-align: center;
+  }
+
+/* @media (max-width: 992px) {
+    .table thead {
+      display: none;
+    }
+    .table tr {
+      border-bottom: 3px solid #ddd;
+      display: block;
+      margin-bottom: 0.625rem;
+    }
+    .table td {
+      border-top: none;
+      border-bottom: 1px solid #ddd;
+      display: block;
+      font-size: 0.875rem;
+      text-align: right;
+    }
+    .table td::before {
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  } */
