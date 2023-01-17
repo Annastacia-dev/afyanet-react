@@ -41,7 +41,7 @@ function DoctorsProfile(){
       style: { backgroundColor: '#9263CB'}
     });
     setTimeout(() => {
-      navigate('/patient/login');
+      navigate('/doctor/login');
     }
     , 2000);
   }
