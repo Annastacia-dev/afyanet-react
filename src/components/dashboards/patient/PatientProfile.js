@@ -7,6 +7,9 @@ import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Loading from '../../display/Loading'
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
+import EditProfile from './EditProfile';
 
 const PatientProfile = () => {
 
@@ -81,7 +84,12 @@ const PatientProfile = () => {
                     </Card.Text>
                   </Card.Body>
                 </Card>
-                <button className="btn btn-primary mt-4">Edit Profile</button>
+                <Popup trigger={<button className="btn btn-primary">Edit Profile</button>} 
+                modal
+                nested
+                >
+                  <EditProfile />
+                </Popup>
               </Col>
               <Col md={6} className="mb-4">
                 <button
