@@ -25,7 +25,20 @@ function Patients(){
 // })
   
 // console.log(appointment)
+// function age() {
+//   var now = new Date();
+//   var age = now.getUTCFullYear() - object.date_of_birth.getUTCFullYear() - (new Date(object.date_of_birth.getUTCFullYear(), object.date_of_birth.getUTCMonth(), object.date_of_birth.getUTCDate()) > now ? 1 : 0);
+//   return age;
+// }
 
+// const date_of_birth = new Date("1999-07-01T00:00:00.000Z");
+// const today = new Date();
+// const age = today.getFullYear() - date_of_birth.getFullYear();
+// const month = today.getMonth() - date_of_birth.getMonth();
+// if (month < 0 || (month === 0 && today.getDate() < date_of_birth.getDate())) {
+//     age--;
+// }
+// console.log(age);
     return(
      <>
         <div className='patient-navbar'>

@@ -1,9 +1,13 @@
 import React, { useState, useEffect} from "react";
 import "../../../css/DoctorDashboard.css"
-import {Row,Col,Card, Table ,Container} from 'react-bootstrap';
-import "../../../css/DoctorPatients.css";
-import { useParams } from 'react-router-dom'
+import {Row,Col,Card, Table ,ListGroup} from 'react-bootstrap';
 // import "../../../css/DoctorPatients.css";
+import { useParams } from 'react-router-dom'
+import "../../../css/PatientDetails.css";
+import DoctorSideBar from './DoctorSideBar';
+import DoctorNavBar from './DoctorNavBar';
+import "../../../css/DoctorDashboard.css"
+
 
 function PatientDetails(){
 
@@ -26,7 +30,170 @@ function PatientDetails(){
 
     return(
         <>
-      <Card className="patientdetails-card">
+    <div className='patient-navbar'>
+        <DoctorNavBar />
+       </div>
+  <div className="patient-homepage doctor-dashboard d-flex" id="wrapper">
+  <DoctorSideBar />
+
+       <div id="page-content-wrapper patient-details">
+        <div className="container-fluid px-5 py-5 sidecontentcontainer">
+         <Row className="sidecontent justify-content-left row no-gutters">
+           <Col md={6} className="mb-4">
+            <Card className="patient-detail card">
+            <Col md={6}>
+                  <Card.Img className='avatar-patient' src={patient && patient.profile_picture ? patient && patient.profile_picture : "https://www.w3schools.com/howto/img_avatar.png"} />
+                  </Col>
+                <Card.Body>
+                
+                  <Card.Title className="patient-detail card-title">
+                {patient && patient.first_name} {patient && patient.last_name}
+                </Card.Title>
+                <Card.Subtitle mb={2} className="card-subtitle1">
+                {patient && patient.location}
+                  </Card.Subtitle>
+                  <Card.Subtitle mb={2} className="card-subtitle2">
+                {patient && patient.age}
+                  </Card.Subtitle>
+                  </Card.Body>
+            </Card>
+
+           </Col>
+         </Row>
+         <Row className=" appointment-history-table mt-7 sidecontent">
+           <Col md={6}>
+            
+            {/* <div className="appointment-history"><h3>Appointment History </h3></div> */}
+
+            <Table table table-bordered table-striped>
+            <thead>
+                      <tr>
+                        <th>Date</th>
+                        <th>Diagnosis</th>
+                        
+                      </tr>
+                    </thead>
+                    { patient && patient.appointments && patient.appointments.length > 0 && patient.appointments.map((appointment) => {
+
+             return(
+            <tbody className="appointment-body"key={appointment.id}>
+           <tr>
+           <td>{appointment.date}</td>
+           <td>{appointment.diagnosis}</td>
+           </tr>
+         </tbody>
+                )
+           })}
+            </Table>
+           
+           </Col>
+          
+           <Col md={5} className="table-right">
+           <h3 className="title">Health Data </h3>
+      
+          <Table >
+            <thead>
+              <tr>
+              <th>Blood Pressure</th>
+              <th >Weight</th>
+              <th >Temperature</th>
+              </tr>
+            </thead>
+            <tbody key={patient && patient.medical_record.id}>
+                        <tr>
+                          <td>{patient && patient.medical_record.blood_pressure}</td>
+                          <td>{patient && patient.medical_record.weight}</td>
+                          <td>{patient && patient.medical_record.temperature}</td>
+
+                             </tr>
+                      </tbody>
+          </Table>
+          
+        </Col>
+
+        <div className="d-flex justify-content-center align-items-end">
+  
+  
+        <Col md={6} className="mb-4">
+            <Card className="patient-medz card">
+            
+                <Card.Body>
+                
+                  <Card.Title className="patient-medz card-title">
+                </Card.Title><h3>Medications</h3>
+                <Card.Text>
+                {/* <ul class="list-group list-group-flush"> */}
+                             
+                             <ListGroup key={patient && patient.medical_record.id} class="list-group-item"
+     >                          {patient && patient.medical_record.medications}
+                             </ListGroup>
+                                     
+                                 {/* </ul> */}
+                  </Card.Text>
+                  </Card.Body>
+            </Card>
+
+           </Col>
+  
+
+</div>         
+
+<div className="d-flex justify-content-center align-items-end">
+  
+  
+        <Col md={6} className="mb-4">
+            <Card className="patient-allergy card">
+            
+                <Card.Body>
+                
+                  <Card.Title className="patient-allergy card-title">
+                </Card.Title><h3>Allergies</h3>
+                <Card.Text>
+                {/* <ul class="list-group list-group-flush"> */}
+                             
+                             <ListGroup key={patient && patient.medical_record.id} class="list-group-item"
+     >                          {patient && patient.medical_record.allergies}
+                             </ListGroup>
+                                     
+                                 {/* </ul> */}
+                  </Card.Text>
+                  </Card.Body>
+            </Card>
+
+           </Col>
+  
+
+</div>         
+</Row>
+        </div>
+
+
+      </div> 
+
+
+
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      {/* <Card className="patientdetails-card">
        <Container>
         <Row>
       <Col  className="patient mt-3" md={4} key={patient && patient.id}>
@@ -122,7 +289,6 @@ function PatientDetails(){
                       </Card>
                       </Col>
 
-                      {/* medication */}
                       <Col className="medication">
                          <Card className="medication-card">
                           <Card.Body>
@@ -141,7 +307,6 @@ function PatientDetails(){
                           </Card>
                       </Col>
 
-                      {/* allergies */}
                       <Col className="allergies">
                          <Card className="allergies-card">
                           <Card.Body>
@@ -162,30 +327,10 @@ function PatientDetails(){
                       </Col>
 
                     </Row>      
-                  </Card>   
+                  </Card>    */}
 
                  
-      <Container>
-                  {/* <Row>
-               {patient && patient.appointments && patient.appointments.length > 0 && patient.appointments.map((appointment) =>
-               {
-                return(
-                  <Col  className="patient mt-3" md={4}>
-                    <Card className="appointment-card">
-                 
-                <Card.Body>
-                    <Card.Title className="patient-name"> {appointment.date} </Card.Title>
-               </Card.Body>
-                </Card>
-
-                  </Col>
-
-                )
-               }
-              )}
-            </Row> */}
-            </Container>
-
+      
 
 
        
