@@ -64,13 +64,14 @@ function PatientDetails(){
            <Col md={6}>
             
             {/* <div className="appointment-history"><h3>Appointment History </h3></div> */}
-
+            <h3 className="title-1">Appointment History</h3>
             <Table table table-bordered table-striped>
             <thead>
                       <tr>
                         <th>Date</th>
                         <th>Diagnosis</th>
-                        
+                        <th>Doctor</th>
+
                       </tr>
                     </thead>
                     { patient && patient.appointments && patient.appointments.length > 0 && patient.appointments.map((appointment) => {
@@ -80,6 +81,9 @@ function PatientDetails(){
            <tr>
            <td>{appointment.date}</td>
            <td>{appointment.diagnosis}</td>
+           <td>Dr. {appointment.doctor.first_name}
+           {appointment.doctor.last_name}</td>
+
            </tr>
          </tbody>
                 )
@@ -101,9 +105,9 @@ function PatientDetails(){
             </thead>
             <tbody key={patient && patient.medical_record.id}>
                         <tr>
-                          <td>{patient && patient.medical_record.blood_pressure}</td>
-                          <td>{patient && patient.medical_record.weight}</td>
-                          <td>{patient && patient.medical_record.temperature}</td>
+                          <td>{patient && patient.medical_record.blood_pressure} mm Hg</td>
+                          <td>{patient && patient.medical_record.weight} kg</td>
+                          <td>{patient && patient.medical_record.temperature} degrees celsius</td>
 
                              </tr>
                       </tbody>
