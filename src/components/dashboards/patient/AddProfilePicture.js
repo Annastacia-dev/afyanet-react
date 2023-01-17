@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import { PatientContext } from '../../../context/patient';
 import { ToastContainer, toast } from 'react-toastify';
+import '../../../css/EditProfilePicture.css';
 
 function AddProfilePicture() {
   const [profilePicture, setProfilePicture] = useState('');
@@ -47,14 +48,7 @@ function AddProfilePicture() {
   }
 
   return (
-    <div className='container' style={{
-         height: '410px',
-         marginTop: "10px", 
-         display:'flex',
-         flexDirection: 'column',
-         justifyContent: 'center',
-         alignItems: 'center',
-         }}>
+    <div className='edit-profile-picture container'>
         <ToastContainer 
             position="top-center"
             autoClose={5000}
@@ -66,8 +60,8 @@ function AddProfilePicture() {
             draggable
             pauseOnHover
         />
-        <h5 style={{marginTop: "-100px", marginBottom:"100px"}}>Update Profile Picture</h5>
-      <input style={{marginLeft:"100px"}} type="file" onChange={handleUpload} />
+        <h5>Update Profile Picture</h5>
+      <input type="file" onChange={handleUpload} />
         <br />
       {loading && <p><strong>Uploading image...</strong></p>}
       <br />

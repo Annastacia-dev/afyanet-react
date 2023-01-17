@@ -41,3 +41,19 @@
     margin-left: 200px;
     width: 130px;
 }
+
+/* Media */
+@media screen and (max-width: 768px){
+    .patient-profile .card{
+        width: 100%;
+    }
+    .patient-profile .btn-danger{
+        margin-left: 0px;
+        width: 100px;
+    }
+    .patient-profile .btn-primary{
+        margin-left: 0px;
+        width: 100px;
+        font-size: 12px;
+    }
+}
