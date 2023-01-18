@@ -1,0 +1,75 @@
+
+.avatar-patient{
+    width: 90px;
+    height: 100px;
+    border-radius: 50%;
+    margin-top: 59px;
+    display: block;
+    object-fit: cover;
+    position: relative;
+    align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+}
+.patients {
+  padding-left: 190px;
+ }
+
+ .patient-card{
+  /* background-color: white; */
+
+  background-color: var(--background-color-4);
+  border: none;
+  margin-left: -30px;
+  width: 100% ;
+  border-radius: 20px;
+  text-align: right;
+}
+.patients .btn-primary{
+  width: 50%;
+  margin-right: 90px;
+  height: 40%;
+
+}
+
+
+.patient-name{
+  margin-top:-100px;
+  margin-right: 10px;
+ 
+
+}
+
+.patient-location{
+  text-align: left;
+  margin-left: 150px;
+  /* margin-top: -90px; */
+
+}
+
+
+.patient-age{
+  text-align: left;
+  margin-left: 150px;
+  /* margin-top: -10px; */
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    .patients{
+        margin: 0 auto;
+    }
+    .patient .card .card-body{
+        margin-left: 0px;
+        text-align: center;
+    }
+    .patient .card .card-title{
+        margin-top: 0px;
+    }
+    .patient .btn-primary{
+        width: 100%;
+    }
+}
+

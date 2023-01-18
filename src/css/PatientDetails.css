@@ -57,7 +57,7 @@
   .patient-medz.card{
     background-color: var(--background-color-4);
     margin-left: 490px;
-    margin-top: -490px;
+    margin-top: -750px;
     width: 475px;
 
   }
@@ -66,7 +66,7 @@
   .patient-allergy.card{
     background-color: var(--background-color-4);
     margin-left: 490px;
-    margin-top: -350px;
+    margin-top: -550px;
     width: 475px;
 
   }
