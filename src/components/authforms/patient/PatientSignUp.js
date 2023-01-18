@@ -59,12 +59,13 @@ const PatientSignUp = () => {
     .then (r => {
         if (r.ok) {
             r.json().then(data => {
+                localStorage.setItem('token', data.jwt)
                 setPatient(data)
                 setTimeout(() => {
                     notify()
                 }, 500);
                 setTimeout(() => {
-                    navigate('/patient/login')
+                    navigate('/patient/dashboard')
                 } , 3000);
             })
         } else {

@@ -11,10 +11,43 @@
     margin-top: 20px;
     margin-left: 20px;
 }
+
+.specialists h2{
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.specialists .search{
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.specialists .search input{
+    height: 40px;
+    border: 1px solid var(--primary-color);
+    border-radius: 20px;
+    padding-left: 20px;
+    font-size: 16px;
+    color: var(--primary-color);
+}
+
+.specialists .search input:focus{
+    outline: none;
+}
+
+.specialists .search i{
+    font-size: 20px;
+    color: var(--primary-color);
+    margin-left: -40px;
+}
+
+
+
 .specialist .card{
     background-color: var(--background-color-4);
     border: none;
     border-radius: 20px;
+    margin-bottom: 10px;
 }
 .specialist .card .card-body{
     margin-left: 150px;
