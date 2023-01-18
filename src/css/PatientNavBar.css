@@ -19,3 +19,27 @@
 .patient-navbar .navbar-toggler:hover{
     background-color: #fff;
 }
+
+/* Doctor */
+
+.doctor-navbar{
+    background-color: var(--primary-color);
+}
+
+.doctor-navbar a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.doctor-navbar .navbar-toggler{
+    background-color: #fff;
+    border: none;
+}
+
+.doctor-navbar .navbar-toggler i{
+    color: var(--primary-color);
+}
+
+.doctor-navbar .navbar-toggler:hover{
+    background-color: #fff;
+}

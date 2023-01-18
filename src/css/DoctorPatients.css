@@ -1,5 +1,4 @@
-
-.avatar-patient{
+.doctor-patients .avatar-patient{
     width: 90px;
     height: 100px;
     border-radius: 50%;
@@ -11,13 +10,11 @@
   justify-content: center;
   margin-left: 10px;
 }
-.patients {
+.doctor-patients .patients {
   padding-left: 190px;
  }
 
- .patient-card{
-  /* background-color: white; */
-
+ .doctor-patients .patient-card{
   background-color: var(--background-color-4);
   border: none;
   margin-left: -30px;
@@ -25,50 +22,51 @@
   border-radius: 20px;
   text-align: right;
 }
-.patients .btn-primary{
+.doctor-patients .patients .btn-primary{
   width: 50%;
   margin-right: 90px;
   height: 40%;
 
 }
-
-
-.patient-name{
+.doctor-patients .patient-name{
   margin-top:-100px;
   margin-right: 10px;
+  font-size: 16px;
  
 
 }
-
-.patient-location{
-  text-align: left;
-  margin-left: 150px;
-  /* margin-top: -90px; */
-
+.doctor-patients .card .card-text{
+  font-size: 10px;
+}
+.doctor-patients .card .card-text i{
+  margin-right: 5px;
 }
 
-
-.patient-age{
+.doctor-patients .patient-age{
   text-align: left;
   margin-left: 150px;
-  /* margin-top: -10px; */
+}
+
+.doctor-patients .btn-primary{
+  margin-left: 150px;
+  margin-bottom: 20px;
 }
 
 
 
 
 @media screen and (max-width: 768px) {
-    .patients{
+    .doctor-patients .patients{
         margin: 0 auto;
     }
-    .patient .card .card-body{
+    .doctor-patients .patient .card .card-body{
         margin-left: 0px;
         text-align: center;
     }
-    .patient .card .card-title{
+    .doctor-patients .patient .card .card-title{
         margin-top: 0px;
     }
-    .patient .btn-primary{
+    .doctor-patients .patient .btn-primary{
         width: 100%;
     }
 }

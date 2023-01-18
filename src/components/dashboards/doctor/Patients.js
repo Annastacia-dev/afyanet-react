@@ -1,6 +1,6 @@
 import React,  { useContext } from "react";
 import DoctorSideBar from './DoctorSideBar';
-import DoctorNavBar from './DoctorNavBar';
+
 import "../../../css/DoctorDashboard.css"
 import {Row,Col,Card, Button, Container} from 'react-bootstrap';
 import "../../../css/DoctorPatients.css";
@@ -41,10 +41,7 @@ function Patients(){
  
     return(
      <>
-        <div className='patient-navbar'>
-        <DoctorNavBar />
-       </div>
-     <div className="patient-homepage doctor-dashboard d-flex" id="wrapper">
+     <div className="patient-homepage doctor-dashboard doctor-patients d-flex" id="wrapper">
        <DoctorSideBar />
           <Container className="sidecontentcontainer px-5 patients mt-5" fluid>
             <Row className="sidecontent">
@@ -63,14 +60,13 @@ function Patients(){
                   </Col>
                   <Card.Body>
                     <Card.Title className="patient-name"> {patient.first_name} {patient.last_name}</Card.Title>
-                    <Card.Subtitle className="mb-2 text">
+                    <Card.Text className="mb-2 text">
                     <i class="fa-solid fa-location-dot"/>
-                    {patient.location}</Card.Subtitle>
-
-                    <Card.Subtitle className="mb-2 text age">
+                    {patient.location}</Card.Text>
+                    <Card.Text className="mb-2 text age">
                     <i class="fa-solid fa-calendar"/>
                     {age} years old
-                    </Card.Subtitle>
+                    </Card.Text>
                   </Card.Body>
                   <Button className="btn btn-primary"  onClick={() => navigate(`/doctor/patientdetails/${patient.id}`)} variant="primary">View Details</Button>
                 </Card>

@@ -8,7 +8,7 @@ function DoctorNavBar () {
 
     return(
         <>
-        <Navbar  expand="lg" className="patient-navbar home navbar navbar-expand-lg navbar-light fixed-top py-3">
+        <Navbar  expand="lg" className="doctor-navbar home navbar navbar-expand-lg navbar-light fixed-top py-3">
             <Container className="container px-4 px-lg-5">
                 <Navbar.Brand  className='brand' href="#home">
                     <img src={logo} alt = "logo" className="logo"/>
