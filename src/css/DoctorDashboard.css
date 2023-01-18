@@ -80,6 +80,12 @@
     border-radius: 20px;
 }
 
+.doctor-top-navbar{
+    display: none;
+}
+
+
+
 
 
 
@@ -120,6 +126,10 @@
 
     .phone-time .card .card-text{
         font-size: 30px;
+    }
+
+    .doctor-top-navbar{
+        display: block;
     }
     
 }

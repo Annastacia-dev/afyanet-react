@@ -1,7 +1,6 @@
 import React,{ useContext } from 'react'
 import { DoctorContext } from '../../../context/doctor';
 import DoctorSideBar from './DoctorSideBar';
-import DoctorNavBar from './DoctorNavBar';
 import "../../../css/DoctorDashboard.css"
 import {Row, Col,Card,Table } from 'react-bootstrap';
 import Loading from '../../display/Loading';
@@ -50,9 +49,6 @@ const DoctorDashboard = () => {
 
   return (
     <>
-    <div className='patient-navbar'>
-      <DoctorNavBar />
-    </div>
      <div className="patient-homepage main-doctor doctor-dashboard d-flex" id="wrapper">
       <DoctorSideBar />
         <div id="page-content-wrapper">
@@ -133,9 +129,9 @@ const DoctorDashboard = () => {
 
                           const currentDate = new Date().toDateString().split(' ').slice(0, 4).join(' ')
 
-                          if (date === currentDate && appointment.time > currentTime) {
+                          if (date === currentDate && appointment.time < currentTime) {
                             return <i style={{color:"green", fontSize:"25px"}} className="fa-solid fa-check"></i>
-                          } else if (date === currentDate && appointment.time < currentTime) {
+                          } else if (date === currentDate && appointment.time > currentTime) {
                             return <i style={{color:"#9263CB", fontSize:"25px"}} className="fa-solid fa-spinner"></i>
                           } else if (date === currentDate && appointment.time === currentTime) {
                             return <i style={{color:"#e36e2c", fontSize:"25px"}}  className="fa-solid fa-ellipsis"></i>

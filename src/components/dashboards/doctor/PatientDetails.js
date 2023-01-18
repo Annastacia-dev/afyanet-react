@@ -1,17 +1,18 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect, useContext} from "react";
 import "../../../css/DoctorDashboard.css"
 import {Row,Col,Card, Table ,ListGroup} from 'react-bootstrap';
-// import "../../../css/DoctorPatients.css";
+import { PatientContext } from '../../../context/patient';
 import { useParams } from 'react-router-dom'
 import "../../../css/PatientDetails.css";
 import DoctorSideBar from './DoctorSideBar';
-import DoctorNavBar from './DoctorNavBar';
 import "../../../css/DoctorDashboard.css"
 
 
 function PatientDetails(){
 
     const { id } = useParams()
+
+    const { specialists } = useContext(PatientContext)
 
     const [patients, setPatients] = useState([])
 
@@ -24,153 +25,171 @@ function PatientDetails(){
    const patient = patients && patients.find(patient => patient && patient.id === parseInt(id))
  console.log(patient)
 
+//  sort appointments by date, most recent first
+
+    const sortedAppointments = patient && patient.appointments.sort((a, b) => {
+        const dateA = new Date(a.date)
+        const dateB = new Date(b.date)
+        return dateB - dateA
+    })
+
+    // show only appointments whose date is in the past
+    const pastAppointments = sortedAppointments && sortedAppointments.filter(appointment => {
+        const date = new Date(appointment.date)
+        return date < new Date()
+    })
+
+  
+
  
   
   
 
     return(
         <>
-    <div className='patient-navbar'>
-        <DoctorNavBar />
-       </div>
   <div className="patient-homepage doctor-dashboard d-flex" id="wrapper">
-  <DoctorSideBar />
-
+      <DoctorSideBar />
        <div id="page-content-wrapper patient-details">
         <div className="container-fluid px-5 py-5 sidecontentcontainer">
-         <Row className="sidecontent justify-content-left row no-gutters">
-           <Col md={6} className="mb-4">
-            <Card className="patient-detail card">
-            <Col md={6}>
-                  <Card.Img className='avatar-patient' src={patient && patient.profile_picture ? patient && patient.profile_picture : "https://www.w3schools.com/howto/img_avatar.png"} />
+          {/* two columns, one with a card with patient details and table with patient appointment histor, second column with patient medical record and health data */}
+          <Row className=" sidecontent patient-details-row">
+            <Col md={4} className="patient-details-col">
+              <Card className="patient-details-card">
+                <Card.Header className="patient-details-card-header">
+                  <h5>Patient Details</h5>
+                </Card.Header>
+                <Card.Body className="patient-details-card-body">
+                  <Card.Img variant="top" className="patient-details-card-img" src={
+                    patient && patient.profile_picture ? patient.profile_picture : "https://www.w3schools.com/howto/img_avatar.png"
+                  } />
+                  <Card.Title className="patient-details-card-title">
+                    <h5>{patient && patient.first_name} {patient && patient.last_name}</h5>
+                  </Card.Title>
+                  <Card.Text className="patient-details-card-text">
+                    <ListGroup variant="flush">
+                      <ListGroup.Item className="patient-details-list-item">
+                        <span className="patient-details-list-item-span">
+                          <i className="fas fa-calendar"></i>
+                          {patient && patient.age} yrs old
+                        </span>
+                      </ListGroup.Item>
+                      <ListGroup.Item className="patient-details-list-item">
+                        <span className="patient-details-list-item-span">
+                          <i className="fas fa-location"></i>
+                          {patient && patient.location}
+                        </span>
+                      </ListGroup.Item>
+                      </ListGroup>
+                  </Card.Text>
+                  </Card.Body>
+                  </Card>
                   </Col>
-                <Card.Body>
-                
-                  <Card.Title className="patient-detail card-title">
-                {patient && patient.first_name} {patient && patient.last_name}
-                </Card.Title>
-                <Card.Subtitle mb={2} className="card-subtitle1">
-                {patient && patient.location}
-                  </Card.Subtitle>
-                  <Card.Subtitle mb={2} className="card-subtitle2">
-                {patient && patient.age}
-                  </Card.Subtitle>
+
+                  {/* Allergies */}
+
+                  <Col md={4} className="patient-details-col">
+              <Card className="patient-details-card">
+                <Card.Header className="patient-details-card-header">
+                  <h5>Allergies</h5>
+                </Card.Header>
+                <Card.Body className="patient-details-card-body">
+                  <Card.Text className="patient-details-card-text">
+                    <ListGroup variant="flush">
+                      {
+                        // convert string to list
+                        patient && patient.medical_record.allergies && patient.medical_record.allergies.split(",").map((allergy, index) => (
+                          <ListGroup.Item className="patient-details-list-item" key={index}>
+                            <span className="patient-details-list-item-span">
+                              <i className="fas fa-caret-right"></i>
+                              {allergy}
+                            </span>
+                          </ListGroup.Item>
+                        ))
+                      }
+                      </ListGroup>
+                  </Card.Text>
                   </Card.Body>
-            </Card>
+                  </Card>
+                  </Col>
 
-           </Col>
-         </Row>
-         <Row className=" appointment-history-table mt-7 sidecontent">
-           <Col md={6}>
-            
-            {/* <div className="appointment-history"><h3>Appointment History </h3></div> */}
-            <h3 className="title-1">Appointment History</h3>
-            <Table table table-bordered >
-            <thead>
-                      <tr>
-                        <th>Date</th>
-                        <th>Diagnosis</th>
-                        <th>Doctor</th>
+                  {/* Medications */}
 
+
+                  <Col md={4} className="patient-details-col">
+              <Card className="patient-details-card medications">
+                <Card.Header className="patient-details-card-header">
+                  <h5>Medications</h5>
+                </Card.Header>
+                <Card.Body className="patient-details-card-body">
+                  <Card.Text className="patient-details-card-text">
+                    <ListGroup variant="flush">
+                      {
+                        // convert string to list
+                        patient && patient.medical_record.medications && patient.medical_record.medications.split(",").map((allergy, index) => (
+                          <ListGroup.Item className="patient-details-list-item" key={index}>
+                            <span className="patient-details-list-item-span">
+                              <i className="fas fa-caret-right"></i>
+                              {allergy}
+                            </span>
+                          </ListGroup.Item>
+                        ))
+                      }
+                      </ListGroup>
+                  </Card.Text>
+                  </Card.Body>
+                  </Card>
+                  </Col>
+                  </Row>
+
+
+                  {/* Appointment History table */}
+                  <Row className=" sidecontent patient-table-details-row">
+            <Col md={12} className="patient-details-col">
+              <Table responsive="sm" className="patient-details-table">
+                <thead>
+                  <tr>
+                    <th>Doctor</th>
+                    <th>Specialty</th>
+                     <th>Date</th>
+                    <th>Diagnosis</th>
+                    <th>Treatment</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {
+                    pastAppointments && pastAppointments.map((appointment, index) => {
+
+                      // find the doctor's specialty
+                      const specialty = specialists && specialists.find(specialty => specialty.id === appointment.doctor.specialty_id)
+
+                      return(
+                        
+                        <tr key={index}>
+                        <td>
+                          < img src={ appointment.doctor.profile_picture ? appointment.doctor.profile_picture : "https://www.w3schools.com/howto/img_avatar.png"} alt="doctor" className="doctor-img" />
+                          Dr.{appointment.doctor.first_name} {appointment.doctor.last_name}</td>
+                        <td>{specialty.name}</td>
+                        <td>{appointment.date}</td>
+                        <td>{
+                          appointment.diagnosis && appointment.diagnosis.length > 0 ? appointment.diagnosis.substring(0, 30) : "N/A"
+                          }</td>
+                        <td>{
+                          appointment.treatment && appointment.treatment.length > 0 ? appointment.treatment.substring(0, 30) : "N/A"
+                          }</td>
                       </tr>
-                    </thead>
-                    { patient && patient.appointments && patient.appointments.length > 0 && patient.appointments.map((appointment) => {
+                      )
+                    
+                  })
 
-             return(
-            <tbody className="appointment-body"key={appointment.id}>
-           <tr>
-           <td>{appointment.date}</td>
-           <td>{appointment.diagnosis}</td>
-           <td>Dr. {appointment.doctor.first_name}
-           {appointment.doctor.last_name}</td>
+                  }
+                </tbody>
+              </Table>
+            </Col>
+          </Row>
 
-           </tr>
-         </tbody>
-                )
-           }
-           ) 
-           }
-            </Table>
-           
-           </Col>
-          
-           <Col md={5} className="table-right">
-           <h3 className="title">Health Data </h3>
-      
-          <Table >
-            <thead>
-              <tr>
-              <th>Blood Pressure</th>
-              <th >Weight</th>
-              <th >Temperature</th>
-              </tr>
-            </thead>
-            <tbody key={patient && patient.medical_record.id}>
-                        <tr>
-                          <td>{patient && patient.medical_record.blood_pressure} mm Hg</td>
-                          <td>{patient && patient.medical_record.weight} kg</td>
-                          <td>{patient && patient.medical_record.temperature} degrees celsius</td>
 
-                             </tr>
-                      </tbody>
-          </Table>
-          
-        </Col>
 
-        <div className="d-flex justify-content-center align-items-end">
-  
-  
-        <Col md={6} className="mb-4">
-            <Card className="patient-medz card">
-            
-                <Card.Body>
-                
-                  <Card.Title className="patient-medz card-title">
-                </Card.Title><h3>Medications</h3>
-                <Card.Text>
-                {/* <ul class="list-group list-group-flush"> */}
-                             
-                             <ListGroup key={patient && patient.medical_record.id} class="list-group-item"
-     >                          {patient && patient.medical_record.medications}
-                             </ListGroup>
-                                     
-                                 {/* </ul> */}
-                  </Card.Text>
-                  </Card.Body>
-            </Card>
-
-           </Col>
-  
-
-</div>         
-
-<div className="d-flex justify-content-center align-items-end">
-  
-  
-        <Col md={6} className="mb-4">
-            <Card className="patient-allergy card">
-            
-                <Card.Body>
-                
-                  <Card.Title className="patient-allergy card-title">
-                </Card.Title><h3>Allergies</h3>
-                <Card.Text>
-                {/* <ul class="list-group list-group-flush"> */}
-                             
-                             <ListGroup key={patient && patient.medical_record.id} class="list-group-item"
-     >                          {patient && patient.medical_record.allergies}
-                             </ListGroup>
-                                     
-                                 {/* </ul> */}
-                  </Card.Text>
-                  </Card.Body>
-            </Card>
-
-           </Col>
-     
-          
-</div>         
-</Row>
+        
         </div>
 
 
@@ -180,166 +199,6 @@ function PatientDetails(){
 
 
       </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      {/* <Card className="patientdetails-card">
-       <Container>
-        <Row>
-      <Col  className="patient mt-3" md={4} key={patient && patient.id}>
-                    <Card className="a-patient-card">
-                  <Col md={3}>
-                  <Card.Img className='avatar-patient' src={patient && patient.profile_picture ? patient && patient.profile_picture : "https://www.w3schools.com/howto/img_avatar.png"} />
-                  </Col>
-                  <Card.Body>
-                    <Card.Title className=" a-patient-name"> {patient && patient.first_name} {patient && patient.last_name}</Card.Title>
-                    <Card.Subtitle className="mb-2 a-patient-location ">
-                    {patient && patient.location}</Card.Subtitle>
-
-                    <Card.Subtitle className="a-patient-age">
-                    {patient && patient.age} Yrs Old
-                    </Card.Subtitle>
-                  </Card.Body>
-                </Card>
-
-                  </Col>
-                 
-                  </Row>
-
-                  </Container>
-
-                  <Col>
-                  <Card className="appointment-card">
-                    <Card.Body>
-                        
-                    <Card.Title className="appointment-name">Appointment History</Card.Title>
-                    <Row className=" mt-5 sidecontent">
-                    <Col md={12}>
-                        <Table striped bordered hover className="appointment-history">
-                        <thead>
-                      <tr className="appointment-subtitles">
-                       <th>Date</th>
-                        <th className="diagnosis">Diagnosis</th>
-                       </tr>
-                    </thead>
-                      { patient && patient.appointments && patient.appointments.length > 0 && patient.appointments.map((appointment) => {
-
-                        return(
-                            <tbody className="appointment-body"key={appointment.id}>
-                            <tr>
-                              <td>{appointment.date}</td>
-                              <td>{appointment.diagnosis}</td>
-                                 </tr>
-                          </tbody>
-                        )
-                      })}
-                        </Table>
-                    </Col>
-
-                    </Row>
-                    </Card.Body>
-                  </Card>
-                  
-                  </Col>
-
-                  <Row className="medi-records">
-                      <Col>
-                      <Card className="health-data">
-                       <Card.Body>
-                        <Card.Title className="health-title">
-                          Health Data
-                        </Card.Title>
-                        <Row className=" mt-5 sidecontent">
-                          <Col md={10}>
-                         <Table striped bordered hover className="healthdata-table">
-                         <thead>
-                      <tr className="appointment-subtitles">
-                       <th>Blood Pressure</th>
-                        <th >Weight</th>
-                        <th >Temperature</th>
-
-                       </tr>
-                    </thead>
-                    
-                        <tbody key={patient && patient.medical_record.id}>
-                        <tr>
-                          <td>{patient && patient.medical_record.blood_pressure}</td>
-                          <td>{patient && patient.medical_record.weight}</td>
-                          <td>{patient && patient.medical_record.temperature}</td>
-
-                             </tr>
-                      </tbody>
-                   
-                  
-                         </Table>
-                          </Col>
-                        </Row>
-
-                       </Card.Body>
-                      </Card>
-                      </Col>
-
-                      <Col className="medication">
-                         <Card className="medication-card">
-                          <Card.Body>
-                            <Card.Title className="medication-title">
-                              Medications
-                            </Card.Title>
-                           
-                            <ul class="list-group list-group-flush">
-                             
-                        <li key={patient && patient.medical_record.id} class="list-group-item"
->                          {patient && patient.medical_record.medications}
-                        </li>
-                                
-                            </ul>
-                            </Card.Body>
-                          </Card>
-                      </Col>
-
-                      <Col className="allergies">
-                         <Card className="allergies-card">
-                          <Card.Body>
-                            <Card.Title className="allergies-title">
-                              Allergies
-                            </Card.Title>
-                           
-                            <ul className="list-group list-group-flush allergies-ul">
-                             
-                        <li key={patient && patient.medical_record.id} class="list-group-item"
->                          {patient && patient.medical_record.allergies}
-                        </li>
-                               
-
-                            </ul>
-                            </Card.Body>
-                          </Card>
-                      </Col>
-
-                    </Row>      
-                  </Card>    */}
-
-                 
-      
-
-
-       
 
         </>
     )

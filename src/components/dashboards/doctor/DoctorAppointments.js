@@ -1,15 +1,19 @@
 import React, { useContext } from 'react'
-import PatientSidebar from './PatientSidebar'
-import { PatientContext } from '../../../context/patient'
+import DoctorSidebar from './DoctorSideBar'
+import { DoctorContext } from '../../../context/doctor'
 import {Row, Col, Table} from 'react-bootstrap'
-import '../../../css/PatientAppointments.css'
+import '../../../css/DoctorAppointments.css'
+import Popup from 'reactjs-popup'
+import 'reactjs-popup/dist/index.css'
+import UpdateDiagnosis from './UpdateDiagnosis'
 
 
-const PatientAppointments = () => {
 
-  const { patient } = useContext(PatientContext)
+const DoctorAppointments = () => {
 
-  console.log(patient)
+  const { doctor } = useContext(DoctorContext)
+
+  console.log(doctor)
 
   const currentDate = new Date()
   const currentTime = new Date().toLocaleTimeString('en-US', {
@@ -22,7 +26,7 @@ const PatientAppointments = () => {
 
 
   // upcoming appointments - if appointment date is greater than current date or it's the current date and the appointment time is greater than current time, sort by most recent appointment first
-  const upcomingAppointments = patient && patient.appointments && patient.appointments.length > 0 ? patient.appointments.filter(appointment => {
+  const upcomingAppointments = doctor && doctor.appointments && doctor.appointments.length > 0 ? doctor.appointments.filter(appointment => {
     const appointmentDate = new Date(appointment.date)
     const appointmentTime = new Date(appointment.time).toLocaleTimeString('en-US', {
       hour: 'numeric',
@@ -49,7 +53,7 @@ const PatientAppointments = () => {
   console.log('upcoming', upcomingAppointments)
 
   // past appointments - if appointment date is less than current date or it's the current date and the appointment time is less than current time, sort by most recent appointment first
-  const pastAppointments = patient && patient.appointments && patient.appointments.length > 0 ? patient.appointments.filter(appointment => {
+  const pastAppointments = doctor && doctor.appointments && doctor.appointments.length > 0 ? doctor.appointments.filter(appointment => {
     const appointmentDate = new Date(appointment.date)
     const appointmentTime = new Date(appointment.time).toLocaleTimeString('en-US', {
       hour: 'numeric',
@@ -80,8 +84,8 @@ const PatientAppointments = () => {
 
   return (
     <>
-    <div className="patient-appointments-page d-flex" id="wrapper">
-      <PatientSidebar />
+    <div className="Doctor-appointments-page d-flex" id="wrapper">
+      <DoctorSidebar />
         <div className='desktop' id="page-content-wrapper">
           <div className="container-fluid px-5 sidecontentcontainer">
             {/* Upcoming Appointments */}
@@ -91,7 +95,7 @@ const PatientAppointments = () => {
                 <Table>
                             <thead>
                              <tr>
-                              <th>Doctor</th>
+                              <th>Patient</th>
                               <th>Date</th>
                               <th>Time</th>
                               <th>Location</th>
@@ -110,12 +114,12 @@ const PatientAppointments = () => {
                         <tbody>
                         <tr key={appointment.id}>
                           <td>
-                            <img src={appointment.doctor.profile_picture? appointment.doctor.profile_picture : "https://www.w3schools.com/howto/img_avatar.png" } alt="doctor" className="avatar-appointment img-fluid" />
-                           <span>Dr. {appointment.doctor.first_name} {appointment.doctor.last_name}</span> 
+                            <img src={appointment.patient.profile_picture? appointment.patient.profile_picture : "https://www.w3schools.com/howto/img_avatar.png" } alt="doctor" className="avatar-appointment img-fluid" />
+                           <span>{appointment.patient.first_name} {appointment.patient.last_name}</span> 
                           </td>
                           <td><p>{appointmentDate.toDateString()}</p></td>
                           <td><p>{appointmentTime}</p></td>
-                          <td><p>{appointment.doctor.location}</p></td>
+                          <td><p>{appointment.patient.location}</p></td>
                           <td><p>{appointment.mode}</p></td>
                         </tr>
                       </tbody>
@@ -133,11 +137,12 @@ const PatientAppointments = () => {
                 <Table >
                             <thead>
                               <tr>
-                                <th>Doctor</th>
+                                <th>Patient</th>
                                 <th>Date</th>
                                 <th>Time</th>
                                 <th>Location</th>
                                 <th>Mode</th>
+                                <th>Description</th>
                                 <th>Diagnosis</th>
                               </tr>
                             </thead>
@@ -149,19 +154,29 @@ const PatientAppointments = () => {
                                   minute: 'numeric',
                                   hour12: true,
                                 })
-                                const diagnosis = appointment.diagnosis && appointment.diagnosis.length > 0 ? appointment.diagnosis.substring(0, 12) : 'No diagnosis'
+                                const diagnosis = appointment.diagnosis && appointment.diagnosis.length > 0 ? appointment.diagnosis.substring(0, 12) : (
+                                    < Popup trigger={<button className="btn btn-primary">Add Diagnosis</button>} 
+                                    modal
+                                    nested
+                                    >
+                                        <UpdateDiagnosis appointment={appointment} />
+                                    </Popup>
+
+                                )
+                                
                                 return (
                                   <tbody>
                                     <tr key={appointment.id}>
                                       <td>
-                                        <img src={appointment.doctor.profile_picture? appointment.doctor.profile_picture : "https://www.w3schools.com/howto/img_avatar.png" } alt="doctor" className="avatar-appointment img-fluid" />
-                                        <span>Dr. {appointment.doctor.first_name} {appointment.doctor.last_name}</span>
+                                        <img src={appointment.patient.profile_picture? appointment.patient.profile_picture : "https://www.w3schools.com/howto/img_avatar.png" } alt="doctor" className="avatar-appointment img-fluid" />
+                                        <span>{appointment.patient.first_name} {appointment.patient.last_name}</span>
                                       </td>
                                       <td><p>{appointmentDate.toDateString()}</p></td>
                                       <td><p>{appointmentTime}</p></td>
-                                      <td><p>{appointment.doctor.location}</p></td>
+                                      <td><p>{appointment.patient.location}</p></td>
                                       <td><p>{appointment.mode}</p></td>
-                                      <td><p>{diagnosis}</p></td>
+                                        <td><p>{appointment.description}</p></td>
+                                      <td>{diagnosis}</td>
                                     </tr>
                                   </tbody>
                                 )
@@ -195,13 +210,13 @@ const PatientAppointments = () => {
                         <div className="card-body">
                           <div className="row">
                             <div className="col-md-3">
-                              <img src={appointment.doctor.profile_picture? appointment.doctor.profile_picture : "https://www.w3schools.com/howto/img_avatar.png" } alt="doctor" className="avatar-appointment img-fluid" />
+                              <img src={appointment.patient.profile_picture? appointment.patient.profile_picture : "https://www.w3schools.com/howto/img_avatar.png" } alt="doctor" className="avatar-appointment img-fluid" />
                             </div>
                             <div className="col-md-9">
-                              <h5 className="card-title">Dr. {appointment.doctor.first_name} {appointment.doctor.last_name}</h5>
+                              <h5 className="card-title">{appointment.patient.first_name} {appointment.patient.last_name}</h5>
                               <p className="card-text">{appointmentDate.toDateString()}</p>
                               <p className="card-text">{appointmentTime}</p>
-                              <p className="card-text">{appointment.doctor.location}</p>
+                              <p className="card-text">{appointment.patient.location}</p>
                               <p className="card-text">{appointment.mode}</p>
                             </div>
                           </div>
@@ -235,7 +250,15 @@ const PatientAppointments = () => {
                       minute: 'numeric',
                       hour12: true,
                     })
-                    const diagnosis = appointment.diagnosis && appointment.diagnosis.length > 0 ? appointment.diagnosis.substring(0, 12) : 'No diagnosis'
+                    const diagnosis = appointment.diagnosis && appointment.diagnosis.length > 0 ? appointment.diagnosis.substring(0, 12) : (
+                        < Popup trigger={<button className="btn btn-primary">Add Diagnosis</button>} 
+                        modal
+                        nested
+                        >
+                            <UpdateDiagnosis appointment={appointment} />
+                        </Popup>
+
+                    )
                     return (
                       <div className="card mb-3" key={appointment.id}>
                         <div className="card-body">
@@ -244,11 +267,12 @@ const PatientAppointments = () => {
                               <img src={appointment.doctor.profile_picture? appointment.doctor.profile_picture : "https://www.w3schools.com/howto/img_avatar.png" } alt="doctor" className="avatar-appointment img-fluid" />
                             </div>
                             <div className="col-md-9">
-                              <h5 className="card-title">Dr. {appointment.doctor.first_name} {appointment.doctor.last_name}</h5>
+                              <h5 className="card-title">{appointment.patient.first_name} {appointment.doctor.last_name}</h5>
                               <p className="card-text">{appointmentDate.toDateString()}</p>
                               <p className="card-text">{appointmentTime}</p>
-                              <p className="card-text">{appointment.doctor.location}</p>
+                              <p className="card-text">{appointment.patient.location}</p>
                               <p className="card-text">{appointment.mode}</p>
+                                <p className="card-text">{appointment.description}</p>
                               <p className="card-text">{diagnosis}</p>
                             </div>
                           </div>
@@ -278,4 +302,4 @@ const PatientAppointments = () => {
   )
 }
 
-export default PatientAppointments
+export default DoctorAppointments
