@@ -41,10 +41,10 @@ const PatientSidebar = () => {
          <i className="fa-solid fa-record-vinyl"></i>
           <span>Medical Records</span>
         </a>
-        <a href="/patient/messages" className="list-group-item list-group-item-action p-4">
+        {/* <a href="/patient/messages" className="list-group-item list-group-item-action p-4">
           <i className="fa-solid fa-message"></i>
           <span>Messages</span>
-        </a>
+        </a> */}
         <a href="/patient/profile" className="list-group-item list-group-item-action p-4">
           <i className="fas fa-user"></i>
           <span>Profile</span>
