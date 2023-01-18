@@ -56,6 +56,7 @@ const PatientMedicalRecords = () => {
                       <th>Weight</th>
                       <th>Height</th>
                       <th>Temperature</th>
+                      <th>BMI</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -63,8 +64,12 @@ const PatientMedicalRecords = () => {
                       <tr>
                         <td>{patient && patient.medical_record && patient.medical_record.blood_pressure} mmHg</td>
                         <td>{patient && patient.medical_record && patient.medical_record.weight} kgs</td>
-                        <td>{patient && patient.medical_record && patient.medical_record.height} ft</td>
+                        <td>{patient && patient.medical_record && patient.medical_record.height} m</td>
                         <td>{patient && patient.medical_record && patient.medical_record.temperature}&deg;C</td>
+                        <td>{
+                        // show first two decimal places of BMI
+                        patient && patient.medical_record && patient.medical_record.bmi && patient.medical_record.bmi.toFixed(2)
+                        }kg/m<sup>2</sup></td>
                       </tr>
                      }
                   </tbody>
@@ -186,7 +191,7 @@ const PatientMedicalRecords = () => {
                           {patient && patient.medical_record && patient.medical_record.weight} kgs</p>
                         <p>Height:
                           <br/>
-                          {patient && patient.medical_record && patient.medical_record.height} ft</p>
+                          {patient && patient.medical_record && patient.medical_record.height}m</p>
                         <p>Temperature:
                           <br/>
                           {patient && patient.medical_record && patient.medical_record.temperature}&deg;C</p>
