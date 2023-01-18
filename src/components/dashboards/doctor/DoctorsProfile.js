@@ -44,7 +44,7 @@ function DoctorsProfile(){
 
 return(
 
-<div className="Doctor-profile d-flex" id="wrapper">
+<div className="doctor-profile d-flex" id="wrapper">
       <DoctorSideBar/>
         <div className="body" id="page-content-wrapper">
           <ToastContainer
@@ -62,14 +62,14 @@ return(
           <div className="container-fluid px-5 sidecontentcontainer">
             <Row className="sidecontent justify-content-center">
             <h3 className="mt-4">Profile
-            <button className="login-button btn btn-danger"
+            <button className="btn btn-danger"
                   onClick={handleLogout}>Log Out</button>
               </h3>
             </Row>
             <Row className="sidecontent">
                 <Col md={6}>
                 <Card className="card">
-                  <Card.Img className='profile-avatar' variant="top" src={ doctor && doctor.profile_picture ? doctor.profile_picture : 'https://www.w3schools.com/howto/img_avatar.png'} />
+                  <Card.Img className='doctor-avatar' variant="top" src={ doctor && doctor.profile_picture ? doctor.profile_picture : 'https://www.w3schools.com/howto/img_avatar.png'} />
                   <Popup trigger={<button className='btn btn-primary'>Edit Profile Picture</button>}
                   modal
                   nested>

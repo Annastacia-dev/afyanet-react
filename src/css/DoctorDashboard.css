@@ -48,10 +48,11 @@
     display: none;
 }
 
-.doctor-dashboard table{
+.main-doctor  table{
     margin-top: 20px;
     margin-bottom: 20px;
     border: none;
+    font-size: 10px;
 }
 
 .doctor-dashboard tr, .doctor-dashboard td, .doctor-dashboard th{
@@ -75,7 +76,7 @@
 
 .doctor-dashboard .appointments-table{
     background-color: var(--background-color-4);
-    width: 110%;
+    width: 100%;
     border-radius: 20px;
 }
 

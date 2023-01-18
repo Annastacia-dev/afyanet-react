@@ -28,7 +28,17 @@ function AddProfilePicture() {
 
   const handleUpdate = async () => {
     try {
-      await axios.patch(`https://afyanet-127t.onrender.com/patients/${patient.id}`, { profile_picture: profilePicture });
+      await fetch(`https://afyanet-127t.onrender.com/patients/${patient.id}`,{
+        method: "PATCH",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem('token')}`
+        },
+        body: JSON.stringify({
+          profile_picture: profilePicture
+        })
+      });
         toast.success('Profile picture updated successfully', {
             position: "top-center",
             autoClose: 5000,
