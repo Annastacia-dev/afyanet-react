@@ -1,0 +1,92 @@
+.Doctor-appointments-page .avatar-appointment{
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.Doctor-appointments-page table{
+    border: none;
+    font-size: 12px;
+}
+
+.Doctor-appointments-page table tr, .Doctor-appointments-page table td, .Doctor-appointments-page table th{
+    border: none;
+}
+
+.Doctor-appointments-page .upcoming-appointments{
+    background-color: var(--background-color-5);
+    width: 100%;
+    padding: 10px 30px;
+    border-radius: 10px;
+    
+}
+
+.Doctor-appointments-page table tbody{
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.Doctor-appointments-page table tbody td{
+    padding: 10px;
+    font-weight: 500;
+}
+
+.Doctor-appointments-page table tbody td p{
+    margin-top: 23px;
+}
+
+.Doctor-appointments-page .past-appointments{
+    background-color: var(--background-color-5);
+    width: 100%;
+    padding: 10px 30px;
+    border-radius: 10px;   
+}
+.Doctor-appointments-page .past-appointments table{
+    width: 100%;
+    padding: 10px 30px;
+    border-radius: 10px;  
+    font-size: 12px;
+}
+
+.Doctor-appointments-page .btn-primary{
+    font-size: 10px;
+    width: 100%;
+}
+
+
+.mobile-phone{
+    display: none;
+}
+
+/* Media */
+
+@media screen and (max-width: 768px){
+    .mobile-phone{
+        display: block;
+    }
+    .desktop{
+        display: none;
+    }
+
+    .mobile-phone .upcoming-appointments h5{
+        margin-top: 60px;
+    }
+
+    .mobile-phone .card{
+        background-color: var(--background-color-4);
+    }
+
+    .mobile-phone .card-text{
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+
+   
+    
+   
+
+    
+}

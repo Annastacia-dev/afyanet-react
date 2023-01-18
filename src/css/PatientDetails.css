@@ -12,6 +12,16 @@
   font-size: 12px;
 }
 
+.doctor-img{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+  border: 1px solid #ddd;
+  margin-right: 10px;
+}
+
 .patient-details-card-title h5{
   font-weight: bold;
   font-size: 12px;
@@ -28,7 +38,16 @@
 .patient-details-table{
   font-size: 10px;
   margin-top: 20px;
+  
 }
+
+.patient-table-details-row{
+  background-color: var(--background-color-5);
+  padding: 20px;
+  border-radius: 30px;
+  margin-top: 30px;
+}
+
 
 
 

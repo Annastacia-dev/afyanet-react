@@ -143,7 +143,7 @@ function PatientDetails(){
 
 
                   {/* Appointment History table */}
-                  <Row className=" sidecontent patient-details-row">
+                  <Row className=" sidecontent patient-table-details-row">
             <Col md={12} className="patient-details-col">
               <Table responsive="sm" className="patient-details-table">
                 <thead>
@@ -165,7 +165,9 @@ function PatientDetails(){
                       return(
                         
                         <tr key={index}>
-                        <td>Dr.{appointment.doctor.first_name} {appointment.doctor.last_name}</td>
+                        <td>
+                          < img src={ appointment.doctor.profile_picture ? appointment.doctor.profile_picture : "https://www.w3schools.com/howto/img_avatar.png"} alt="doctor" className="doctor-img" />
+                          Dr.{appointment.doctor.first_name} {appointment.doctor.last_name}</td>
                         <td>{specialty.name}</td>
                         <td>{appointment.date}</td>
                         <td>{
