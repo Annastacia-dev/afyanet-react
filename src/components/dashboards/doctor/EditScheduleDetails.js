@@ -1,6 +1,8 @@
 import React,{useState, useContext } from 'react'
 import { DoctorContext } from '../../../context/doctor'
 import { Row, Col, Form} from 'react-bootstrap'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const EditScheduleDetails = () => {
 
@@ -45,6 +47,20 @@ const EditScheduleDetails = () => {
           if (r.ok) {
             r.json().then(data => {
               console.log(data)
+              toast.success('Schedule Details Updated Successfully',{
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'colored',
+                transition: 'slide',
+                style: { backgroundColor: '#9263CB'}
+
+              })
+              window.location.reload()
             })
           } else {
             r.json().then(errors => {
@@ -61,6 +77,18 @@ const EditScheduleDetails = () => {
   return (
     <div>
     <Form onSubmit={handleSubmit}>
+      < ToastContainer
+          position='top-center'
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme='colored'
+       />
       <Row>
         <Col>
           <Form.Group>
