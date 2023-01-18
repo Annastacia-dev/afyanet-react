@@ -18,7 +18,10 @@ const EditHealthData = () => {
         fetch(`https://afyanet-127t.onrender.com/medical_records/${patient.medical_record.id}`, {
             method: "PATCH",
             headers: {
-                "Content-Type": "application/json"
+                Accept: "application/json",
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${localStorage.getItem('token')}`
+
             },
             body: JSON.stringify({
                 blood_pressure: bloodPressure,

@@ -53,7 +53,7 @@ const DoctorDashboard = () => {
     <div className='patient-navbar'>
       <DoctorNavBar />
     </div>
-     <div className="patient-homepage doctor-dashboard d-flex" id="wrapper">
+     <div className="patient-homepage main-doctor doctor-dashboard d-flex" id="wrapper">
       <DoctorSideBar />
         <div id="page-content-wrapper">
           <div className="doctor-container container-fluid px-5 py-5 sidebarcontentcontainer">
@@ -133,9 +133,9 @@ const DoctorDashboard = () => {
 
                           const currentDate = new Date().toDateString().split(' ').slice(0, 4).join(' ')
 
-                          if (date === currentDate && appointment.time < currentTime) {
+                          if (date === currentDate && appointment.time > currentTime) {
                             return <i style={{color:"green", fontSize:"25px"}} className="fa-solid fa-check"></i>
-                          } else if (date === currentDate && appointment.time > currentTime) {
+                          } else if (date === currentDate && appointment.time < currentTime) {
                             return <i style={{color:"#9263CB", fontSize:"25px"}} className="fa-solid fa-spinner"></i>
                           } else if (date === currentDate && appointment.time === currentTime) {
                             return <i style={{color:"#e36e2c", fontSize:"25px"}}  className="fa-solid fa-ellipsis"></i>
@@ -150,7 +150,11 @@ const DoctorDashboard = () => {
                           return (
                             <tbody key={appointment.id}>
                               <tr>
-                                <td>{appointment.patient.first_name} {appointment.patient.last_name}</td>
+                              <td>
+                                  <img src={appointment.patient.profile_picture ? appointment.patient.profile_picture : "https://www.w3schools.com/howto/img_avatar.png"
+                                } alt="profile" className="avatar" />
+                                <span>{appointment.patient.first_name} {appointment.patient.last_name}</span> 
+                              </td>
                                 <td>{appointment.patient.location}</td>
                                 <td>{date}</td>
                                 <td>{appointmentTime}</td>
