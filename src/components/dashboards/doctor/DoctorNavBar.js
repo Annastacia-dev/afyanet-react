@@ -19,6 +19,7 @@ function DoctorNavBar () {
                     <ul className="navbar-nav ms-auto my-2 my-lg-0">
                         <li><Nav.Link href="/doctor/dashboard">Dashboard</Nav.Link></li>
                         <li><Nav.Link href="/doctor/patients">Patients</Nav.Link></li>
+                        <li><Nav.Link href="/doctor/appointments">Appointments</Nav.Link></li>
                         <li><Nav.Link href="/doctor/statistics">Statistics</Nav.Link></li>
                         <li><Nav.Link href="/doctor/messages">Messages</Nav.Link></li>
                         <li><Nav.Link href="/doctor/profile">Profile</Nav.Link></li>
