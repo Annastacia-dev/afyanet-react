@@ -58,15 +58,14 @@ const handleChange = (e) => {
             location: formData.location,
             days_available_weekly: selectedDays.join(', '),
             contract_length: formData.contractLength,
-            specific_days_times_available: formData.time,
-            password: 'doctor.password_digest',
-            password_confirmation: 'doctor.password_digest'
+            specific_days_times_available: formData.time
         };
-        fetch(`https://afyanet-127t.onrender.com/doctors/${doctor.id}`, {
+        fetch(`https://afyanet-127t.onrender.com/doctor_profile`, {
             method: 'PATCH',
             headers: {
-                Accepts: "application/json",
-                "Content-Type": "application/json"
+                'Content-Type': 'application/json',
+                'Accepts': 'application/json',
+                Authorization: `Bearer ${localStorage.getItem("token")}`
             },
             body: JSON.stringify(doctorData)
         })
@@ -282,7 +281,7 @@ return (
                                 </Form.Group>
                             </Col>
                         </Row>
-                        <Row className="justify-content-center">
+                        {/* <Row className="justify-content-center">
                                 {
                                     errors && errors.map((error, index) => (
                                     <Col md={5} sm={12} gap={6}  className="alert alert-danger" role="alert" key={index}>
@@ -290,7 +289,7 @@ return (
                                         </Col>
                                     ))
                                 }   
-                        </Row>
+                        </Row> */}
                         <Row className="justify-content-center">
                             <Col lg="6">
                                 <button className="btn btn-primary" type="submit"> Authenticate </button>
