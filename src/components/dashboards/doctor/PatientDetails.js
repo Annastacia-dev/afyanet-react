@@ -65,7 +65,7 @@ function PatientDetails(){
             
             {/* <div className="appointment-history"><h3>Appointment History </h3></div> */}
             <h3 className="title-1">Appointment History</h3>
-            <Table table table-bordered table-striped>
+            <Table table table-bordered >
             <thead>
                       <tr>
                         <th>Date</th>
@@ -87,7 +87,9 @@ function PatientDetails(){
            </tr>
          </tbody>
                 )
-           })}
+           }
+           ) 
+           }
             </Table>
            
            </Col>
@@ -165,8 +167,8 @@ function PatientDetails(){
             </Card>
 
            </Col>
-  
-
+     
+          
 </div>         
 </Row>
         </div>
