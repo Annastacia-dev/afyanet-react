@@ -1,26 +1,42 @@
-import React, { useContext } from "react";
+import React, { useContext,useState } from "react";
 import DoctorSideBar from './DoctorSideBar';
 import { Row, Col, Card } from 'react-bootstrap';
 import { BsFillPersonFill } from "react-icons/bs";
 import { BsCalendarCheckFill } from "react-icons/bs";
-import { TiMessages } from "react-icons/ti";
-import { AiOutlineFileSearch } from "react-icons/ai";
-import { GoGraph } from "react-icons/go";
-import { IoPieChartSharp } from "react-icons/io5";
 import '../../../css/DoctorStatistics.css';
 import { DoctorContext } from '../../../context/doctor';
+import { Data } from "./DoctorStatisticsData";
+import BarChart from "./BarChart.js"
 
 
 
 function Statistics() {
 
   const style = { color: "var(--light-purple)" }
+  const style2 = { color: "var(--dark-purple)"}
+  const { doctor } = useContext(DoctorContext);
 
- const { doctor } = useContext(DoctorContext);
+  const [chartData,setChartData] = useState({
+    labels: Data.map((data) => data.day),
+    datasets: [
+      {
+        label : "Patients per Day",
+        // data: Data.map((data) => data.patientsSeen),
+        data: [8,9,12,4,7,15,12],
+        backgroundColor :[
+          "#9263CB",
+          "#9263CB",
+          "#9263CB",
+          "#9263CB",
+          "#9263CB"
+        ],
+        borderColor: "#dfd4ec",
+        borderWidth: 2
+      }
+    ]
+  });
 
- console.log(doctor)
   
-
   return (
 
     <>
@@ -65,40 +81,15 @@ function Statistics() {
                   </Card.Body>
                 </Card>
               </Col>
-              <Col>
-                <Card className="doctor-statistic-card" style={{ width: '15rem' }}>
-                  <TiMessages size={100} style={style} />
-                  <Card.Body>
-                    <Card.Title>Total Messages</Card.Title>
-                    <Card.Text>
-                      15
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-              </Col>
-              <Col>
-                <Card className="doctor-statistic-card" style={{ width: '15rem' }}>
-                  <AiOutlineFileSearch size={100} style={style} />
-                  <Card.Body>
-                    <Card.Title>Searches you appeared on</Card.Title>
-                    <Card.Text>
-                      25
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-              </Col>
             </Row>
-            <h1 className="mt-4">Average Patients Per Day</h1>
+            <h1 className="mt-4">Average Patients</h1>
+            <Card className="doctor-statistic-card" style= {{width:"900px", height:"400px"}}>
             <div>
-              <Row>
                 <Col>
-                  <GoGraph size={250} style={style} />
+                  <BarChart chartData={chartData}/>
                 </Col>
-                <Col>
-                  <IoPieChartSharp size={250} style={style} />
-                </Col>
-              </Row>
             </div>
+            </Card>
 
           </div>
         </div>
