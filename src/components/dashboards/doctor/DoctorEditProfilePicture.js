@@ -28,7 +28,15 @@ function DoctorEditProfilePicture() {
 
   const handleUpdate = async () => {
     try {
-      await axios.patch(`https://afyanet-127t.onrender.com/doctors/${doctor.id}`, { profile_picture: profilePicture });
+      await fetch(`https://afyanet-127t.onrender.com/doctors/${doctor.id}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          Authorization: `Bearer ${localStorage.getItem('token')}`
+        },
+        body: JSON.stringify({ profile_picture: profilePicture })
+      });
         toast.success('Profile picture updated successfully', {
             position: "top-center",
             autoClose: 5000,

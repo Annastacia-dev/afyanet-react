@@ -1,7 +1,7 @@
 import React from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { PatientContext } from '../../../context/patient'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import {Container, Row, Col, Card, Button} from 'react-bootstrap'
 import '../../../css/PatientViewSpecialists.css'
 
@@ -20,6 +20,12 @@ const PatientViewSpecialists = () => {
 
   console.log('patient', patient)
 
+  const [search, setSearch] = useState('')
+
+  const filteredDoctors = doctors && doctors.filter(doctor => {
+    return doctor.first_name.toLowerCase().includes(search.toLowerCase()) || doctor.last_name.toLowerCase().includes(search.toLowerCase()) || doctor.location.toLowerCase().includes(search.toLowerCase())
+  })
+
   
 
   return (
@@ -27,9 +33,14 @@ const PatientViewSpecialists = () => {
       <Row>
         <Col md={12}>
           <h2 className='text-center'>{specialist && specialist.name}s</h2>
+
+          <div className="search">
+            <input type="text" placeholder="Search by location or name ..." onChange={e => setSearch(e.target.value)}/>
+            <i className="fa fa-search"></i>
+          </div>
         </Col>
        {
-          doctors && doctors.length > 0 ? doctors.map(doctor => {
+          filteredDoctors && filteredDoctors.length > 0 ? filteredDoctors.map(doctor => {
             return (
               <Col key={doctor.id} className="specialist mt-3" md={4}>
                 <Card className="card shadow">

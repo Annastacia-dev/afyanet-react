@@ -60,12 +60,12 @@ const handleChange = (e) => {
             contract_length: formData.contractLength,
             specific_days_times_available: formData.time
         };
-        fetch(`https://afyanet-127t.onrender.com/doctor_profile`, {
+        fetch(`https://afyanet-127t.onrender.com/doctors/${doctor.id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
                 'Accepts': 'application/json',
-                Authorization: `Bearer ${localStorage.getItem("token")}`
+                 Authorization: `Bearer ${localStorage.getItem("token")}`
             },
             body: JSON.stringify(doctorData)
         })
