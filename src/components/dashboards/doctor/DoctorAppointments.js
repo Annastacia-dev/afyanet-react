@@ -272,6 +272,7 @@ const DoctorAppointments = () => {
                               <p className="card-text">{appointmentTime}</p>
                               <p className="card-text">{appointment.patient.location}</p>
                               <p className="card-text">{appointment.mode}</p>
+                                <p className="card-text">{appointment.description}</p>
                               <p className="card-text">{diagnosis}</p>
                             </div>
                           </div>
