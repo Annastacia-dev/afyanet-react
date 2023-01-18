@@ -1,33 +1,30 @@
-import React,{ useContext, useState } from 'react'
-import { PatientContext } from '../../../context/patient'
+import React, { useContext, useState } from "react"
+import { DoctorContext } from '../../../context/doctor'
 import { Row, Col, Form, Button } from 'react-bootstrap'
-import { ToastContainer, toast } from 'react-toastify'
+import { ToastContainer, toast} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import Loading from '../../display/Loading'
-import Axios from 'axios'
 
-const EditProfile = () => {
 
-    const { patient, error, loading } = useContext(PatientContext)
 
-    const [firstName, setFirstName] = useState(patient && patient.first_name)
-    const [lastName, setLastName] = useState(patient && patient.last_name)
-    const [email, setEmail] = useState(patient && patient.email)
-    const [phone, setPhone] = useState(patient && patient.phone_number)
-    const [location, setLocation] = useState(patient && patient.location)
-   
+function EditPersonalDetails(){
+    const { doctor, error, loading } = useContext(DoctorContext)
+
+    const [firstName, setFirstName] = useState(doctor && doctor.first_name)
+    const [lastName, setLastName] = useState(doctor && doctor.last_name)
+    const [email, setEmail] = useState(doctor && doctor.email)
+    const [phone, setPhone] = useState(doctor && doctor.phone_number)
+    const [location, setLocation] = useState(doctor && doctor.location)
+
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        setTimeout(() => {
-
-            fetch(`https://afyanet-127t.onrender.com/patients/${patient.id}`, {
+        fetch(`https://afyanet-127t.onrender.com/doctors/${doctor.id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
                 'Accepts': 'application/json',
                 Authorization: `Bearer ${localStorage.getItem("token")}`,
-
             },
             body: JSON.stringify({
                 first_name: firstName,
@@ -58,13 +55,25 @@ const EditProfile = () => {
             } else {
                 r.json().then(data => {
                     console.log(data.errors)
+                    toast.error('Error updating profile',{
+                        position: 'top-center',
+                        autoClose: 1000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: 'colored',
+                        transition: 'slide',
+                        style: {backgroundColor: '#9263CB'}
+                    })
                 })
             }
-        })
+        }
+        )
+        
 
-        },100);
     }
-
 
     if (loading) {
         return <div><Loading /></div>
@@ -73,10 +82,9 @@ const EditProfile = () => {
     if (error) {
         return <div>Error: {error.message}</div>
     }
-
-  return (
-    <div>
-        <ToastContainer 
+    return(
+        <>
+          <ToastContainer 
             position="top-center"
             autoClose={1000}
             hideProgressBar={false}
@@ -86,11 +94,12 @@ const EditProfile = () => {
             progress={undefined}
             theme='colored'
             transition='slide'
+            style={{backgroundColor: '#9263CB'}}
         />
-        <Row className="justify-content-center">
+
+        <Row className="justify-content-right">
             <Col md={8}>
-                <Form onSubmit={handleSubmit}
-                >
+                <Form onSubmit={handleSubmit}>  
                     <Form.Group controlId="formBasicFirstName">
                         <Form.Label>First Name</Form.Label>
                         <Form.Control type="text" placeholder="Enter first name" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
@@ -114,9 +123,9 @@ const EditProfile = () => {
                     <Button variant='primary' type='submit'>Update</Button>
                 </Form>
             </Col>
-        </Row>            
-    </div>
-  )
-}
-
-export default EditProfile
+        </Row>  
+        </>
+    )
+        
+    };
+export default EditPersonalDetails

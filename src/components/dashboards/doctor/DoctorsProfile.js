@@ -1,30 +1,23 @@
-import axios  from "axios";
 import DoctorSideBar from './DoctorSideBar';
 import { Row, Col, Card } from 'react-bootstrap';
-import React, { useEffect, useState } from "react"
-import { useNavigate, useParams } from "react-router-dom";
-
+import React, { useContext} from "react"
+import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import Popup from 'reactjs-popup';
-import Profile from "./Profile";
+import EditPersonalDetails from "./EditPersonalDetails";
+import EditScheduleDetails from "./EditScheduleDetails";
 import '../../../css/DoctorsProfile.css';
+import { DoctorContext } from '../../../context/doctor';
+import DoctorEditProfilePicture from './DoctorEditProfilePicture'
 
 
 function DoctorsProfile(){
-  let navigate = useNavigate();
-  const {id} = useParams();
-  const [doctor, setDoctor] = useState({
-    first_name:"",
-    last_name:"", 
-    email:"", 
-    phone_number:"",  
-    location:"", 
-    specialty:"", 
-    contract_length:"", 
-    days_available_weekly:"", 
-    specific_days_times_available:""
-  });
+  
+  const { doctor} = useContext(DoctorContext);
 
+  console.log(doctor)
+
+  const navigate = useNavigate();
 
   const handleLogout = () => {
     localStorage.removeItem('token');
@@ -47,27 +40,6 @@ function DoctorsProfile(){
   }
 
 
-const {first_name, last_name, email, phone_number, location, specialty, contract_length, days_available_weekly, specific_days_times_available} = doctor;
-const onInputchange = e =>{
-  setDoctor ({...doctor, [e.target.name]: e.target.value});
-};
-
-useEffect(()=>{
-  loadDocter();
-
-},[]);
-
-
-const onSubmit = async e => {
-  e.preventDefault();
-  await axios.patch(`https://afyanet-127t.onrender.com/doctors/${id}`, doctor);
-  navigate.push("/profile");
-};
-
-const loadDocter = async () => {
-  const result = await axios.patch(`https://afyanet-127t.onrender.com/doctors/${id}`,doctor);
-  setDoctor(result.data);
-};
 
 
 return(
@@ -95,35 +67,55 @@ return(
               </h3>
             </Row>
             <Row className="sidecontent">
-              <Col md={6} className="mb-4">
+                <Col md={6}>
                 <Card className="card">
-                  <Card.Img className='profile-avatar' variant="top" src={doctor && doctor.profile_picture ? doctor.profile_picture : "https://www.w3schools.com/howto/img_avatar.png"} />
+                  <Card.Img className='profile-avatar' variant="top" src={ doctor && doctor.profile_picture ? doctor.profile_picture : 'https://www.w3schools.com/howto/img_avatar.png'} />
+                  <Popup trigger={<button className='btn btn-primary'>Edit Profile Picture</button>}
+                  modal
+                  nested>
+                    <DoctorEditProfilePicture />
+                  </Popup>
+
                   <Card.Body>
-                    <Card.Title className="card-title">{doctor && doctor.first_name} {doctor && doctor.last_name}</Card.Title>
-                    <Card.Text>
-                      <p><strong>Email:</strong> {doctor && doctor.email}</p>
-                      <p><strong>phone:</strong> {doctor && doctor.phone_number}</p>
-                      <p><strong>location</strong> {doctor && doctor.location}</p>
-                      <p><strong>specialty:</strong> {doctor && doctor.specialty}</p>
-                      
-                      <p><strong>contract_length:</strong> {doctor && doctor.contract_length}</p>
-                      <p><strong>days_available_weekly:</strong> {doctor && doctor.days_available_weekly}</p>
-                      <p><strong>specific_days_times_available</strong> {doctor && doctor.specific_days_times_available}</p>
-                      
+                    <Card.Title className="card-title">Personal Details</Card.Title>
+                     <Card.Text>
+                      <p>Dr.{doctor && doctor.first_name} {doctor && doctor.last_name}</p>
+                      <p><i className={doctor && doctor.specialty.image}></i> {doctor && doctor.specialty.name}</p>
+                      <p>{doctor && doctor.email}</p>
+                      <p>{doctor && doctor.phone_number}</p>
+                      <p>{doctor && doctor.location}</p>
                     </Card.Text>
-                  </Card.Body>
-                </Card>
-                <Popup trigger={<button className="btn btn-primary">Edit Personal Details</button>} 
+                    </Card.Body>
+                    </Card>
+                    <Popup trigger={<button className="btn btn-primary">Edit Personal Details</button>} 
                 modal
                 nested
                 >
-                  <Popup trigger={<button className="btn btn-primary">Edit Schedule Details</button>} 
+                  <EditPersonalDetails />
+                </Popup>
+                
+                </Col>
+                <Col md={6}>
+                <Card className="card">
+                  <Card.Body>
+                    <Card.Title className="card-title">Schedule Details</Card.Title>
+                     <Card.Text>
+                      <p>Available for the next {doctor && doctor.contract_length}months</p>
+                      <p>Available on {doctor && doctor.days_available_weekly}</p>
+                      <p>Available from {
+                        // convert doctor.specific_days_times_available to 12 hour clock
+                        new Date(doctor && doctor.specific_days_times_available).toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
+                        }</p>
+                    </Card.Text>
+                    </Card.Body>
+                </Card>
+                <Popup trigger={<button className="btn btn-primary">Edit Schedule Details</button>} 
                 modal
                 nested
-                />
-                  <Profile/>
+                >
+                  <EditScheduleDetails />
                 </Popup>
-              </Col>
+                </Col>
             </Row>
           </div>
         </div>
