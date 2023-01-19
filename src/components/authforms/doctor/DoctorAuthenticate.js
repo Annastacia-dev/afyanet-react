@@ -281,7 +281,7 @@ return (
                                 </Form.Group>
                             </Col>
                         </Row>
-                        {/* <Row className="justify-content-center">
+                        <Row className="justify-content-center">
                                 {
                                     errors && errors.map((error, index) => (
                                     <Col md={5} sm={12} gap={6}  className="alert alert-danger" role="alert" key={index}>
@@ -289,7 +289,7 @@ return (
                                         </Col>
                                     ))
                                 }   
-                        </Row> */}
+                        </Row>
                         <Row className="justify-content-center">
                             <Col lg="6">
                                 <button className="btn btn-primary" type="submit"> Authenticate </button>
