@@ -97,14 +97,14 @@ function PatientDetails(){
                     <ListGroup variant="flush">
                       {
                         // convert string to list
-                        patient && patient.medical_record.allergies && patient.medical_record.allergies.split(",").map((allergy, index) => (
+                        patient && patient.medical_record && patient.medical_record.allergies && patient.medical_record.allergies.length > 0 ? patient.medical_record.allergies.split(",").map((allergy, index) => (
                           <ListGroup.Item className="patient-details-list-item" key={index}>
                             <span className="patient-details-list-item-span">
                               <i className="fas fa-caret-right"></i>
                               {allergy}
                             </span>
                           </ListGroup.Item>
-                        ))
+                        )) : <p>No allergies</p>
                       }
                       </ListGroup>
                   </Card.Text>
@@ -125,14 +125,14 @@ function PatientDetails(){
                     <ListGroup variant="flush">
                       {
                         // convert string to list
-                        patient && patient.medical_record.medications && patient.medical_record.medications.split(",").map((allergy, index) => (
+                        patient && patient.medical_record && patient.medical_record.medications && patient.medical_record.medications.length > 0 ? patient.medical_record.medications.split(",").map((allergy, index) => (
                           <ListGroup.Item className="patient-details-list-item" key={index}>
                             <span className="patient-details-list-item-span">
                               <i className="fas fa-caret-right"></i>
                               {allergy}
                             </span>
                           </ListGroup.Item>
-                        ))
+                        )) : <p>No medications</p>
                       }
                       </ListGroup>
                   </Card.Text>
@@ -168,7 +168,7 @@ function PatientDetails(){
                         <td>
                           < img src={ appointment.doctor.profile_picture ? appointment.doctor.profile_picture : "https://www.w3schools.com/howto/img_avatar.png"} alt="doctor" className="doctor-img" />
                           Dr.{appointment.doctor.first_name} {appointment.doctor.last_name}</td>
-                        <td>{specialty.name}</td>
+                        <td>{specialty && specialty.name}</td>
                         <td>{appointment.date}</td>
                         <td>{
                           appointment.diagnosis && appointment.diagnosis.length > 0 ? appointment.diagnosis.substring(0, 30) : "N/A"
