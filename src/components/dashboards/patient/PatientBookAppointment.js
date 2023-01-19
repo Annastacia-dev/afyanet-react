@@ -79,6 +79,37 @@ const PatientBookAppointment = () => {
         }
     }
 
+    // date cannot be earlier than today
+    const validateDate = (e) => {
+        const date = e.target.value
+        const dateArray = date.split('-')
+        const year = parseInt(dateArray[0])
+        const month = parseInt(dateArray[1])
+        const day = parseInt(dateArray[2])
+        const today = new Date()
+        const todayYear = today.getFullYear()
+        const todayMonth = today.getMonth() + 1
+        const todayDay = today.getDate()
+        if (year < todayYear || (year === todayYear && month < todayMonth) || (year === todayYear && month === todayMonth && day < todayDay)) {
+            toast.error('Please select a date that is later than today',{
+                position: 'top-center',
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'colored'
+            })
+            setFormData({
+                ...formData,
+                date: ''
+            })
+        }
+    }
+
+
+
 
 
     
@@ -185,7 +216,10 @@ const PatientBookAppointment = () => {
                         <Col md={6}>
                             <Form.Group controlId="formBasicDate">
                                 <Form.Label>Date</Form.Label>
-                                <Form.Control type="date" placeholder="Enter date" name="date" value={formData.date} onChange={handleChange} />
+                                <Form.Control type="date" placeholder="Enter date" name="date" value={formData.date} onChange={(e) => {
+                                    handleChange(e)
+                                    validateDate(e)
+                                }} />
                             </Form.Group>    
                         </Col>
                         <Col md={3}>
@@ -193,7 +227,7 @@ const PatientBookAppointment = () => {
                                 <Form.Label>Time</Form.Label>
                                 <Form.Control  type="time" placeholder="Enter time" name="time" value={formData.time} onChange={(e) => {
                                     handleChange(e)
-                                    validateTime()
+                                    validateTime(e)
                                 }} />
                             </Form.Group>
                         </Col>
