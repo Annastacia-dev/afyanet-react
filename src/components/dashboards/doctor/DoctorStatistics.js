@@ -6,14 +6,13 @@ import { BsCalendarCheckFill } from "react-icons/bs";
 import '../../../css/DoctorStatistics.css';
 import { DoctorContext } from '../../../context/doctor';
 import { Data } from "./DoctorStatisticsData";
-import BarChart from "./BarChart.js"
+import BarChart from "./BarChart"
 
 
 
 function Statistics() {
 
   const style = { color: "var(--light-purple)" }
-  const style2 = { color: "var(--dark-purple)"}
   const { doctor } = useContext(DoctorContext);
 
   const [chartData,setChartData] = useState({
