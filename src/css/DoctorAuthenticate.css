@@ -1,0 +1,99 @@
+.doctor-authenticate{
+    background-color: var(--background-color-4); 
+    padding-top: 74px;  
+}
+
+.doctor-authenticate h2{
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.doctor-authenticate form{
+    padding: 30px;   
+}
+.doctor-authenticate input[type="text"],.doctor-authenticate input[type="tel"], .doctor-authenticate input[type="number"],.doctor-authenticate input[type="time"] {
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: var(--primary-font);
+    background-color: transparent;
+}
+.doctor-authenticate input[type="text"]:focus,.doctor-authenticate input[type="tel"]:focus,.doctor-authenticate input[type="number"]:focus, .doctor-authenticate input[type="time"]:focus{
+    outline: none;
+    border: 1px solid var(--dark-purple);
+    color: black;
+}
+
+.doctor-authenticate form select{
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: var(--primary-font);
+    background-color: transparent;
+}
+
+.doctor-authenticate select:focus{
+    outline: none;
+    border: 1px solid var(--dark-purple);
+    color: black;
+}
+
+.doctor-authenticate option{
+    font-size: 1rem;
+    font-family: var(--primary-font);
+    border: none;
+    background-color: var(--dark-purple);
+    color: #fff;
+    padding: 2px;
+}
+
+.doctor-authenticate .btn-primary{
+    width: 60%;
+}
+
+.doctor-authenticate label{
+    font-size: 11px;
+    text-align: left;
+    font-weight: 500;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.doctor-authenticate .btn-link{
+    cursor: pointer;
+    color: var(--light-purple);   
+}
+
+.doctor-authenticate .btn-link:hover{
+    color: var(--dark-purple);
+}
+
+.doctor-authenticate input[type="checkbox"]{
+    background-color: var(--primary-color);
+}
+
+
+
+/* Media */
+@media screen and (max-width: 768px){
+    .doctor-authenticate{
+      padding-top: 100px;
+    }
+    .doctor-authenticate h2{
+        font-size: 1.1rem;
+    }
+    .doctor-authenticate input[type="text"], .doctor-authenticate input[type="tel"]{
+        height: 50px;
+        font-size: 0.9rem;
+    }
+}

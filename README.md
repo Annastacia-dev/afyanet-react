@@ -1,35 +1,61 @@
-# Getting Started with Create React App
+# AfyaNet
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+AfyaNet is a platform for connecting patients with health care providers, including tools for 
+scheduling appointments, managing medical records, and tracking health data.
+
+## Live Link
+https://afyanetapp.onrender.com/
+
+## Users
+The platform is used with patients and health care providers who are able to login and access the following services;
+1. The user/patient is able to search for and find 
+health care providers in their area, based on factors such as specialty, location, and availability. 
+2. The patient is able to schedule an appointment and the health care provider is able to confirm their availability.
+3. Patients are able to view their medical records  including information such as past visits, medications, and allergies while health care providers can manage a patient's medical records, including updating visits, 
+medications and allergies. 
+4. Patients are able to view their health data, such as blood pressure, weight, and exercise activity.
+5. Patients and providers are able to communicate through the platform.
+6. Patients are able to rate the services of a health care provider
+
+## Set Up
+This application is created using node version `v16.17.1
+`.
+To get started;
+```console
+$ git clone git@github.com:Annastacia-dev/afyanet-react.git
+
+$ cd afyanet-react
+
+$ npm install
+
+$ npm start
+
+```
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+ `npm start`
 
-Runs the app in the development mode.\
+Runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The page will reload when you make changes.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+ `npm test`
 
-### `npm test`
+Launches the test runner in the interactive watch mode.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`npm run build`
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
+Builds the app for production to the `build` folder.
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+`npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
@@ -39,33 +65,25 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## Authors
+Annastacia Kioko
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Mutuma Mwiti
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Sharon Chepkemoi
 
-### Code Splitting
+Adreen Muchiri
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Lisa Lyayuga
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Licence
+MIT License
 
-### Making a Progressive Web App
+Copyright (c) 2022
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-### Advanced Configuration
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# afyanet-react
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

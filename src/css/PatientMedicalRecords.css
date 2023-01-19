@@ -1,0 +1,170 @@
+.patient-medical-records p{
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.patient-medical-records table {
+    border: none;
+}
+
+.patient-medical-records table td , .patient-medical-records table th , .patient-medical-records table tr {
+    border: none;
+}
+
+.patient-medical-records table th {
+    text-transform: uppercase;
+    padding: 10px 30px;
+}
+
+.patient-medical-records table td {
+    background-color: var(--background-color-4);
+    border-radius: 10px;
+}
+
+.patient-medical-records .allergies {
+    background-color: var(--background-color-4);
+    margin: 0 auto;
+    width: 50%;
+    border-radius: 20px;
+    padding: 20px;
+    position: relative;
+    
+}
+.patient-medical-records .allergies ul{
+    list-style: none;
+    text-align: left;
+}
+.patient-medical-records .allergies i{
+    font-size: 20px;
+    margin-right: 10px;
+}
+.patient-medical-records .allergies li{
+    text-align: left;
+    text-transform: capitalize;
+}
+
+.patient-medical-records .patient-records-medications {
+    background-color: var(--background-color-4);
+    list-style: none;
+    margin: 0 auto;
+    width: 50%;
+    border-radius: 20px;
+    padding: 20px;
+    position: relative;
+}
+.patient-medical-records .patient-records-medications i{
+    font-size: 20px;
+    margin-right: 10px;
+}
+.patient-medical-records .patient-records-medications li{
+    text-align: left;
+    text-transform: capitalize;
+}
+
+.patient-medical-records .btn-primary{
+    position: absolute;
+    width: 20%;
+    background: none;
+    color: var(--primary-color);
+    right: 10px;
+    top: 1px;
+}
+.patient-medical-records .patient-records-medications ul{
+    list-style: none;
+    text-align: left;
+}
+
+.patient-medical-records .healthdata-edit{
+    background-color: var(--primary-color);
+    padding: 10px;
+    color: #fff;
+    margin-left: 50px;
+    border: none;
+    border-radius: 5px;
+}
+
+.patient-medical-records .healthdata-edit i{
+    margin-right: 10px;
+}
+
+
+.patient-medical-records .healthdata-add{
+    background-color: var(--primary-color);
+    padding: 10px;
+    color: #fff;
+    margin-left: 50px;
+    border: none;
+    border-radius: 5px;
+}
+
+.patient-medical-records .healthdata-add i{
+    margin-right: 10px;
+}
+
+.medical-records-phone{
+    display: none;
+}
+
+/* Media */
+@media screen and (max-width: 768px){
+    .medical-records-phone{
+        display: block;
+    }
+    .medical-records-phone p{
+        text-transform: none;
+        font-size: 12px;
+        font-weight: 400;
+        color: black;
+    }
+    .medical-records-phone .heading{
+        margin-top: 60px;
+        font-weight: 500;
+        font-size: 20px;
+    }
+    .medical-records-phone .healthdata-edit i, .medical-records-phone .healthdata-add i{
+        font-size: 25px;
+    }
+
+    .medical-records-phone .allergies i{
+        font-size: 5px;
+    }
+    .medical-records-phone .patient-records-medications i{
+        font-size: 5px;
+    }
+
+    .medical-records-phone ul{
+        font-size: 10px;
+    }
+
+    .medical-records-phone .healthdata-edit, .medical-records-phone .healthdata-add{
+        width: 30%;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+    .medical-records-desktop{
+        display: none;
+    }
+
+    .medical-records-phone .allergies{
+        width: 300%;
+    }
+
+    .medical-records-phone .patient-records-medications{
+        width: 300%;
+    }
+
+    .medical-records-phone .btn-primary{
+        position: absolute;
+        width: 50%;
+        background: none;
+        color: var(--primary-color);
+        right: -10px;
+        top: -30px;
+        font-size: 10px;
+    }
+
+
+   
+}

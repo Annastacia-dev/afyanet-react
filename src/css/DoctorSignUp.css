@@ -1,0 +1,61 @@
+.doctor-signup{
+    background-color: var(--background-color-4); 
+    padding-top: 74px;  
+    height: 100vh;
+}
+
+.doctor-signup h2{
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.doctor-signup form{
+    padding: 30px;   
+}
+.doctor-signup input[type="text"], .doctor-signup input[type="email"], .doctor-signup input[type="password"], .doctor-signup input[type="tel"]{
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: var(--primary-font);
+    background-color: transparent;
+}
+.doctor-signup input[type="text"]:focus, .doctor-signup input[type="email"]:focus, .doctor-signup input[type="password"]:focus, .doctor-signup input[type="tel"]:focus{
+    outline: none;
+    border: 1px solid var(--dark-purple);
+    color: black;
+}
+
+.doctor-signup .btn-primary{
+    width: 50%;
+}
+
+.doctor-signup .btn-link{
+    cursor: pointer;
+    color: var(--light-purple);   
+}
+
+.doctor-signup .btn-link:hover{
+    color: var(--dark-purple);
+}
+
+
+
+/* Media */
+@media screen and (max-width: 768px){
+    .doctor-signup{
+      padding-top: 100px;
+      height: 100%;
+    }
+    .doctor-signup h2{
+        font-size: 1.1rem;
+    }
+    .doctor-signup input[type="text"], .doctor-signup input[type="email"], .doctor-signup input[type="password"], .doctor-signup input[type="tel"]{
+        height: 50px;
+        font-size: 0.9rem;
+    }
+}

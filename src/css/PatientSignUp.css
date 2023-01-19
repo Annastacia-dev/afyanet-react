@@ -1,0 +1,75 @@
+.patient-signup{
+    background-color: var(--background-color-4); 
+    padding-top: 70px;  
+    height: 100vh;
+}
+
+.patient-signup h2{
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+}
+.patient-signup form{
+    padding: 30px;   
+}
+.patient-signup input[type="text"], .patient-signup input[type="email"], .patient-signup input[type="password"], .patient-signup input[type="tel"], .patient-signup input[type="date"]{
+    width: 100%;
+    height: 50px;
+    padding: 5px;
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: var(--primary-font);
+    background-color: transparent;
+}
+.patient-signup input[type="text"]:focus, .patient-signup input[type="email"]:focus, .patient-signup input[type="password"]:focus, .patient-signup input[type="tel"]:focus, .patient-signup input[type="date"]:focus{
+    outline: none;
+    border: 1px solid var(--dark-purple);
+    color: black;
+}
+
+.patient-signup .btn-primary{
+    width: 50%;
+}
+
+.patient-signup .btn-link{
+    cursor: pointer;
+    color: var(--light-purple);   
+}
+
+.patient-signup .btn-link:hover{
+    color: var(--dark-purple);
+}
+
+
+
+/* Media */
+@media screen and (max-width: 768px){
+    .patient-signup{
+      padding-top: 100px;
+      height: 100%;
+    }
+    .patient-signup h2{
+        font-size: 1.1rem;
+    }
+    .patient-signup input[type="text"], .patient-signup input[type="email"], .patient-signup input[type="password"], .patient-signup input[type="tel"], .patient-signup input[type="date"]{
+        height: 50px;
+        font-size: 0.9rem;
+    }
+}
+
+
+
+
+    
+
+
+
+
+
+
+
+
+

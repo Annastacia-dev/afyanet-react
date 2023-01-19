@@ -1,23 +1,57 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import LandingPage from './components/landingpage/LandingPage';
+import PatientSignUp from './components/authforms/patient/PatientSignUp';
+import PatientLogIn from './components/authforms/patient/PatientLogIn';
+import PatientDashboard from './components/dashboards/patient/PatientDashboard';
+import PatientAppointments from './components/dashboards/patient/PatientAppointments';
+import PatientMedicalRecords from './components/dashboards/patient/PatientMedicalRecords';
+import PatientProfile from './components/dashboards/patient/PatientProfile';
+import PatientViewSpecialists from './components/dashboards/patient/PatientViewSpecialists';
+import PatientBookAppointment from './components/dashboards/patient/PatientBookAppointment';
+import DoctorSignUp from './components/authforms/doctor/DoctorSignUp';
+import DoctorAuthenticate from './components/authforms/doctor/DoctorAuthenticate';
+import DoctorLogIn from './components/authforms/doctor/DoctorLogIn';
+import DoctorDashboard from './components/dashboards/doctor/DoctorDashboard';
+import Patients from './components/dashboards/doctor/Patients';
+import DoctorsProfile from './components/dashboards/doctor/DoctorsProfile';
+import DoctorStatistics from './components/dashboards/doctor/DoctorStatistics';
+import PatientDetails from './components/dashboards/doctor/PatientDetails';
+import Profile from './components/dashboards/doctor/DoctorProfile';
+import DoctorAppointments from './components/dashboards/doctor/DoctorAppointments';
+
+
+
+
 
 function App() {
+
+
   return (
+   
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/patient/signup" element={<PatientSignUp/>} />
+        <Route path="/patient/login" element={<PatientLogIn/>} />
+        <Route path="/patient/dashboard" element={<PatientDashboard />} />
+        <Route path="/patient/appointments" element={<PatientAppointments />} />
+        <Route path="/patient/medicalrecords" element={<PatientMedicalRecords />} />
+        <Route path="/patient/profile" element={<PatientProfile />} />
+        <Route path="/patient/specialists/:id" element={<PatientViewSpecialists />} />
+        <Route path="/doctor/signup" element={<DoctorSignUp  />} />
+        <Route path="/doctor/login" element={<DoctorLogIn  />} />
+        <Route path="/doctor/authenticate" element={<DoctorAuthenticate  />} />
+        <Route path="/doctor/dashboard" element={<DoctorDashboard />} />
+        <Route path="/doctor/patients" element={<Patients />} />
+        <Route path="/doctor/statistics" element={<DoctorStatistics />} />
+        <Route path="/doctors/profile" element={<DoctorsProfile/>} />
+        <Route path="/patient/bookappointment/:id" element={<PatientBookAppointment />} />
+        <Route path="/doctor/patientdetails/:id" element={<PatientDetails />} />
+        <Route path="/doctor/profile" element={<Profile/>} />
+        <Route path="/doctor/appointments" element={<DoctorAppointments/>} />
+      </Routes>
     </div>
   );
 }

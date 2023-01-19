@@ -1,0 +1,45 @@
+.partners{
+    padding: 20px;
+    height: 100vh;
+}
+.partners h1{
+    font-size: 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.partners p{
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+.partners .card{
+    border-radius: 1rem;
+    border: none;
+}
+.partners .card img{
+    border-radius: 1rem;
+}
+
+.partners a{
+    text-decoration: none;
+    color: var(--black);
+}
+
+.partners a :hover{
+    transform: scale(1.02);
+}
+
+.partners h5{
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 0.5rem;
+}
+
+/* Media */
+@media screen and (max-width: 768px){
+    .partner{
+        width: 50%;
+    }
+}
+

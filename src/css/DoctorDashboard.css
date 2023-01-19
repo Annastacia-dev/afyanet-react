@@ -1,0 +1,135 @@
+ .doctor-dashboard {
+    background-color: #fff;
+    height: 100vh;
+ }
+ 
+ 
+ .greeting.card{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 130%;
+    color: #000;
+    text-align: left;
+}
+
+.greeting.card .card-title{
+    padding: 10px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.greeting.card .card-title span{
+    color: var(--light-purple);
+}
+
+.greeting.card .card-text{
+    padding: 10px;
+}
+
+.time.card{
+    margin-top: 20px;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-left: 150px;
+    color: #000;
+    text-align: center;
+}
+
+.time.card .card-title{
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.time.card .card-text{
+    font-size: 50px;
+}
+
+.phone-time{
+    display: none;
+}
+
+.main-doctor  table{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: none;
+    font-size: 10px;
+}
+
+.doctor-dashboard tr, .doctor-dashboard td, .doctor-dashboard th{
+    border: none;
+}
+
+.doctor-dashboard thead{
+    background-color: none;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.doctor-dashboard tbody tr{
+    background-color: #fff;
+}
+
+
+.doctor-dashboard tbody td{
+   padding: 30px;
+}
+
+.doctor-dashboard .appointments-table{
+    background-color: var(--background-color-4);
+    width: 100%;
+    border-radius: 20px;
+}
+
+.doctor-top-navbar{
+    display: none;
+}
+
+
+
+
+
+
+/* Media */
+@media screen and (max-width: 768px){
+    .doctor-dashboard .doctor-container{
+        margin-top:100px;
+    }
+    .greeting.card{
+        width: 100%;
+    }
+    .greeting.card .card-title{
+        padding: 5px;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .time.card{
+        display: none;
+        
+    }
+
+    .phone-time{
+        display: block;
+    }
+
+    .phone-time .card{
+        background-color: var(--background-color-3);
+        border: none;
+        padding: 20px;
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .phone-time .card .card-title{
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+
+    .phone-time .card .card-text{
+        font-size: 30px;
+    }
+
+    .doctor-top-navbar{
+        display: block;
+    }
+    
+}

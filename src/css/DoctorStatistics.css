@@ -1,0 +1,14 @@
+.doctor-statistic-card{
+    font-size: 40px;
+    font-weight: 200;
+    padding: 30px;
+    border-radius: 25px;
+    background-color:var(--background-color-4) ;
+}
+#statistics-page-content-wrapper{
+    margin: auto;
+}
+h1{
+    text-align: left;
+    padding: 20px;
+}

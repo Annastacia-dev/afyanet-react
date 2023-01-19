@@ -1,0 +1,42 @@
+.doctor-profile{
+    background-color: var(--background-color-3);
+}
+
+.doctor-profile .container-fluid{
+    background-color: var(--background-color-3);
+}
+
+.doctor-avatar{
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.3);
+}
+
+.doctor-profile h3{
+    margin-top: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+
+.doctor-profile .card{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-color-3);
+    border: none;
+}
+
+.doctor-profile .btn-danger{
+    margin-left: 100px;
+    width: 100px;
+}
+
+.doctor-profile .btn-primary{
+    margin-left: 100px;
+    width: 250px;
+}
