@@ -80,7 +80,7 @@ return(
                     <Card.Title className="card-title">Personal Details</Card.Title>
                      <Card.Text>
                       <p>Dr.{doctor && doctor.first_name} {doctor && doctor.last_name}</p>
-                      <p><i className={doctor && doctor.specialty.image}></i> {doctor && doctor.specialty.name}</p>
+                      <p><i className={doctor && doctor.specialty.image? doctor.specialty.image : null }></i> {doctor && doctor.specialty.name}</p>
                       <p>{doctor && doctor.email}</p>
                       <p>{doctor && doctor.phone_number}</p>
                       <p>{doctor && doctor.location}</p>

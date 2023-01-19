@@ -46,7 +46,7 @@ function Patients(){
           <Container className="sidecontentcontainer px-5 patients mt-5" fluid>
             <Row className="sidecontent">
               <h3>Patients History</h3>
-               {uniquePatients.map((patient) =>{
+               {uniquePatients.length > 0 ? uniquePatients.map((patient) =>{
 
                  const currentYear = new Date().getFullYear();
                 const birthYear = new Date(patient.date_of_birth).getFullYear();
@@ -75,7 +75,9 @@ function Patients(){
 
                 ) 
                }
-              ) 
+              ) : <h1
+              style={{ textAlign: "center", width: "100%", marginTop:"100px" }}
+              >No patients yet</h1>
               
               }
             </Row>
